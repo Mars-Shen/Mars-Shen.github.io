@@ -162,8 +162,8 @@ hr.small {
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
   font-size: 24px;
-  line-height: 1.1;
-  display: block;
+  line-height: 1.1,
+			display: block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
@@ -394,4 +394,25 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #0085a1;
+}
+#top-link-block.affix-top {
+  position: absolute;
+  /* allows it to "slide" up into view */
+  bottom: -82px;
+  /* negative of the offset - height of link element */
+  right: 20px;
+  /* padding from the left side of the window */
+}
+#top-link-block.affix {
+  position: fixed;
+  /* keeps it on the bottom once in view */
+  bottom: 18px;
+  /* height of link element */
+  right: 20px;
+  /* padding from the left side of the window */
+}
+#top-link-block a:hover,
+#top-link-block a:focus {
+  color: #808080;
+  text-decoration: none;
 }

@@ -373,8 +373,8 @@ $('#name').focus(function() {
                         var foundValidator = false;
                         message =
                             (
-                            message ? message : "'" + el + "' validation failed <!-- Add attribute 'data-validation-" + el.toLowerCase() + "-message' to input to change this message -->"
-                        );
+                                message ? message : "'" + el + "' validation failed <!-- Add attribute 'data-validation-" + el.toLowerCase() + "-message' to input to change this message -->"
+                            );
 
                         $.each(
                             settings.validatorTypes,
@@ -999,21 +999,21 @@ $('#name').focus(function() {
 
 // make all images responsive
 $(function() {
-	$("img").addClass("img-responsive");
+    $("img").addClass("img-responsive");
 });
 
 // responsive tables
 $(document).ready(function() {
-	$("table").wrap("<div class='table-responsive'></div>");
-	$("table").addClass("table");
+    $("table").wrap("<div class='table-responsive'></div>");
+    $("table").addClass("table");
 });
 
 // responsive embed videos
-$(document).ready(function () { 
+$(document).ready(function() {
     $('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
-	$('iframe[src*="youtube.com"]').addClass('embed-responsive-item');
+    $('iframe[src*="youtube.com"]').addClass('embed-responsive-item');
     $('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
-	$('iframe[src*="vimeo.com"]').addClass('embed-responsive-item');
+    $('iframe[src*="vimeo.com"]').addClass('embed-responsive-item');
 });
 
 // Floating label headings for the contact form
@@ -1054,5 +1054,19 @@ jQuery(document).ready(function($) {
                 }
                 this.previousTop = currentTop;
             });
+    }
+});
+// Navigation Scripts to Show Header on Scroll-Up
+jQuery(document).ready(function($) {
+    // Only enable if the document has a long scroll bar
+    // Note the window height + offset
+    var offsetTop = 200;
+    if (($(window).height() + offsetTop) < $(document).height()) {
+        $('#top-link-block').removeClass('hidden').affix({
+            // how far to scroll down before link "slides" into view
+            offset: {
+                top: offsetTop
+            }
+        });
     }
 });

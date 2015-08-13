@@ -461,3 +461,22 @@ img::-moz-selection {
 body {
 	webkit-tap-highlight-color: @brand-primary;
 }
+
+#top-link-block.affix-top{
+	position: absolute; /* allows it to "slide" up into view */
+	bottom: -82px; /* negative of the offset - height of link element */
+	right: 20px; /* padding from the left side of the window */
+	
+}
+#top-link-block.affix {
+	position: fixed; /* keeps it on the bottom once in view */
+	bottom: 18px; /* height of link element */
+	right: 20px; /* padding from the left side of the window */
+}
+
+#top-link-block{
+  a:hover, a:focus{
+      color: @gray;   
+      text-decoration: none;
+  } 
+}
