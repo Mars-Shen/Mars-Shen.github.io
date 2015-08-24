@@ -2,10 +2,10 @@
 title: Mars's Blog
 owner: Mars Shen
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+email: 
+description: "Mars的个人blog"
 baseurl: ""
-url: "http://Mars-Shen.github.io"
+url: "http://www.marsshen.com/"
 twitter_username: Mars1Shen
 github_username:  Mars-Shen
 facebook_username:  marscatz
