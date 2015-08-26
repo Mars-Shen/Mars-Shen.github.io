@@ -7,18 +7,23 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://mars-shen.github.io/</loc>
-  <lastmod>2015-08-22T08:28:39+00:00</lastmod>
+  <loc>http://www.marsshen.com/</loc>
+  <lastmod>2015-08-26T13:42:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://mars-shen.github.io/about/</loc>
-  <lastmod>2015-08-22T08:28:39+00:00</lastmod>
+  <loc>http://www.marsshen.com/about/</loc>
+  <lastmod>2015-08-26T13:42:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://mars-shen.github.io/%E6%B8%B8%E6%88%8F/2015/08/22/IOS-%E6%B8%B8%E6%88%8F-%3C%3CThe%20Guide%3E%3E%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%94%BB%E7%95%A5/</loc>
-  <lastmod>2015-08-22T08:28:39+00:00</lastmod>
+  <loc>http://www.marsshen.com/%E6%B8%B8%E6%88%8F/2015/08/25/IOS-%E6%B8%B8%E6%88%8F-%E8%A7%A3%E8%B0%9C%E6%8C%87%E5%8D%97(The%20Guide)%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%94%BB%E7%95%A5/</loc>
+  <lastmod>2015-08-26T13:42:16+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.marsshen.com/%E6%B8%B8%E6%88%8F/2015/08/22/IOS-%E6%B8%B8%E6%88%8F-%3C%3CThe%20Guide%3E%3E%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%94%BB%E7%95%A5/</loc>
+  <lastmod>2015-08-26T07:24:34+00:00</lastmod>
   <changefreq>weekly</changefreq>
 </url>
 </urlset>
