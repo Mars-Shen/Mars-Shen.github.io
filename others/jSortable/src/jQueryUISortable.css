@@ -21,8 +21,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.sortable_Descrption_only_Style{
-	width: 65%;
+
+.sortable_Descrption_only_Style {
+    width: 65%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
