@@ -6,9 +6,9 @@ email:
 description: "Mars的个人blog"
 baseurl: ""
 url: "http://www.marsshen.com/"
-twitter_username: Mars1Shen
+#twitter_username: Mars1Shen
 github_username:  Mars-Shen
-facebook_username:  marscatz
+#facebook_username:  marscatz
 weibo_username:  catz123
 
 # Build settings
