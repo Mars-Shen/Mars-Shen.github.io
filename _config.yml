@@ -9,7 +9,7 @@ url: "http://www.marsshen.com/"
 #twitter_username: Mars1Shen
 github_username:  Mars-Shen
 #facebook_username:  marscatz
-weibo_username:  catz123
+#weibo_username:  catz123
 
 # Build settings
 markdown: kramdown
@@ -18,3 +18,5 @@ permalink: pretty
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 gems: [jekyll-paginate,jekyll-gist]
+plugins:
+  - jekyll-sitemap
