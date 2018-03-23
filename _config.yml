@@ -17,6 +17,9 @@ highlighter: rouge
 permalink: pretty
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-gems: [jekyll-paginate,jekyll-gist]
 plugins:
   - jekyll-sitemap
+  - jekyll-coffeescript
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-paginate
