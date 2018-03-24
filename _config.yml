@@ -1,25 +1,91 @@
 # Site settings
 title: Mars's Blog
-owner: Mars Shen
+SEOTitle: Mars的博客 | Mars's Blog
 header-img: img/home-bg.jpg
-email: 
+#email: 
 description: "Mars的个人blog"
-baseurl: ""
-url: "http://www.marsshen.com/"
+keyword: "Mars"
+url: "http://www.marsshen.com/"              # your host, for absolute URL
+baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
+
+# SNS settings
+RSS: false
+#zhihu_username:  
 #twitter_username: Mars1Shen
 github_username:  Mars-Shen
 #facebook_username:  marscatz
 #weibo_username:  catz123
 
 # Build settings
-markdown: kramdown
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
-paginate: 5
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+#Plugins
 plugins:
   - jekyll-sitemap
   - jekyll-coffeescript
   - jekyll-gist
   - jekyll-github-metadata
   - jekyll-paginate
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: ""
+sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 2              # A tag will be featured if the size of it is more than this condition value
+
+#BaiDu Share
+baidu_share: true
+
+# Friends
+# friends: [
+#     {
+#         title: "Hux Blog",
+#         href: "http://huangxuan.me"
+#     },{
+#         title: "Foo",
+#         href: "#"
+#     },{
+#         title: "Bar",
+#         href: "#"
+#     },{
+#         title: "Example Friends",
+#         href: "#"
+#     },{
+#         title: "It helps SEO",
+#         href: "#"
+#     }
+# ]
+
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+#duoshuo_username: huxblog
+# Share component is depend on Comment so we can NOT use share only.
+#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+#ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+# Google Analytics
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: huangxuan.me

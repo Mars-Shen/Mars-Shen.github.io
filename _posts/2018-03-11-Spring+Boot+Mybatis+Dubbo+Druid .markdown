@@ -5,8 +5,8 @@ subtitle:   "使用Spring Boot与Mybatis/Dubbo/Druid整合,并且记录过程中
 date:       2018-03-10 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
-categories: [Spring]
-tags: [Spring Boot,Mybatis,Dubbo,Druid]
+catelog: true
+tags: [原创,Spring Boot,Mybatis,Dubbo,Druid]
 ---
 
 <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>

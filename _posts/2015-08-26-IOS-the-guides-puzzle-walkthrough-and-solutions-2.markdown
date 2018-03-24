@@ -5,8 +5,8 @@ subtitle:   "一款值得推荐的纯解谜游戏"
 date:       2015-08-25 12:00:00
 author:     "Mars Shen"
 header-img: "img/theguides_cover.jpg"
-categories: [游戏]
-tags: [原创,The Guides,解谜指南]
+catelog: true
+tags: [原创,翻译]
 ---
 
 <p>这是解谜指南的第二章攻略,部分来自<a href="http://www.appunwrapper.com/2015/08/17/the-guides-puzzle-walkthrough-and-solutions/2/">Appunwrapper</a>.</p>

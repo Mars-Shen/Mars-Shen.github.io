@@ -5,8 +5,8 @@ subtitle:   "一款值得推荐的纯解谜游戏"
 date:       2015-08-22 12:00:00
 author:     "Mars Shen"
 header-img: "img/theguides_cover.jpg"
-categories: [游戏]
-tags: [原创,The Guides]
+catelog: true
+tags: [原创,翻译]
 ---
 
 <p>这两天在iphone上玩到一款纯粹的解谜游戏,没有剧情,没有拖沓,没有内购,只有解谜.我觉得还是一款值得推荐的游戏.</p>

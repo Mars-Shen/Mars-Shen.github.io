@@ -5,8 +5,8 @@ subtitle:   ""
 date:       2018-03-23 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/jiamitu-hd.jpg"
-categories: [区块链]
-tags: [区块链,区块链宠物]
+catelog: true
+tags: [原创,区块链,区块链宠物]
 ---
 
 <h2 class="section-heading">领养小米加密兔辅助工具</h2>
