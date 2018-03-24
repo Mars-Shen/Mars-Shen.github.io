@@ -5,7 +5,7 @@ subtitle:   ""
 date:       2018-03-16 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/eos-hd.jpg"
-catelog: true
+catalog: true
 tags: [EOS]
 ---
 

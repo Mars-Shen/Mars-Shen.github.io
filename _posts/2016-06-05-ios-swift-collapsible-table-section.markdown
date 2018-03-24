@@ -5,7 +5,7 @@ subtitle:   "使用swift2.2在IOS中实现可折叠/展开的Table Section"
 date:       2016-06-06 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
-catelog: true
+catalog: true
 tags: [原创,翻译,IOS开发,swift]
 ---
 

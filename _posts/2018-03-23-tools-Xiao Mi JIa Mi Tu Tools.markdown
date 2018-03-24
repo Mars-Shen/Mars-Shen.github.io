@@ -5,7 +5,7 @@ subtitle:   ""
 date:       2018-03-23 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/jiamitu-hd.jpg"
-catelog: true
+catalog: true
 tags: [原创,区块链,区块链宠物]
 ---
 

@@ -5,7 +5,7 @@ subtitle:   "使用Spring Boot与Mybatis/Dubbo/Druid整合,并且记录过程中
 date:       2018-03-10 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
-catelog: true
+catalog: true
 tags: [原创,Spring Boot,Mybatis,Dubbo,Druid]
 ---
 

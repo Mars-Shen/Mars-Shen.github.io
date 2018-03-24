@@ -5,7 +5,7 @@ subtitle:   "一款值得推荐的纯解谜游戏"
 date:       2015-08-22 12:00:00
 author:     "Mars Shen"
 header-img: "img/theguides_cover.jpg"
-catelog: true
+catalog: true
 tags: [原创,翻译]
 ---
 
