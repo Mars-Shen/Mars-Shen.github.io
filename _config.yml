@@ -52,6 +52,10 @@ featured-condition-size: 2              # A tag will be featured if the size of 
 #BaiDu Share
 baidu_share: true
 
+#Baffle js
+#Doc https://camwiegert.github.io/baffle/
+baffle-js: true
+
 # Friends
 # friends: [
 #     {

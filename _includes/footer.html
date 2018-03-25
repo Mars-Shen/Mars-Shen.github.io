@@ -92,6 +92,11 @@
 <script src="{{ "/js/sw-registration.js " | prepend: site.baseurl }}"></script>
 {% endif %}
 
+<!-- Baffle js -->
+{% if site.baffle-js %}
+<script src="{{ "/js/baffle.min.js " | prepend: site.baseurl }}"></script>
+{% endif %}
+
 <!-- async load function -->
 <script>
     function async(u, c) {
