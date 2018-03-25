@@ -6,6 +6,7 @@ date:       2018-03-16 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/eos-hd.jpg"
 catalog: true
+multilingual: false
 tags: [EOS]
 ---
 
@@ -16,11 +17,11 @@ tags: [EOS]
 	</ul>
 </blockquote>
 
-<h2 class="section-heading">是否需要钱包映射?</h2>
+# 是否需要钱包映射?
 <p>
 	关于是否需要映射的问题, 网上已经有很多讨论了, 个人在这里给出的建议是, 如果你嫌麻烦可以直接把EOS放在交易所, 据我所知现在主流的交易所都会帮你完成映射过程, 但如果你想把交易所的EOS提出来保存到自己的钱包, 那还是需要做钱包映射的, 因为EOS项目目前还没有完成, 目前市场上的EOS为项目开发组预发行的EOS代币, 并不是真正的EOS币, 在2018年6月2日6:59:59（北京时间）此前钱包里流通的EOS代币将会被冻结, 真正的EOS币将会投放到对应钱包取代这些代币, 如果钱包不做映射, 你将不会得到这些真正的EOS货币.
 </p>
-<h2 class="section-heading">使用MetaMask钱包完成EOS钱包映射</h2>
+# 使用MetaMask钱包完成EOS钱包映射
 <blockquote>映射分三步:
 	<ul>
 		<li>钱包的生成</li>

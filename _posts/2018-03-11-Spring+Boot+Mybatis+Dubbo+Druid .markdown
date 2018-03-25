@@ -6,12 +6,13 @@ date:       2018-03-10 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
 catalog: true
+multilingual: false
 tags: [原创,Spring Boot,Mybatis,Dubbo,Druid]
 ---
 
 <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
-<h2 class="section-heading">Spring Boot部分</h2>
+# Spring Boot部分
 <p><b>·生成一个简单的Spring Boot项目</b></p>
 <p>
 	首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
@@ -83,7 +84,7 @@ Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback Lo
             </exclusions>
         </dependency>
 {% endhighlight %}
-<h2 class="section-heading">Spring Boot与Dubbo整合</h2>
+# Spring Boot与Dubbo整合
 <p><b>·Spring Boot与Dubbo整合</b></p>
 <p>
 	Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
@@ -135,7 +136,7 @@ public class MemberServiceImpl implements MemberService {
 	Dubbo控制台可以很好的监控当前服务发布者与消费者的状态, 建议调试的时候安装使用.<code><a href="http://dubbo.io/books/dubbo-admin-book/">安装教程</a></code>
 </p>
 
-<h2 class="section-heading">Spring Boot与Mybatis/Druid整合</h2>
+# Spring Boot与Mybatis/Druid整合
 <p><b>·Spring Boot与Mybatis/Druid整合</b></p>
 <p>
 	首先在Pom文件中导入相应的jar包:
