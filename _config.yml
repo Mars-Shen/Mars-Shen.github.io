@@ -50,7 +50,7 @@ featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 2              # A tag will be featured if the size of it is more than this condition value
 
 #BaiDu Share
-baidu_share: true
+baidu_share: false
 
 #Baffle js
 #Doc https://camwiegert.github.io/baffle/
