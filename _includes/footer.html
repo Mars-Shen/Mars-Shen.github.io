@@ -283,3 +283,25 @@ var _hmt = _hmt || [];
     _render();
 </script>
 {% endif %}
+
+{% if site.sticky-sidebar %}
+<!-- sticky-sidebar -->
+<script>
+     $('#catalog-sidebar-container').stickySidebar({
+        containerSelector: '#main-content',
+        innerWrapperSelector: '.sidebar__inner',
+        topSpacing: 60,
+        bottomSpacing: 60
+    });
+</script>
+<style>
+	#catalog-sidebar-container{
+	    will-change: min-height;
+	}
+	.sidebar__inner{
+	    transform: translate(0, 0); /* For browsers don't support translate3d. */
+	    transform: translate3d(0, 0, 0);
+	    will-change: position, transform;
+	}
+</style>
+{% endif %}
