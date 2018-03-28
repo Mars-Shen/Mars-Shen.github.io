@@ -97,6 +97,11 @@
 <script src="{{ "/js/baffle.min.js " | prepend: site.baseurl }}"></script>
 {% endif %}
 
+<!-- sticky-sidebar js -->
+{% if site.sticky-sidebar %}
+<script src="{{ "/js/jquery.sticky-sidebar.min.js " | prepend: site.baseurl }}"></script>
+{% endif %}
+
 <!-- async load function -->
 <script>
     function async(u, c) {
