@@ -13,13 +13,13 @@ tags: [原创,Spring Boot,Mybatis,Dubbo,Druid]
 <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
 # Spring Boot部分
-### 生成一个简单的Spring Boot项目
+#### 生成一个简单的Spring Boot项目
 <p>
 	首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
 	<img src="{{ site.baseurl }}/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
 	点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
 </p>
-### Spring Boot Pom文件修改默认继承关系及引用
+#### Spring Boot Pom文件修改默认继承关系及引用
 <p>
 	默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
 </p>
@@ -40,7 +40,7 @@ tags: [原创,Spring Boot,Mybatis,Dubbo,Druid]
 <p>
 	使用<code>dependencyManagement</code>代替<code>parent</code>完成Spring Boot必须组件的导入.
 </p>
-### 出现错误
+#### 出现错误
 <p>
 	项目中出现:
 </p>
@@ -85,7 +85,7 @@ Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback Lo
         </dependency>
 {% endhighlight %}
 # Spring Boot与Dubbo整合
-### Spring Boot与Dubbo整合
+#### Spring Boot与Dubbo整合
 <p>
 	Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
 </p>
@@ -108,7 +108,7 @@ Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback Lo
 	修改application.properties中的配置, 添加dubbo相关属性:
 </p>
 {% highlight xml %}
-# Dubbo 服务提供者配置
+#Dubbo 服务提供者配置
 #注册中心选择了zookeeper
 spring.dubbo.registry.address=zookeeper://127.0.0.1:2181 
 spring.dubbo.protocol.name=dubbo 
@@ -131,13 +131,13 @@ public class MemberServiceImpl implements MemberService {
 }
 {% endhighlight %}
 
-### Dubbo Admin的使用
+#### Dubbo Admin的使用
 <p>
 	Dubbo控制台可以很好的监控当前服务发布者与消费者的状态, 建议调试的时候安装使用.<code><a href="http://dubbo.io/books/dubbo-admin-book/">安装教程</a></code>
 </p>
 
 # Spring Boot与Mybatis/Druid整合
-### Spring Boot与Mybatis/Druid整合
+#### Spring Boot与Mybatis/Druid整合
 <p>
 	首先在Pom文件中导入相应的jar包:
 </p>
