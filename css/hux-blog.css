@@ -951,3 +951,6 @@ body {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
+.catalog-container {
+  padding: 0px;
+}
