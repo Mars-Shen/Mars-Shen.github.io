@@ -179,27 +179,3 @@ layout: default
     }
 </style>
 {% endif %}
-
-{% if site.sticky-sidebar %}
-<!-- sticky-sidebar -->
-<script>
-	async("/js/jquery.sticky-sidebar.min.js",function(){
-		 $('#catalog-sidebar-container').stickySidebar({
-			containerSelector: '#main-content',
-			innerWrapperSelector: '.sidebar__inner',
-			topSpacing: 60,
-			bottomSpacing: 60
-		});
-	});
-</script>
-<style>
-	#catalog-sidebar-container{
-	    will-change: min-height;
-	}
-	.sidebar__inner{
-	    transform: translate(0, 0); /* For browsers don't support translate3d. */
-	    transform: translate3d(0, 0, 0);
-	    will-change: position, transform;
-	}
-</style>
-{% endif %}
