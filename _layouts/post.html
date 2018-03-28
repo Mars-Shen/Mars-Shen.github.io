@@ -40,7 +40,22 @@ layout: default
 <article>
     <div class="container">
         <div class="row" id="main-content">
-
+	<!-- Side Catalog Container -->
+        {% if page.catalog %}
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container" id="catalog-sidebar-container">
+                <div class="side-catalog sidebar__inner">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        {% endif %}
     <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -124,22 +139,6 @@ layout: default
                 </ul>
                 {% endif %}
             </div>
-	<!-- Side Catalog Container -->
-        {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container" id="catalog-sidebar-container">
-                <div class="side-catalog sidebar__inner">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
-        {% endif %}
         </div>
     </div>
 </article>
