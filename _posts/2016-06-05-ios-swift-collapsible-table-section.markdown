@@ -6,20 +6,21 @@ date:       2016-06-06 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
 catalog: true
+multilingual: false
 tags: [原创,翻译,IOS开发,swift]
 ---
 
 <blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
-<h2 class="section-heading">如何在IOS中实现可折叠/展开的Table Section?</h2>
+# 如何在IOS中实现可折叠/展开的Table Section?
 <img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
 <img src="{{ site.baseurl }}/img/IOSection/demo.gif" width="60%" heigh="60%">
-<p><b>第一步:准备数据</b></p>
+#### 第一步:准备数据
 <p>
 假设我们有下面这些分好组的数据,每一组是一个 <code>Section</code> 对象
 {% gist Mars-Shen/7b1193a9ba6712e27ff0cf2c456b4896 %}
 <code>collapsed</code> 表明了现在是否是折叠状态,默认为false.
 </p>
-<p><b>第二步:设计 Header 和 Cell</b></p>
+#### 第二步:设计 Header 和 Cell
 <p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
 <img src="{{ site.baseurl }}/img/IOSection/cell.png" width="60%" heigh="60%">
 <p>添加一个 UIButton (用做切换折叠状态) 和一个 Label 到 header 的 prototype cell 中, 创建一个继承自 <code>UITableViewCell</code> 的 swift 文件并且命名为<code> CollapsibleTableViewHeader.swift</code>. 这个文件很简单, 有两个 IBOutlets, 一个用做链接切换按钮 (UIButton), 另外一个用做链接 Label. 最后我们设置这个 header 的 Class 为 我们自定义的类 <code>CollapsibleTableViewHeader</code> 并且在类中正确的链接 IBOutlets.</p>
@@ -32,7 +33,7 @@ tags: [原创,翻译,IOS开发,swift]
 </ul>
 {% gist Mars-Shen/3afdc49795819b56efb7b56d42f655bb %}
 <p>个人而言, 我不喜欢在我的项目中有 nib 文件, 并且如果我们用了 <code>dequeueReusableHeaderFooterViewWithIdentifier</code>, 好像我们必须在那个 section 中最少拥有一行 row, 但这里我们需要 0 row!</p>
-<p><b>第三步: UITableViewDelegate</b></p>
+#### 第三步: UITableViewDelegate
 <p>首先,用 sections.count 正确的表示 section 的数量:</p>
 {% gist Mars-Shen/4ef5c46a29a1a25b2370f256d2a06af9 %}
 <p>对于那些每个 section 中的 row 的数量, 我们使用 <code>collapsed</code> 变量去控制它, 如果 collapsed 是 true, 我们就返回 0, 否则返回他真实 items 的数量:</p>
