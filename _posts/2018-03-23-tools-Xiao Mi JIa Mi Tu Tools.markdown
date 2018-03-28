@@ -16,7 +16,7 @@ tags: [原创,区块链,区块链宠物]
 小米区块链宠物小米加密兔领养活动目前正在进行中. 该工具脚本用于实现自动化抢小米加密兔, 目前为可用状态(2018/3/23), 但并不能保证长期可用, 可能会随缘更新, 有问题或者建议请在下面留言.
 </p>
 
-## **使用方法**
+### 使用方法
 * 使用前请先在Chrome下载Tampermonkey插件.
 * 下载脚本文件XiaoMi-JiaMiTu-Tools.zip至本地.
 * 将文件XiaoMi-JiaMiTu-Tools.zip导入Tampermonkey.
@@ -26,13 +26,14 @@ tags: [原创,区块链,区块链宠物]
 * 如果需要更新, 请在Tampermonkey插件更新插件.
 
 下载链接: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools/raw/master/XiaoMi-JiaMiTu-Tools.zip">点我下载</a></code>
+
 源码地址: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools">点我查看</a></code>
 
-## **脚本原理**
+### 脚本原理
 <p>
 脚本模拟用户点击, 运行时循环发送点击请求.
 </p>
-## **注意事项**
+### 注意事项
 * 活动开始时, 运行中脚本可能会卡住, 日志可能会不输出, 这是正常情况, 因为小米服务器在那一刻接受大量请求, 响应缓慢. 所以抢不抢的到兔子, 还是得看你运气, 不能保证.
 
 <!-- 开启前效果:
