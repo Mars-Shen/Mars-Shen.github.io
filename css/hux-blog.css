@@ -62,9 +62,9 @@
   position: fixed;
   top: -21px;
 }
-.side-catalog.fold .catalog-toggle::before {
+/*.side-catalog.fold .catalog-toggle::before {
   content: "+";
-}
+}*/
 .side-catalog.fold .catalog-body {
   display: none;
 }
