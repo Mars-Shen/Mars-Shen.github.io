@@ -472,10 +472,10 @@ pre code {
 }
 .post-container .pager li.previous {
   float: left;
-}
+}/*
 .post-container .pager li > a {
   width: 100%;
-}
+}*/
 .post-container .pager li > a > span {
   color: #cccccc;
   font-weight: normal;
