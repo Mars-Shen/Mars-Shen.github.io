@@ -7,7 +7,7 @@ author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
 catalog: true
 multilingual: false
-tags: [原创,Spring Boot,Mybatis,Dubbo,Druid]
+tags: [原创,Spring Boot,Mybatis,Dubbo,Druid,互联网技术,Java]
 ---
 
 <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>

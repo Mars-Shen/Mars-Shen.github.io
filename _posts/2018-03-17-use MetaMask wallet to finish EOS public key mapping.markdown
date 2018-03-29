@@ -7,7 +7,7 @@ author:     "Mars Shen"
 header-img: "img/Header/eos-hd.jpg"
 catalog: true
 multilingual: false
-tags: [EOS]
+tags: [EOS,区块链]
 ---
 
 <blockquote>前提条件:

@@ -7,7 +7,7 @@ author:     "Mars Shen"
 header-img: "img/Header/coder-doom-dos-code-hd.jpg"
 catalog: true
 multilingual: false
-tags: [原创,翻译,IOS开发,swift]
+tags: [原创,翻译,互联网技术,IOS开发,swift]
 ---
 
 <blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>

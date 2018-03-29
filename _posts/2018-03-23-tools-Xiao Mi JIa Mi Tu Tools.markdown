@@ -7,7 +7,7 @@ author:     "Mars Shen"
 header-img: "img/Header/jiamitu-hd.jpg"
 catalog: true
 multilingual: false
-tags: [原创,区块链,区块链宠物]
+tags: [原创,区块链]
 ---
 
 # 领养小米加密兔辅助工具
