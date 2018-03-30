@@ -60,6 +60,9 @@ baffle-js: true
 #Doc https://abouolia.github.io/sticky-sidebar/
 sticky-sidebar: true
 
+#Google AdSense
+google_adsense: true
+
 # Friends
 # friends: [
 #     {
@@ -87,9 +90,6 @@ sticky-sidebar: true
 #duoshuo_username: huxblog
 # Share component is depend on Comment so we can NOT use share only.
 #duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
 
 # Analytics settings
 # Baidu Analytics
