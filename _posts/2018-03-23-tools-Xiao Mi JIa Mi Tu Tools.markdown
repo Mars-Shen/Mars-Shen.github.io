@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "自动化抢小米加密兔辅助工具"
+title:      "自动化抢小米加密兔辅助工具"
 subtitle:   ""
 date:       2018-03-23 12:00:00
 author:     "Mars Shen"
