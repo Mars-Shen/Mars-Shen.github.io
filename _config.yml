@@ -61,7 +61,7 @@ baffle-js: true
 sticky-sidebar: true
 
 #Google AdSense
-google_adsense: true
+google_adsense: false
 
 # Friends
 # friends: [
