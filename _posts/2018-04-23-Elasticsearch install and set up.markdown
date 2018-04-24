@@ -128,31 +128,19 @@ max number of threads [1024] for user [es] is too low, increase to at least [204
 - 原因：无法创建本地线程问题,用户最大可创建线程数太小
 - 解决方案：
 	1.切换到root用户，进入limits.d目录下，修改90-nproc.conf 配置文件。<code>vi /etc/security/limits.d/90-nproc.conf</code>找到如下内容：
-{% highlight Shell %}
-* soft nproc 1024
-{% endhighlight %}
-修改为：
-{% highlight Shell %}
-* soft nproc 2048
-{% endhighlight %}
+<code>* soft nproc 1024</code>修改为：<code>* soft nproc 2048</code>
 
 {% highlight Java %}
 max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]
 {% endhighlight %}
 - 原因：这个问题比较常见，原因是因为最大虚拟内存太小
 	1. 解决方案：切换到root用户下，修改配置文件sysctl.conf，<code>vi /etc/sysctl.conf</code>添加下面配置：
-{% highlight Shell %}
-vm.max_map_count=655360
-{% endhighlight %}
-并执行命令：<code>sysctl -p</code>，然后重新启动elasticsearch，即可启动成功。
+<code>vm.max_map_count=655360</code>，并执行命令：<code>sysctl -p</code>，然后重新启动Elasticsearch，即可启动成功。
 
 问题3：
 
 启动后，如果只有本地可以访问，尝试修改配置文件 elasticsearch.yml中network.host(注意配置文件格式不是以 # 开头的要空一格， ： 后要空一格)为
-{% highlight Shell %}
-network.host: 0.0.0.0
-{% endhighlight %}
-默认端口是 9200，注意：关闭防火墙 或者开放9200端口。
+<code>network.host: 0.0.0.0</code>，默认端口是 9200，注意：关闭防火墙 或者开放9200端口。
 
 问题4：
 {% highlight Java %}
@@ -164,7 +152,7 @@ Java HotSpot(TM) Client VM warning: INFO: os::commit_memory(0x74800000, 20132659
 - 原因：这个错误是由于Elasticsearch尝试用默认配置的2G内存启动（Elasticsearch 5.X以后的版本），但你的机器实际内存小于2G导致的内存不足问题。
 - 解决方案二选一即可：
 	1. 升级你机器的内存。
-	2. 修改Elasticsearch中jvm的配置，即修改<code>elasticsearch-6.2.4/config/</code>中的jvm.options文件。修改其中的<code>-Xms2g -Xmx2g</code>为<code>-Xms512m -Xmx512m</code>即可。注意这个参数可能需要根据具体情况具体设置，但有个原则就是<code>-Xms</code>与<code>-Xmx</code>需要想等
+	2. 修改Elasticsearch中jvm的配置，即修改<code>elasticsearch-6.2.4/config/</code>中的jvm.options文件。修改其中的<code>-Xms2g -Xmx2g</code>为<code>-Xms512m -Xmx512m</code>即可。注意这个参数可能需要根据具体情况具体设置，但有个原则就是<code>-Xms</code>与<code>-Xmx</code>需要相等。
 
 
 #### 安装x-pack插件
