@@ -7,7 +7,7 @@ author:     "Mars Shen"
 header-img: "img/Header/elasticsearch-hd.png"
 catalog: true
 multilingual: false
-tags: [原创,互联网技术]
+tags: [原创,互联网技术,ELK]
 ---
 
 # Ubuntu下Elasticsearch安装与问题记录
