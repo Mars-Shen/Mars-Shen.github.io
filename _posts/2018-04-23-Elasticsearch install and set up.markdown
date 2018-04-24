@@ -83,7 +83,7 @@ TBD
 #### 安装Elasticsearch常见错误
 这一部分部分引用<code><a href="https://github.com/DimonHo/DH_Note/issues/3">这篇文章</a></code>，结合我遇到的实际问题做了些修改。
 
-问题1：
+**问题1：**
 {% highlight Java %}
 [2017-04-13T00:14:20,144][WARN ][o.e.b.JNANatives ] unable to install syscall filter:
 java.lang.UnsupportedOperationException: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
@@ -93,7 +93,7 @@ java.lang.UnsupportedOperationException: seccomp unavailable: CONFIG_SECCOMP not
 	1. 重新安装新版本的Linux系统
 	2. 警告不影响使用，可以忽略
 
-问题2：
+**问题2：**
 {% highlight Java %}
 [2017-04-13T00:08:51,031][ERROR][o.e.b.Bootstrap ] [ZdbjA-a] node validation exception
 [4] bootstrap checks failed
@@ -137,12 +137,12 @@ max virtual memory areas vm.max_map_count [65530] likely too low, increase to at
 	1. 解决方案：切换到root用户下，修改配置文件sysctl.conf，<code>vi /etc/sysctl.conf</code>添加下面配置：
 <code>vm.max_map_count=655360</code>，并执行命令：<code>sysctl -p</code>，然后重新启动Elasticsearch，即可启动成功。
 
-问题3：
+**问题3：**
 
 启动后，如果只有本地可以访问，尝试修改配置文件 elasticsearch.yml中network.host(注意配置文件格式不是以 # 开头的要空一格， ： 后要空一格)为
 <code>network.host: 0.0.0.0</code>，默认端口是 9200，注意：关闭防火墙 或者开放9200端口。
 
-问题4：
+**问题4：**
 {% highlight Java %}
 Java HotSpot(TM) Client VM warning: INFO: os::commit_memory(0x74800000, 201326592, 0) failed; error='Cannot allocate memory' (errno=12)
 #
@@ -153,7 +153,19 @@ Java HotSpot(TM) Client VM warning: INFO: os::commit_memory(0x74800000, 20132659
 - 解决方案二选一即可：
 	1. 升级你机器的内存。
 	2. 修改Elasticsearch中jvm的配置，即修改<code>elasticsearch-6.2.4/config/</code>中的jvm.options文件。修改其中的<code>-Xms2g -Xmx2g</code>为<code>-Xms512m -Xmx512m</code>即可。注意这个参数可能需要根据具体情况具体设置，但有个原则就是<code>-Xms</code>与<code>-Xmx</code>需要相等。
+#### 安装elasticsearch-head插件
+elasticsearch-head是个用来与Elasticsearch互动的图形化界面插件，有了他你可以很方便的管理你的Elasticsearch，查看你的Elasticsearch状态或者测试你的查询语句。这个是他官方的<code><a href="https://github.com/mobz/elasticsearch-head">GitHub页面</a></code>。
 
+**安装步骤：**
+{% highlight Shell %}
+git clone git://github.com/mobz/elasticsearch-head.git
+cd elasticsearch-head
+npm install
+npm run start
+{% endhighlight %}
+安装完成后用http://localhost:9100/ 打开即可。
+
+elasticsearch-head也推出了Chrome插件，**个人推荐直接安装Chrome的插件来使用elasticsearch-head**，非常非常方便。
 
 #### 安装x-pack插件
 TBD
