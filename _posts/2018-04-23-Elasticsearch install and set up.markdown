@@ -154,6 +154,19 @@ network.host: 0.0.0.0
 {% endhighlight %}
 默认端口是 9200，注意：关闭防火墙 或者开放9200端口。
 
+问题4：
+{% highlight Java %}
+Java HotSpot(TM) Client VM warning: INFO: os::commit_memory(0x74800000, 201326592, 0) failed; error='Cannot allocate memory' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 201326592 bytes for committing reserved memory.
+{% endhighlight %}
+- 原因：这个错误是由于Elasticsearch尝试用默认配置的2G内存启动（Elasticsearch 5.X以后的版本），但你的机器实际内存小于2G导致的内存不足问题。
+- 解决方案二选一即可：
+	1. 升级你机器的内存。
+	2. 修改Elasticsearch中jvm的配置，即修改<code>elasticsearch-6.2.4/config/</code>中的jvm.options文件。修改其中的<code>-Xms2g -Xmx2g</code>为<code>-Xms512m -Xmx512m</code>即可。注意这个参数可能需要根据具体情况具体设置，但有个原则就是<code>-Xms</code>与<code>-Xmx</code>需要想等
+
+
 #### 安装x-pack插件
 TBD
 
