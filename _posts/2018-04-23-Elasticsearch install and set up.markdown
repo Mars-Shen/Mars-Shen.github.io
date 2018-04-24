@@ -106,7 +106,7 @@ java.lang.UnsupportedOperationException: seccomp unavailable: CONFIG_SECCOMP not
 [2017-04-13T00:08:51,097][INFO ][o.e.n.Node ] [ZdbjA-a] closing ...
 [2017-04-13T00:08:51,107][INFO ][o.e.n.Node ] [ZdbjA-a] closed
 {% endhighlight %}
-**注意：如果你的VPS为OpenVZ构架，可以不用接着往下看了，因为你什么也做不了，所以买VPS推荐买KVM构架的，KVM构架更加独立，在你自己手上的控制权更多。**
+>**注意：如果你的VPS为OpenVZ构架，可以不用接着往下看了，因为你什么也做不了，所以买VPS推荐买KVM构架的，KVM构架更加独立，在你自己手上的控制权更多。**
 
 这里报了若干个错误，我们一个一个来
 {% highlight Java %}
@@ -153,6 +153,7 @@ Java HotSpot(TM) Client VM warning: INFO: os::commit_memory(0x74800000, 20132659
 - 解决方案二选一即可：
 	1. 升级你机器的内存。
 	2. 修改Elasticsearch中jvm的配置，即修改<code>elasticsearch-6.2.4/config/</code>中的jvm.options文件。修改其中的<code>-Xms2g -Xmx2g</code>为<code>-Xms512m -Xmx512m</code>即可。注意这个参数可能需要根据具体情况具体设置，但有个原则就是<code>-Xms</code>与<code>-Xmx</code>需要相等。
+
 #### 安装elasticsearch-head插件
 elasticsearch-head是个用来与Elasticsearch互动的图形化界面插件，有了他你可以很方便的管理你的Elasticsearch，查看你的Elasticsearch状态或者测试你的查询语句。这个是他官方的<code><a href="https://github.com/mobz/elasticsearch-head">GitHub页面</a></code>。
 
@@ -165,7 +166,7 @@ npm run start
 {% endhighlight %}
 安装完成后用http://localhost:9100/ 打开即可。
 
-elasticsearch-head也推出了Chrome插件，**个人推荐直接安装Chrome的插件来使用elasticsearch-head**，非常非常方便。
+>elasticsearch-head也推出了Chrome插件，**个人推荐直接安装Chrome的插件来使用elasticsearch-head**，非常非常方便。
 
 #### 安装x-pack插件
 TBD
