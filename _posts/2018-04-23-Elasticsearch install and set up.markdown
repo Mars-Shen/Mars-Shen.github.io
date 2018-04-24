@@ -193,6 +193,116 @@ npm run start
 
 >elasticsearch-head也推出了Chrome插件，**个人推荐直接安装Chrome的插件来使用elasticsearch-head**，非常非常方便。
 
+#### 安装elasticsearch-analysis-ik插件
+elasticsearch-analysis-ik是一个Elasticsearch的中文分词插件，支持自定义词库以及热更新，这个是他官方的<code><a href="https://github.com/medcl/elasticsearch-analysis-ik">GitHub页面</a></code>。
+
+**安装步骤：**
+
+方式一：
+
+从<code><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases">这里</a></code>下载你Elasticsearch相应版本的安装包，解压缩后放在<code>your-es-root/plugins/</code>中。
+
+方式二：
+
+使用Elasticsearch-plugin来安装，这个方式支持v5.5.1以后的版本。
+{% highlight Shell %}
+./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.3/elasticsearch-analysis-ik-6.2.3.zip
+{% endhighlight %}
+注意将6.2.3换成你自己Elasticsearch所用的版本，安装完成后重启Elasticsearch服务。
+
+**如何使用：**
+
+首先创建一个index：
+{% highlight Shell %}
+curl -XPUT http://localhost:9200/index
+{% endhighlight %}
+然后创建mapping：
+{% highlight Shell %}
+curl -XPOST http://localhost:9200/index/fulltext/_mapping -H 'Content-Type:application/json' -d'
+{
+        "properties": {
+            "content": {
+                "type": "text",
+                "analyzer": "ik_max_word",
+                "search_analyzer": "ik_max_word"
+            }
+        }
+    
+}'
+{% endhighlight %}
+之后就像往常一样，创建doc并且查询这个中文字段：
+{% highlight Shell %}
+curl -XPOST http://localhost:9200/index/fulltext/1 -H 'Content-Type:application/json' -d'
+{"content":"美国留给伊拉克的是个烂摊子吗"}
+'
+curl -XPOST http://localhost:9200/index/fulltext/2 -H 'Content-Type:application/json' -d'
+{"content":"公安部：各地校车将享最高路权"}
+'
+curl -XPOST http://localhost:9200/index/fulltext/3 -H 'Content-Type:application/json' -d'
+{"content":"中韩渔警冲突调查：韩警平均每天扣1艘中国渔船"}
+'
+curl -XPOST http://localhost:9200/index/fulltext/4 -H 'Content-Type:application/json' -d'
+{"content":"中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首"}
+'
+curl -XPOST http://localhost:9200/index/fulltext/_search  -H 'Content-Type:application/json' -d'
+{
+    "query" : { "match" : { "content" : "中国" }},
+    "highlight" : {
+        "pre_tags" : ["<tag1>", "<tag2>"],
+        "post_tags" : ["</tag1>", "</tag2>"],
+        "fields" : {
+            "content" : {}
+        }
+    }
+}
+{% endhighlight %}
+查询结果：
+{% highlight Json %}
+{
+    "took": 14,
+    "timed_out": false,
+    "_shards": {
+        "total": 5,
+        "successful": 5,
+        "failed": 0
+    },
+    "hits": {
+        "total": 2,
+        "max_score": 2,
+        "hits": [
+            {
+                "_index": "index",
+                "_type": "fulltext",
+                "_id": "4",
+                "_score": 2,
+                "_source": {
+                    "content": "中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首"
+                },
+                "highlight": {
+                    "content": [
+                        "<tag1>中国</tag1>驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首 "
+                    ]
+                }
+            },
+            {
+                "_index": "index",
+                "_type": "fulltext",
+                "_id": "3",
+                "_score": 2,
+                "_source": {
+                    "content": "中韩渔警冲突调查：韩警平均每天扣1艘中国渔船"
+                },
+                "highlight": {
+                    "content": [
+                        "均每天扣1艘<tag1>中国</tag1>渔船 "
+                    ]
+                }
+            }
+        ]
+    }
+}
+{% endhighlight %}
+
 #### 安装x-pack插件
 TBD
 
