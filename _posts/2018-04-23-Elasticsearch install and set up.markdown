@@ -78,7 +78,32 @@ curl http://127.0.0.1:9200
 {% endhighlight %}
 
 #### 通过Docker安装Elasticsearch
-TBD
+通过Docker来安装Elasticsearch的运行环境也是很好的一个选择，Docker可以快速的搭建我们所需要的环境，如果硬件条件允许，我觉得这个将是Elasticsearch环境搭建的首选。通过Docker的方式安装Elasticsearch前，请确保已经安装了Docker。
+
+**安装步骤**
+
+首先拉取Elasticsearch的Docker镜像：
+{% highlight Shell %}
+docker pull docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+{% endhighlight %}
+为了让我们能够方便的配置镜像中Elasticsearch的配置文件，我们可以用挂载配置文件的方式运行Elasticsearch镜像。
+
+首先运行下载来的镜像：
+{% highlight Shell %}
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" --rm --name es docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+{% endhighlight %}
+将镜像中的配置文件与Data文件夹拷贝到宿主主机：
+{% highlight Shell %}
+docker cp 容器name:/usr/share/elasticsearch/config /opt/elasticsearch/config/
+docker cp 容器name:/usr/share/elasticsearch/data /opt/elasticsearch/data/
+{% endhighlight %}
+在宿主主机相应目录中修改相关配置如Elasticsearch.yml。
+
+用挂载的宿主主机中的配置文件运行Elasticsearch的Docker镜像：
+{% highlight Shell %}
+docker run -p 9200:9200 -p 9300:9300 -d -e "discovery.type=single-node" --rm --name es -v /opt/elasticsearch/config:/usr/share/elasticsearch/config -v /opt/elasticsearch/data:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+{% endhighlight %}
+因为加了<code>-d</code>，所以当前运行模式是后台运行，不会有什么输出，若要停止这个镜像的运行，输入<code>docker ps</code>查看相应的信息，根据相关信息使用<code>docker stop</code>命令，停止Elasticsearch服务。在上面的例子中我们使用<code>docker stop es</code>来停止Elasticsearch服务。
 
 #### 安装Elasticsearch常见错误
 这一部分部分引用<code><a href="https://github.com/DimonHo/DH_Note/issues/3">这篇文章</a></code>，结合我遇到的实际问题做了些修改。
