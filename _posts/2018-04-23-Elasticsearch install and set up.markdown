@@ -304,7 +304,13 @@ curl -XPOST http://localhost:9200/index/fulltext/_search  -H 'Content-Type:appli
 {% endhighlight %}
 
 #### 安装x-pack插件
-TBD
+x-pack是一个将各种插件集合起来的官方插件，这个插件集成了官方的Security（旧称 Shield），Alerting（通过 Watcher 实现），Monitoring（旧称 Marvel），Reporting，Graph，Machine Learning等。遗憾的是这个插件是付费的，如果只是自己学习用途，买个证书完全不合算。我们刚安装完Elasticsearch时，官方提供给我们一个试用licence，这是个全功能的证书，但是只能用30天。如果试用证书过期，官方另外提供了一种免费证书，类型为Basic，功能有限，具体可以看<code><a href="https://www.elastic.co/subscriptions/">这里</a></code>。x-pack我并不想详细讲，因为Basic证书连最基本的http认证都不提供，这表示如果将服务器暴露在外网环境任何人都可以随意操作我的Elasticsearch。最终我抛弃了x-pack并且通过Nginx的反向代理实现了最基本的http认证。
+
+x-pack的介绍与安装步骤详细的信息可以看<code><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/installing-xpack-es.html">这里</a></code>。
+
+证书相关操作可以看<code><a href="https://www.elastic.co/guide/en/x-pack/6.2/license-management.html">这里</a></code>。
+
+Nginx相关设置可以看<code><a href="https://www.jianshu.com/p/7ec26c13abbb">这里</a></code>
 
 #### 资源列表
 * <code><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a></code>， 这个是中文版的，容易看懂，但是有个问题就是版本有点老，最新版中已经移除type概念，这个指南中还存在这个概念，可以一看但更推荐看英文最新文档。
