@@ -1,21 +1,18 @@
 ---
 layout:     post
-title:      "Ubuntu下Elasticsearch安装与问题记录"
-subtitle:   ""
+title:      "Use Blockingconnection in RabbitMQ python client pika with long running task"
+subtitle:   "使用RabbitMQ的Python客户端pika中Blockingconnection来运行耗时任务"
 date:       2018-04-23 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/elasticsearch-hd.png"
 catalog: true
 multilingual: false
-tags: [原创,互联网技术,ELK,Ubuntu]
+tags: [原创,互联网技术,RabbitMQ,python]
 ---
 
-# Ubuntu下Elasticsearch安装与问题记录
+# Use Blockingconnection in RabbitMQ python client pika with long running task
 
-> Elasticsearch 是一个分布式、可扩展、实时的搜索与数据分析引擎。 它能从项目一开始就赋予你的数据以搜索、分析和探索的能力。 --<<Elasticsearch: 权威指南>>
-
-就像<code><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a></code>里说的，开源的 Elasticsearch是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。像维基百科、Stack Overflow、Github 等网站都采用它，足以见得他的能力。其实Elasticsearch最常见的组合是ELK(Elasticsearch + Logstash + kibana)，这里只介绍Elasticsearch的安装与使用。
-本文的环境：Ubuntu。
+Recentlly I'm working with pika, a RabbitMQ client in python langurage, it's an old framework for RabbitMQ. Here, old means it has long history, 
 
 #### 安装Elasticsearch注意事项
 首先有一点要说明一下，ES对内存的要求很高，最好可以在内存2G以上的坏境运行Elasticsearch，否则可能会出现运行不稳定的问题。本人只有一台1核1G儿童云服务器，勉强使用中。另外ES运行需要Java8的运行环境，关于Java8的安装在这里不赘述，可以参考<code><a href="https://www.cnblogs.com/a2211009/p/4265225.html">这篇文章</a></code>。
