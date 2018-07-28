@@ -2,7 +2,7 @@
 layout:     post
 title:      "[Scrapy]如何使用RabbitMQ控制Scrapy爬虫"
 subtitle:   ""
-date:       2018-05-23 12:00:00
+date:       2018-07-27 12:00:00
 author:     "Mars Shen"
 header-img: "img/Header/taoshow-header.jpeg"
 catalog: true
