@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-date: 2022-05-29T12:00:00.000Z
+date: {}
 author: Mars Shen
 header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
@@ -11,7 +11,6 @@ tags:
   - switch
 title: Switch 破解术语
 multilingual: false
-subtitle: ''
 ---
 ## Switch 破解术语
 
@@ -80,12 +79,11 @@ subtitle: ''
 	一般在 EmuNAND 中的任何更改或操作都不会影响您的 SysNAND，因为它是一个独立的副本。
 
 	我们常说的虚拟系统一般就存储在此.
-
-	{% highlight %}
-    
+   
+   ```
 	注意: 使用 EmuNAND 并不能确保你不会被Ban. 单击此处了解有关如何避免被Ban的更多信息.
-	
-   {% endhighlight %}
+	```
+   
 
 - **Signature Patches**
 
