@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Switch硬件破解经验分享 - 术语篇"
-subtitle: ""
-date: 2022-05-29 12:00:00
-author: "Mars Shen"
-header-img: "img/Header/coder-doom-dos-code-hd.jpg"
+title: Switch硬件破解经验分享 - 术语篇
+date: 2022-05-29T12:00:00.000Z
+author: Mars Shen
+header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
 multilingual: false
-tags: [原创,switch硬破教程,switch]
+tags:
+  - 原创
+  - switch硬破教程
+  - switch
+published: true
 ---
-
-## Switch硬件破解经验分享 - 术语篇
-
 - **RCM**
 
   RCM 是 ReCovery Mode 的缩写, 即恢复模式.
