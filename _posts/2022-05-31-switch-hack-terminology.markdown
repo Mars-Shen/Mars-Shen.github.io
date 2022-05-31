@@ -12,49 +12,49 @@ tags:
   - switch
 published: true
 ---
-- **RCM**
+### **RCM**
 
   RCM 是 ReCovery Mode 的缩写, 即恢复模式.
 
-- **Horizon OS (HOS)**
+### **Horizon OS (HOS)**
 
   Horizon 是 Nintendo Switch 操作系统的名称.
 
-- **OFW**
+### **OFW**
 
   OFW 是 Original Firmware的缩写, 即官方原版胸固件.
 
   这指的是你设备中没有被修改的原始系统固件.
 
-- **CFW**
+### **CFW**
 
   CFW 是 Custom Firmware 的缩写, 即自制系统固件.
 
   这指的是被修改的自制系统固件, 第三方自制程序(homebrew)被允许在此类系统固件上运行.
 
-- **Homebrew**
+### **Homebrew**
 
   一般用于描述开发人员为锁定的(非开放的)系统创建的非官方软件.
 
   对于 Switch 来说, 此类软件可以包括存档管理器, 模拟器或破解游戏.
 
-- **Atmosphere**
+### **Atmosphere**
 
   大气层自制固件(Atmosphere), 一个免费开源的第三方自制固件(CFW), [Github地址](https://github.com/Atmosphere-NX/Atmosphere).
 
-- **SXOS**
+### **SXOS**
 
   由 Team Xecuter 创建的付费并封闭源代码的自制固件(CFW), 由于TX团队已经由于破解盈利被抓捕, 所以相关固件也已经不再更新.
 
   不适用于 11.0.0 以上的固件.
 
-- **NAND**
+### **NAND**
 
   NAND是switch设备中内置的存储(不要与 SD 卡存储混淆).
 
   Switch 一般拥有 32GB 内置存储(25.9GB 可用存储, 其余被系统占用).
 
-- **SysNAND**
+### **SysNAND**
 
   SysNAND 是 "System NAND" 的缩写, 即设备机身内置存储.
 
@@ -66,7 +66,7 @@ published: true
 
   我们常说的正版系统一般就存储在此.
 
-- **EmuNAND**
+### **EmuNAND**
 
   EmuNAND 是 "Emulated NAND"的缩写, 即虚拟内置存储.
 
@@ -79,64 +79,64 @@ published: true
   我们常说的虚拟系统一般就存储在此.
 
     ```
-  注意: 使用 EmuNAND 并不能确保你不会被Ban. 单击此处了解有关如何避免被Ban的更多信息.
+  	 注意: 使用 EmuNAND 并不能确保你不会被Ban. 单击此处了解有关如何避免被Ban的更多信息.
     ```
 
-- **Signature Patches**
+### **Signature Patches**
 
   Signature Patches(签名补丁)或 SigPatches 允许您的设备绕过 Horizon 对已安装程序执行的签名检查.
 
-- **Hekate**
+### **Hekate**
 
   一个免费开源的自定义引导加载程序(bootloader)，可让您绕过熔断数检查, 并且其拥有许多有用的工具. [Github地址](https://github.com/CTCaer/hekate).
 
   可用于启动 OFW、CFW、Android、Linux 和任何其他有效payload.
 
-- **Fusee**
+### **Fusee**
 
   一个迷你自定义引导加载程序(bootloader), 仅用于引导大气层自制固件(Atmosphere).
   Hekate 和 Fusee 之间的区别在于, Hekate 需要一个自定义配置文件来告诉Atmosphere它应该使用哪些 KIP、补丁和其他设置, 而Fusee会自动启动它们.
 
-- **NSP**
+### **NSP**
 
   NSP 是 Nintendo Submission Package 的缩写.
 
   NSP是已安装title的转储安装程序包或可以安装的自制程序包. eShop中的数字版一般都为此格式.
 
-- **XCI**
+### **XCI**
 
   XCI 是 NX Card Image 的缩写.
 
   XCI 是 switch 卡带dump文件镜像. switch 卡带中文件一般为此格式.
 
-- **NSZ**
+### **NSZ**
 
   一种压缩后的 NSP 文件.
 
-- **XCZ**
+### **XCZ**
 
   一种压缩后的 XCI 文件.
 
-- **NRO**
+### **NRO**
 
   homebrew 应用程序使用的扩展.
   
-- **sx core/lite**
+### **sx core/lite**
 
   TX小组研发的硬件破解芯片，目前小组成员被抓，相关产品停产，固件不再更新。
 
-- **HWFLY**
+### **HWFLY**
 
-  国产芯片名称, 截止目前最新版本为第四代芯片。[官网](https://www。chipnx。com/)
+  国产芯片名称, 截止目前最新版本为第四代芯片。[官网](https://www.chipnx.com/)
 
   其原理为开机触发脉冲漏洞破解 switch 主机，只要破解后芯片就不再工作, 后续工作交给 tf 卡上的自定义引导加载程序(bootloader), 只有关机后下次开机才需要重新触发。
 
-- **Spacecraft-NX**
+### **Spacecraft-NX**
 
-  开源的破解芯片固件，[Github地址](https://github。com/Spacecraft-NX/firmware)
+  开源的破解芯片固件，[Github地址](https://github.com/Spacecraft-NX/firmware)
 
   switch oled之后的版本请务必刷0.2以后的固件版本。
 
-- **hwfly-nx**
+### **hwfly-nx**
 
-  开源的破解芯片固件， 由于Spacecraft-NX更新缓慢，一些开发者开发基于Spacecraft-NX创建了hwfly-nx固件。 [Github地址](https://github。com/hwfly-nx)
+  开源的破解芯片固件， 由于Spacecraft-NX更新缓慢，一些开发者开发基于Spacecraft-NX创建了hwfly-nx固件。 [Github地址](https://github.com/hwfly-nx)
