@@ -11,28 +11,31 @@ tags:
   - switch硬破教程
   - switch
 published: true
-subtitle: ''
+subtitle: 如何更新国产破解芯片
 ---
+>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 
-## Switch硬件破解经验分享 - 破解芯片更新篇
+## 基础知识
 
-### 基础知识
+- **关于芯片：** 是hwfly芯片，即所谓的国产芯片，该芯片已经出了好几代，第四代芯片是可以对芯片的固件进行更新或者改刷别的开源固件的。
 
-- 目前市面上能接触到的较多的是hwfly芯片，即国产芯片，本文主要介绍续航版国产芯片升级hwfly-nx固件，其余版本芯片升级或升级别的固件请酌情参考。
+	**目前可刷的固件有：**
+	+ [hwfly-nx](https://github.com/hwfly-nx/firmware)
+	+ [hwfly官方固件](https://www.chipnx.com/)
+    
+ 主要介绍续航版国产芯片升级hwfly-nx固件，其余版本芯片升级或升级别的固件请酌情参考。
 
-- 目前国产芯片已经出了好几代，第四代芯片是可以对芯片的固件进行更新或者改刷别的开源固件的。
-
-- 如何判断当前芯片是否为国产四代芯片:
+- **如何判断当前芯片是否为国产四代芯片:**
 
   芯片左上角为MV1-7以上,即为四代或更新的芯片, 如下图
 
    ![四代](https://raw.githubusercontent.com/sthetix/DIAGRAM/main/Flashable-Core-SWD.jpg)
 
-### hwfly-nx固件介绍
+## hwfly-nx固件介绍
 
 hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/releases/latest)）是一个完全开源的芯片固件，用于链式引导您自己的playload，其支持SX Core / Lite/ hwfly等芯片
 
-#### 使用
+### 使用
 
 - 将兼容的有效playload（如 [hekate](https://github.com/CTCaer/hekate/releases) ），重命名payload.bin，并放在您的 sd 卡根目录中。
 - 第一次开启时，芯片将进行初始脉冲训练（最多 5 分钟），完成后破解芯片将准备就绪，后续就可以更快速的启动。
@@ -40,20 +43,21 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 - 启动switch后，当芯片脉冲破解成功但由于 sd 卡问题阻止加载 payload.bin 时，屏幕上会提供诊断。在这时， 可以通过同时按下 VOL+ 和 VOL- 来启动OFW。
 - 在开机期间按住 VOL+ 和 VOL- 直到脉冲完成（绿灯亮起），会绕过任何有效的playload 并启动到 OFW。
 
-#### LED诊断
+### LED诊断
 
   安装完成后的第一次启动，固件将自动进行脉冲破解训练。这时候主板上的LED灯呈黄色闪烁状态，最多可能需要 5 分钟。当完成第一次脉冲破解训练后，后续引导会快得多。有关可能的 LED 模式的完整概述，请参阅下图，这可能有助于对芯片安装完成后但不工作的情况下进行诊断。
 
 ![诊断](https://camo.githubusercontent.com/e8cfc33ee7e8bd08187148d993425f666bd009369495233e25929e1ca79eee67/68747470733a2f2f692e696d6775722e636f6d2f6e48596e4266752e676966)
 
-#### 更新
+### 如何更新破解芯片
 
   可以使用以下 3 种方法之一进行更新破解芯片：
 
 **方法 a) - 使用 USB 引导加载程序（首选）**
 
 1. 完全关闭你的switch主机。
-2. 在**芯片上**插入 USB 电缆。**注意不要插入错误！！！ 不要插反！**如果插反这会完全破坏芯片上的 USB 功能。
+2. 在**芯片上**插入 USB 电缆。**注意不要插入错误！！！ 不要插反！如果插反这会完全破坏芯片上的 USB 功能。正确插法如下图所示，注意up朝向!**
+![正确插法](https://ae01.alicdn.com/kf/Sb1bb02e089074625a9a484f1c9347314f/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.png)
 3. 运行[最新固件下载地址](https://github.com/hwfly-nx/firmware/releases/latest)中的flash.bat。这会更新引导加载程序（bootloader）和破解固件（firmware），运行过完成后LED灯呈蓝色闪烁状态。
 4. 拔下 USB 电缆。
 5. 重新打开你的switch主机。
@@ -81,6 +85,7 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 
 
-###### 引用：
+##### 引用：
 
 1. [固件Github地址](https://github.com/hwfly-nx/firmware)
+2. [Switch硬件破解经验分享 - 术语篇](https://www.marsshen.com/2022/05/29/switch-hack-terminology/)
