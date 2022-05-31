@@ -120,3 +120,23 @@ tags: [原创,switch硬破教程,switch]
 - **NRO**
 
   homebrew 应用程序使用的扩展.
+  
+- **sx core/lite**
+
+  TX小组研发的硬件破解芯片，目前小组成员被抓，相关产品停产，固件不再更新。
+
+- **HWFLY**
+
+  国产芯片名称, 截止目前最新版本为第四代芯片。[官网](https://www。chipnx。com/)
+
+  其原理为开机触发脉冲漏洞破解 switch 主机，只要破解后芯片就不再工作, 后续工作交给 tf 卡上的自定义引导加载程序(bootloader), 只有关机后下次开机才需要重新触发。
+
+- **Spacecraft-NX**
+
+  开源的破解芯片固件，[Github地址](https://github。com/Spacecraft-NX/firmware)
+
+  switch oled之后的版本请务必刷0.2以后的固件版本。
+
+- **hwfly-nx**
+
+  开源的破解芯片固件， 由于Spacecraft-NX更新缓慢，一些开发者开发基于Spacecraft-NX创建了hwfly-nx固件。 [Github地址](https://github。com/hwfly-nx)
