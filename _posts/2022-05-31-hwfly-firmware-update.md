@@ -84,8 +84,10 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 **注意**：上面的三个方法没有一个可将无法更新固件的4代以前的芯片变成可更新固件的芯片。（不可更新固件的芯片在主板上使用一个 BGA FPGA类型控制芯片，而可更新固件的芯片主板上使用的是QFN FPGA类型控制芯片，硬件上是不通的）。
 
 
+---
+> 引用
 
-##### 引用：
+
 
 1. [固件Github地址](https://github.com/hwfly-nx/firmware)
 2. [Switch硬件破解经验分享 - 术语篇](https://www.marsshen.com/2022/05/29/switch-hack-terminology/)
