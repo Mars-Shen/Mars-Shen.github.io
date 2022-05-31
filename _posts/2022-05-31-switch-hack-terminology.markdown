@@ -1,7 +1,7 @@
 ---
-published: false
+published: true
 layout: post
-date: {}
+date: 2022-05-29T12:00:00.000Z
 author: Mars Shen
 header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
@@ -9,6 +9,9 @@ tags:
   - 原创
   - switch硬破教程
   - switch
+title: Switch 破解术语
+multilingual: false
+subtitle: ''
 ---
 ## Switch 破解术语
 
@@ -122,5 +125,3 @@ tags:
 - **NRO**
 
 	homebrew 应用程序使用的扩展.
-
-
