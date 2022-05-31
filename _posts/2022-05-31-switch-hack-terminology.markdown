@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Switch硬件破解教程 - 术语篇"
+title: "Switch硬件破解经验分享 - 术语篇"
 subtitle: ""
 date: 2022-05-29 12:00:00
 author: "Mars Shen"
@@ -10,7 +10,7 @@ multilingual: false
 tags: [原创,switch硬破教程,switch]
 ---
 
-## Switch硬件破解教程 - 术语篇
+## Switch硬件破解经验分享 - 术语篇
 
 - **RCM**
 
