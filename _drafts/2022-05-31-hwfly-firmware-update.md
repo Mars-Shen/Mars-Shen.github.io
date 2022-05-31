@@ -22,7 +22,7 @@ published: false
 
   芯片左上角为MV1-7以上,即为四代或更新的芯片, 如下图
 
-  <img src="https://raw.githubusercontent.com/sthetix/DIAGRAM/main/Flashable-Core-SWD.jpg" width="600" height="250" alt="四代"/>
+   ![四代](https://raw.githubusercontent.com/sthetix/DIAGRAM/main/Flashable-Core-SWD.jpg)
 
 ### hwfly-nx固件介绍
 
