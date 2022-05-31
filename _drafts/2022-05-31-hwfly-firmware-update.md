@@ -1,4 +1,13 @@
 ---
+layout: post
+title: "Switch硬件破解经验分享 - 破解芯片更新篇"
+subtitle: ""
+date: 2022-05-31 12:00:00
+author: "Mars Shen"
+header-img: "img/Header/coder-doom-dos-code-hd.jpg"
+catalog: true
+multilingual: false
+tags: [原创,switch硬破教程,switch]
 published: false
 ---
 ## Switch硬件破解经验分享 - 破解芯片更新篇
