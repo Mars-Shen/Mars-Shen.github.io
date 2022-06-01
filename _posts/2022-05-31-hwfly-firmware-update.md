@@ -83,14 +83,40 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 **注意**：上面的三个方法没有一个可将无法更新固件的4代以前的芯片变成可更新固件的芯片。（不可更新固件的芯片在主板上使用一个 BGA FPGA类型控制芯片，而可更新固件的芯片主板上使用的是QFN FPGA类型控制芯片，硬件上是不通的）。
 
+
+**安装完成后：**
 使用以上方法升级完后，开机如果显示如下画面，则说明刷成功
 ![](https://i.ytimg.com/vi/NvxLS_Lkwlg/maxresdefault.jpg)
 
+## 其他
+
+### 无法关机Bug和解决办法
+
+国产芯片刷完最新固件（0.7.0）后目前主要 Bug 是在系统关机上，mariko 机型特别明显。简单说就是你选择关机之后，机器自动开机，芯片开始工作。
+
+这个不管真实（正版）系统、真实（破解）系统，还是虚拟系统下，都一 样。而且不管你是通过按住电源键选择“关闭电源”关机，还是 goldleaf 里面 按 ZL/ZR 后点击 shutdown 关机，也都一样。
+
+假如在 bootloader/hekate_ipl.ini 中配置 autoboot=0，则自动开机会停 留在 hekate 的 RCM 菜单里，这就带来一个严重问题，首先机器会非常耗电且 机器热量也会立刻增加，假如长时间放在包里，其实不利于机器散热，容易造成硬件隐患。
+
+**解决正常关机的办法如下：**
+
+1、**正确操作：** 先重启或者等自动开机到 hekate 下，选择 power off 关机就不会再自动开机了。
+
+2、**实用操作：** 索性不关机，采取息屏待机状态，那么耗电其实也不大，一 晚上最多 3-5%。类似当初爆浆机使用 autorcm 免短接时候。
+
+3、**实用操作：** 设置 hekate 的 autoboot=虚拟系统或真实系统，这样就 算关机后自动重启，也会进入系统自动待机，记得系统设置里开启锁屏。
+
+4、**建议操作：** 启动后进入 hekate 设置页面，把 Auto HOS Power Off 选项设置成 ON，保存，后面正常关机后，过大约15秒还是会自动开机但进入 hekate 后会自动关机。
+
+除了关机后自动开机这个主要 bug 之外，别的bug暂时没有遇到。
+
+如果出现 bug，建议的解决方式也只需要你按住电源键 15 秒以上强制关机后重新开机就能解决。
 
 ---
 > 引用
 
 
 
-1. [固件Github地址](https://github.com/hwfly-nx/firmware)
+1. [hwfly-nx固件Github地址](https://github.com/hwfly-nx/firmware)
 2. [Switch硬件破解经验分享 - 术语篇](https://www.marsshen.com/2022/05/29/switch-hack-terminology/)
+3. [简析国产三种NS芯片区别及Spacecraft固件Bug](http://www.265xh.com/nszhinan/4246.html)
