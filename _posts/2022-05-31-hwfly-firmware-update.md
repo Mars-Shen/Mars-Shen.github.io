@@ -29,7 +29,7 @@ subtitle: 教你如何升级国产破解芯片固件
 
   芯片左上角为MV1-7以上,即为四代或更新的芯片, 如下图
 
-   ![四代](https://raw.githubusercontent.com/sthetix/DIAGRAM/main/Flashable-Core-SWD.jpg)
+   ![四代]({{site.baseurl}}/img/switch/Flashable-Core-SWD.jpg)
 
 ## hwfly-nx固件介绍
 
@@ -47,7 +47,7 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
   安装完成后的第一次启动，固件将自动进行脉冲破解训练。这时候主板上的LED灯呈黄色闪烁状态，最多可能需要 5 分钟。当完成第一次脉冲破解训练后，后续引导会快得多。有关可能的 LED 模式的完整概述，请参阅下图，这可能有助于对芯片安装完成后但不工作的情况下进行诊断。
 
-![诊断](https://camo.githubusercontent.com/e8cfc33ee7e8bd08187148d993425f666bd009369495233e25929e1ca79eee67/68747470733a2f2f692e696d6775722e636f6d2f6e48596e4266752e676966)
+![诊断]({{site.baseurl}}/img/switch/switch-modchip-led-pattern.gif)
 
 ### 如何更新破解芯片
 
@@ -57,7 +57,7 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 1. 完全关闭你的switch主机。
 2. 在**芯片上**插入 USB 电缆。**注意不要插入错误！！！ 不要插反！如果插反这会完全破坏芯片上的 USB 功能。正确插法如下图所示，注意up朝向!**
-![正确插法](https://ae01.alicdn.com/kf/Sb1bb02e089074625a9a484f1c9347314f/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.png)
+![正确插法]({{site.baseurl}}/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg)
 3. 运行[最新固件下载地址](https://github.com/hwfly-nx/firmware/releases/latest)中的flash.bat。这会更新引导加载程序（bootloader）和破解固件（firmware），运行过完成后LED灯呈蓝色闪烁状态。**如果刷固件时PC上出现错误，需要重新拔出USB，换个USB口子再重新执行刷固件程序，否则将会清除当前芯片上的固件。**
 4. 拔下 USB 电缆。
 5. 重新打开你的switch主机。
@@ -86,7 +86,7 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 **安装完成后：**
 使用以上方法升级完后，开机如果显示如下画面，则说明刷成功
-![](https://i.ytimg.com/vi/NvxLS_Lkwlg/maxresdefault.jpg)
+![成功]({{site.baseurl}}/img/switch/maxresdefault.jpg)
 
 ## 其他
 
