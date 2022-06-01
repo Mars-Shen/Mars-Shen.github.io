@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Switch硬件破解经验分享 - 破解芯片更新篇
+title: Switch硬件破解经验分享 - 破解芯片固件升级篇
 date: 2022-05-31T12:00:00.000Z
 author: Mars Shen
 header-img: img/Header/coder-doom-dos-code-hd.jpg
@@ -11,13 +11,13 @@ tags:
   - switch硬破教程
   - switch
 published: true
-subtitle: 如何更新国产破解芯片
+subtitle: 教你如何升级国产破解芯片固件
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 
 ## 基础知识
 
-- **关于芯片：** 是hwfly芯片，即所谓的国产芯片，该芯片已经出了好几代，第四代芯片是可以对芯片的固件进行更新或者改刷别的开源固件的。
+- **关于芯片：** 这里指的是hwfly芯片，即所谓的国产芯片，该芯片目前已经出了多代，第四代芯片是可以对芯片的固件进行更新升级或者改刷别的开源固件的。
 
 	**目前可刷的固件有：**
 	+ [hwfly-nx](https://github.com/hwfly-nx/firmware)
@@ -58,7 +58,7 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 1. 完全关闭你的switch主机。
 2. 在**芯片上**插入 USB 电缆。**注意不要插入错误！！！ 不要插反！如果插反这会完全破坏芯片上的 USB 功能。正确插法如下图所示，注意up朝向!**
 ![正确插法](https://ae01.alicdn.com/kf/Sb1bb02e089074625a9a484f1c9347314f/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.png)
-3. 运行[最新固件下载地址](https://github.com/hwfly-nx/firmware/releases/latest)中的flash.bat。这会更新引导加载程序（bootloader）和破解固件（firmware），运行过完成后LED灯呈蓝色闪烁状态。
+3. 运行[最新固件下载地址](https://github.com/hwfly-nx/firmware/releases/latest)中的flash.bat。这会更新引导加载程序（bootloader）和破解固件（firmware），运行过完成后LED灯呈蓝色闪烁状态。**如果刷固件时PC上出现错误，需要重新拔出USB，换个USB口子再重新执行刷固件程序，否则将会清除当前芯片上的固件。**
 4. 拔下 USB 电缆。
 5. 重新打开你的switch主机。
 
@@ -82,6 +82,9 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 
 **注意**：上面的三个方法没有一个可将无法更新固件的4代以前的芯片变成可更新固件的芯片。（不可更新固件的芯片在主板上使用一个 BGA FPGA类型控制芯片，而可更新固件的芯片主板上使用的是QFN FPGA类型控制芯片，硬件上是不通的）。
+
+使用以上方法升级完后，开机如果显示如下画面，则说明刷成功
+![](https://i.ytimg.com/vi/NvxLS_Lkwlg/maxresdefault.jpg)
 
 
 ---
