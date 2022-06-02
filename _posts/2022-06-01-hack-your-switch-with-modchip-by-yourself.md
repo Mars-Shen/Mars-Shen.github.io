@@ -86,6 +86,7 @@ CPU屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可�
 
 这里有个焊接的视频讲的非常详细与到位，可以参考下：
 
+<iframe src="//player.bilibili.com/player.html?aid=969301681&bvid=BV1rp4y1v7zh&cid=225560839&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 [https://www.bilibili.com/video/BV1rp4y1v7zh](https://www.bilibili.com/video/BV1rp4y1v7zh)
 
 CPU上的电容非常的小，建议搞个放大镜，如果有条件的可以上个PCB板焊接用的显微镜。我自己的话没这个条件，所以使用的是手机照相机。找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。
