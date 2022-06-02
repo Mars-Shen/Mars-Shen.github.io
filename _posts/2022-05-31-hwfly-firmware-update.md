@@ -23,7 +23,7 @@ subtitle: 教你如何升级国产破解芯片固件
 	+ [hwfly-nx](https://github.com/hwfly-nx/firmware)
 	+ [hwfly官方固件](https://www.chipnx.com/)
     
- 主要介绍续航版国产芯片升级hwfly-nx固件，其余版本芯片升级或升级别的固件请酌情参考。
+ 这里主要介绍续航版国产芯片升级hwfly-nx固件，其余版本芯片升级或升级别的固件请酌情参考。
 
 - **如何判断当前芯片是否为国产四代芯片:**
 
