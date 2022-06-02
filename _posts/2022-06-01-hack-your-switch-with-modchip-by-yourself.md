@@ -1,16 +1,17 @@
 ---
 layout: post
+title: Switch硬件破解经验分享 - 破解焊接篇
 date: 2022-06-02T12:00:00.000Z
 author: Mars Shen
 header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
+multilingual: false
 tags:
   - 原创
   - switch硬破教程
   - switch
-subtitle: 国产破解芯片焊接教程
-title: Switch硬件破解经验分享 - 破解焊接篇
 published: true
+subtitle: 国产破解芯片焊接教程
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 
@@ -62,18 +63,18 @@ published: true
 正确的顺序是：后盖 -> tf卡槽 -> 金属屏蔽罩 -> 散热铜管 -> CPU屏蔽罩和 NAND 颗粒芯片，具体拆解方式可以参考下图。
 
 **tf卡槽和金属屏蔽罩**
-![]({{site.baseurl}}/img/switch/c2.jpg)
+![tf卡槽和金属屏蔽罩]({{site.baseurl}}/img/switch/c2.jpg)
 
 **散热铜管**
-![]({{site.baseurl}}/img/switch/c3.jpg)
+![散热铜管]({{site.baseurl}}/img/switch/c3.jpg)
 
 **CPU屏蔽罩**
 CPU屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可以找个趁手的工具，将中间卡扣挑起，就比较容易拆。
 
-![]({{site.baseurl}}/img/switch/c4.jpg)
+![CPU屏蔽罩]({{site.baseurl}}/img/switch/c4.jpg)
 
 拆完后CPU裸露处理，我们要做的是用洗板水或者酒精将硅脂擦干净，特别是电容边上的硅脂，后面焊接要用到。
-![]({{site.baseurl}}/img/switch/c5.jpg)
+![清洁]({{site.baseurl}}/img/switch/c5.jpg)
 
 ## 焊接
 
@@ -81,7 +82,7 @@ CPU屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可�
 ![]({{site.baseurl}}/img/switch/c6.jpg)
 
 焊完之后应该是这样的：
-![]({{site.baseurl}}/img/switch/c7.jpg)
+![焊完]({{site.baseurl}}/img/switch/c7.jpg)
 
 这里有个焊接的视频讲的非常详细与到位，可以参考下：
 
@@ -92,10 +93,10 @@ CPU上的电容非常的小，建议搞个放大镜，如果有条件的可以�
 ## 装机
 
 接下来只要将Nand插在芯片，然后将CPU上的排线插上芯片，芯片插在之前查Nand的插座上就行。参考下图
-![]({{site.baseurl}}/img/switch/c8.jpg)
+![装机]({{site.baseurl}}/img/switch/c8.jpg)
 开机测试下，第一次开机时间可能较长，一般来说LED应该是 黄（闪烁） -> 紫（闪烁） -> 绿(常亮)这个顺序，则表示安装没问题，否则则检查焊接是否到位，是否安装错误。
 
 最后装上CPU屏蔽罩，安好之前拆下来的散热铜管，将芯片如下图安放即可，一般来说都会将芯片下的金属屏蔽罩剪掉一块，这样的话后盖不会凸起来。注意记得在CPU屏蔽罩上贴上绝缘隔热胶带，这样防止芯片短路。
-![]({{site.baseurl}}/img/switch/c9.jpg)
+![装机2]({{site.baseurl}}/img/switch/c9.jpg)
 
 安装完后，再用绝缘胶固定好芯片，按回后盖，就基本大功告成了。
