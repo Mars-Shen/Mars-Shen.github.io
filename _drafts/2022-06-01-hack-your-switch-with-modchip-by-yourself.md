@@ -9,7 +9,7 @@ tags:
   - 原创
   - switch硬破教程
   - switch
-subtitle: 教你如何升级国产破解芯片固件
+subtitle: 国产破解芯片焊接教程
 title: Switch硬件破解经验分享 - 破解焊接篇
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
