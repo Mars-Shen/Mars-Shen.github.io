@@ -86,7 +86,6 @@ CPU屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可�
 
 这里有个焊接的视频讲的非常详细与到位，可以参考下：
 
-<iframe src="//player.bilibili.com/player.html?aid=969301681&bvid=BV1rp4y1v7zh&cid=225560839&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 [https://www.bilibili.com/video/BV1rp4y1v7zh](https://www.bilibili.com/video/BV1rp4y1v7zh)
 
 CPU上的电容非常的小，建议搞个放大镜，如果有条件的可以上个PCB板焊接用的显微镜。我自己的话没这个条件，所以使用的是手机照相机。找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。
@@ -94,10 +93,12 @@ CPU上的电容非常的小，建议搞个放大镜，如果有条件的可以�
 ## 装机
 
 接下来只要将Nand插在芯片，然后将CPU上的排线插上芯片，芯片插在之前查Nand的插座上就行。参考下图
+
 ![装机]({{site.baseurl}}/img/switch/c8.jpg)
 开机测试下，第一次开机时间可能较长，一般来说LED应该是 黄（闪烁） -> 紫（闪烁） -> 绿(常亮)这个顺序，则表示安装没问题，否则则检查焊接是否到位，是否安装错误。
 
 最后装上CPU屏蔽罩，安好之前拆下来的散热铜管，将芯片如下图安放即可，一般来说都会将芯片下的金属屏蔽罩剪掉一块，这样的话后盖不会凸起来。注意记得在CPU屏蔽罩上贴上绝缘隔热胶带，这样防止芯片短路。
+
 ![装机2]({{site.baseurl}}/img/switch/c9.jpg)
 
 安装完后，再用绝缘胶固定好芯片，按回后盖，就基本大功告成了。
