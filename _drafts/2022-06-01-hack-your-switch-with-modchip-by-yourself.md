@@ -1,7 +1,7 @@
 ---
 published: false
 layout: post
-date: 2022-06-01T12:00:00.000Z
+date: 2022-06-02T12:00:00.000Z
 author: Mars Shen
 header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
@@ -53,7 +53,7 @@ title: Switch硬件破解经验分享 - 破解焊接篇
 
 螺丝点位以下这张图描述的比较清楚，按这张图拧就行。
 
-![]({{site.baseurl}}//img/switch/c1.jpg)
+![]({{site.baseurl}}/img/switch/c1.jpg)
 
 注意下后盖上面是有卡扣的，不要硬掰，抬起后盖下半部分，慢慢往下拉即可绕出卡扣。
 
@@ -62,18 +62,18 @@ title: Switch硬件破解经验分享 - 破解焊接篇
 正确的顺序是：后盖 -> tf卡槽 -> 金属屏蔽罩 -> 散热铜管 -> CPU屏蔽罩和 NAND 颗粒芯片，具体拆解方式可以参考下图。
 
 **tf卡槽和金属屏蔽罩**
-![]({{site.baseurl}}//img/switch/c2.jpg)
+![]({{site.baseurl}}/img/switch/c2.jpg)
 
 **散热铜管**
-![]({{site.baseurl}}//img/switch/c3.jpg)
+![]({{site.baseurl}}/img/switch/c3.jpg)
 
 **CPU屏蔽罩**
 CPU屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可以找个趁手的工具，将中间卡扣挑起，就比较容易拆。
 
-![]({{site.baseurl}}//img/switch/c4.jpg)
+![]({{site.baseurl}}/img/switch/c4.jpg)
 
 拆完后CPU裸露处理，我们要做的是用洗板水或者酒精将硅脂擦干净，特别是电容边上的硅脂，后面焊接要用到。
-![]({{site.baseurl}}//img/switch/c5.jpg)
+![]({{site.baseurl}}/img/switch/c5.jpg)
 
 ## 焊接
 
