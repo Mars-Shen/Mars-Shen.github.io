@@ -78,9 +78,9 @@ published: true
 
   我们常说的虚拟系统一般就存储在此.
 
-    ```
+    
   	 注意: 使用 EmuNAND 并不能确保你不会被Ban. 单击此处了解有关如何避免被Ban的更多信息.
-    ```
+    
 
 ### **Signature Patches**
 
