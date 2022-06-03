@@ -59,7 +59,7 @@ subtitle: 国产破解芯片焊接教程
 我用的是hwfly国产第四代芯片，即所谓的国产山寨芯片。它是目前相对较容易拿到的芯片，同时也支持刷固件，可玩性较高。TX芯片没有接触过，现在市面上也较少，但焊接原理和国产芯片一样。
 
 芯片主要由芯片主体，排线，以及USB插排组成。
-![]({{site.baseurl}}//img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg)
+![芯片](/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg)
 排线的话由于我们是续航版，所以选择V2就行。V1是给普通版准备的排线。
 
 ## 拆机
