@@ -24,6 +24,7 @@ date: 2018-04-23 12:00:00
 
 #### 安装Elasticsearch注意事项
 首先有一点要说明一下，ES对内存的要求很高，最好可以在内存2G以上的坏境运行Elasticsearch，否则可能会出现运行不稳定的问题。本人只有一台1核1G儿童云服务器，勉强使用中。另外ES运行需要Java8的运行环境，关于Java8的安装在这里不赘述，可以参考<code><a href="https://www.cnblogs.com/a2211009/p/4265225.html">这篇文章</a></code>。
+
 #### 通过tar包安装Elasticsearch
 这里用当前最新版6.2.4做例子，最新版可以从<code><a href="https://www.elastic.co/cn/products/elasticsearch">Elasticsearch官网</a></code>找到。
 <!-- more -->

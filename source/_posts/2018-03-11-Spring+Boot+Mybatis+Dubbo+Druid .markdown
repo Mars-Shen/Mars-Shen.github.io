@@ -27,6 +27,7 @@ date: 2018-03-10 12:00:00
 	<img src="{{ site.baseurl }}/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
 	点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
 </p>
+
 #### Spring Boot Pom文件修改默认继承关系及引用
 <p>
 	默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
@@ -49,6 +50,7 @@ date: 2018-03-10 12:00:00
 <p>
 	使用<code>dependencyManagement</code>代替<code>parent</code>完成Spring Boot必须组件的导入.
 </p>
+
 #### 出现错误
 <p>
 	项目中出现:
@@ -94,7 +96,9 @@ Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback Lo
 </dependency>
 ```
 # Spring Boot与Dubbo整合
+
 #### Spring Boot与Dubbo整合
+
 <p>
 	Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
 </p>

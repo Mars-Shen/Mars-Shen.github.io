@@ -17,7 +17,9 @@ date: 2016-06-06 12:00:00
 ---
 
 <blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
+
 # 如何在IOS中实现可折叠/展开的Table Section?
+
 <img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
 <img src="{{ site.baseurl }}/img/IOSection/demo.gif" width="60%" heigh="60%">
 <!-- more -->
@@ -48,6 +50,7 @@ sections = [
 ```
 <code>collapsed</code> 表明了现在是否是折叠状态,默认为false.
 </p>
+
 #### 第二步:设计 Header 和 Cell
 <p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
 <img src="{{ site.baseurl }}/img/IOSection/cell.png" width="60%" heigh="60%">
@@ -73,6 +76,7 @@ let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
 tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "TableSectionHeader")
 ```
 <p>个人而言, 我不喜欢在我的项目中有 nib 文件, 并且如果我们用了 <code>dequeueReusableHeaderFooterViewWithIdentifier</code>, 好像我们必须在那个 section 中最少拥有一行 row, 但这里我们需要 0 row!</p>
+
 #### 第三步: UITableViewDelegate
 <p>首先,用 sections.count 正确的表示 section 的数量:</p>
 ```Swift
