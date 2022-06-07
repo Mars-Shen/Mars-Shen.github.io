@@ -530,6 +530,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Switch硬件破解经验分享 - 术语篇</title>
+    <url>/posts/f96d7ec4/</url>
+    <content><![CDATA[<h3 id="RCM"><a href="#RCM" class="headerlink" title="RCM"></a><strong>RCM</strong></h3><p>  RCM 是 ReCovery Mode 的缩写, 即恢复模式.</p>
+<h3 id="Horizon-OS-HOS"><a href="#Horizon-OS-HOS" class="headerlink" title="Horizon OS (HOS)"></a><strong>Horizon OS (HOS)</strong></h3><p>  Horizon 是 Nintendo Switch 操作系统的名称.</p>
+<h3 id="OFW"><a href="#OFW" class="headerlink" title="OFW"></a><strong>OFW</strong></h3><p>  OFW 是 Original Firmware的缩写, 即官方原版胸固件.</p>
+<p>  这指的是你设备中没有被修改的原始系统固件.</p>
+<span id="more"></span>
+<h3 id="CFW"><a href="#CFW" class="headerlink" title="CFW"></a><strong>CFW</strong></h3><p>  CFW 是 Custom Firmware 的缩写, 即自制系统固件.</p>
+<p>  这指的是被修改的自制系统固件, 第三方自制程序(homebrew)被允许在此类系统固件上运行.</p>
+<h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><strong>Homebrew</strong></h3><p>  一般用于描述开发人员为锁定的(非开放的)系统创建的非官方软件.</p>
+<p>  对于 Switch 来说, 此类软件可以包括存档管理器, 模拟器或破解游戏.</p>
+<h3 id="Atmosphere"><a href="#Atmosphere" class="headerlink" title="Atmosphere"></a><strong>Atmosphere</strong></h3><p>  大气层自制固件(Atmosphere), 一个免费开源的第三方自制固件(CFW), <a href="https://github.com/Atmosphere-NX/Atmosphere">Github地址</a>.</p>
+<h3 id="SXOS"><a href="#SXOS" class="headerlink" title="SXOS"></a><strong>SXOS</strong></h3><p>  由 Team Xecuter 创建的付费并封闭源代码的自制固件(CFW), 由于TX团队已经由于破解盈利被抓捕, 所以相关固件也已经不再更新.</p>
+<p>  不适用于 11.0.0 以上的固件.</p>
+<h3 id="NAND"><a href="#NAND" class="headerlink" title="NAND"></a><strong>NAND</strong></h3><p>  NAND是switch设备中内置的存储(不要与 SD 卡存储混淆).</p>
+<p>  Switch 一般拥有 32GB 内置存储(25.9GB 可用存储, 其余被系统占用).</p>
+<h3 id="SysNAND"><a href="#SysNAND" class="headerlink" title="SysNAND"></a><strong>SysNAND</strong></h3><p>  SysNAND 是 “System NAND” 的缩写, 即设备机身内置存储.</p>
+<p>  SysNAND中的内容是存储在机身内置存储中的内容(不要与OFW混淆).</p>
+<p>  它包含从操作系统本身到游戏、屏幕截图、视频和保存文件的所有内容.</p>
+<p>  无论是被破解或未被破解的设备都有一个SysNAND.</p>
+<p>  我们常说的正版系统一般就存储在此.</p>
+<h3 id="EmuNAND"><a href="#EmuNAND" class="headerlink" title="EmuNAND"></a><strong>EmuNAND</strong></h3><p>  EmuNAND 是 “Emulated NAND”的缩写, 即虚拟内置存储.</p>
+<p>  EmuNAND 是 SysNAND的副本，它存储在 SD 卡上，而不是在设备内部存储器上.</p>
+<p>  可以把它想象成在你的 SD 卡上 有一个独立的额外的Nintendo Switch. </p>
+<p>  一般在 EmuNAND 中的任何更改或操作都不会影响您的 SysNAND，因为它是一个独立的副本。</p>
+<p>  我们常说的虚拟系统一般就存储在此.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注意: 使用 EmuNAND 并不能确保你不会被Ban. 单击此处了解有关如何避免被Ban的更多信息.</span><br></pre></td></tr></table></figure>
+<h3 id="Signature-Patches"><a href="#Signature-Patches" class="headerlink" title="Signature Patches"></a><strong>Signature Patches</strong></h3><p>  Signature Patches(签名补丁)或 SigPatches 允许您的设备绕过 Horizon 对已安装程序执行的签名检查.</p>
+<h3 id="Hekate"><a href="#Hekate" class="headerlink" title="Hekate"></a><strong>Hekate</strong></h3><p>  一个免费开源的自定义引导加载程序(bootloader)，可让您绕过熔断数检查, 并且其拥有许多有用的工具. <a href="https://github.com/CTCaer/hekate">Github地址</a>.</p>
+<p>  可用于启动 OFW、CFW、Android、Linux 和任何其他有效payload.</p>
+<h3 id="Fusee"><a href="#Fusee" class="headerlink" title="Fusee"></a><strong>Fusee</strong></h3><p>  一个迷你自定义引导加载程序(bootloader), 仅用于引导大气层自制固件(Atmosphere).<br>  Hekate 和 Fusee 之间的区别在于, Hekate 需要一个自定义配置文件来告诉Atmosphere它应该使用哪些 KIP、补丁和其他设置, 而Fusee会自动启动它们.</p>
+<h3 id="NSP"><a href="#NSP" class="headerlink" title="NSP"></a><strong>NSP</strong></h3><p>  NSP 是 Nintendo Submission Package 的缩写.</p>
+<p>  NSP是已安装title的转储安装程序包或可以安装的自制程序包. eShop中的数字版一般都为此格式.</p>
+<h3 id="XCI"><a href="#XCI" class="headerlink" title="XCI"></a><strong>XCI</strong></h3><p>  XCI 是 NX Card Image 的缩写.</p>
+<p>  XCI 是 switch 卡带dump文件镜像. switch 卡带中文件一般为此格式.</p>
+<h3 id="NSZ"><a href="#NSZ" class="headerlink" title="NSZ"></a><strong>NSZ</strong></h3><p>  一种压缩后的 NSP 文件.</p>
+<h3 id="XCZ"><a href="#XCZ" class="headerlink" title="XCZ"></a><strong>XCZ</strong></h3><p>  一种压缩后的 XCI 文件.</p>
+<h3 id="NRO"><a href="#NRO" class="headerlink" title="NRO"></a><strong>NRO</strong></h3><p>  homebrew 应用程序使用的扩展.</p>
+<h3 id="sx-core-x2F-lite"><a href="#sx-core-x2F-lite" class="headerlink" title="sx core&#x2F;lite"></a><strong>sx core&#x2F;lite</strong></h3><p>  TX小组研发的硬件破解芯片，目前小组成员被抓，相关产品停产，固件不再更新。</p>
+<h3 id="HWFLY"><a href="#HWFLY" class="headerlink" title="HWFLY"></a><strong>HWFLY</strong></h3><p>  国产芯片名称, 截止目前最新版本为第四代芯片。<a href="https://www.chipnx.com/">官网</a></p>
+<p>  其原理为开机触发脉冲漏洞破解 switch 主机，只要破解后芯片就不再工作, 后续工作交给 tf 卡上的自定义引导加载程序(bootloader), 只有关机后下次开机才需要重新触发。</p>
+<h3 id="Spacecraft-NX"><a href="#Spacecraft-NX" class="headerlink" title="Spacecraft-NX"></a><strong>Spacecraft-NX</strong></h3><p>  开源的破解芯片固件，<a href="https://github.com/Spacecraft-NX/firmware">Github地址</a></p>
+<p>  switch oled之后的版本请务必刷0.2以后的固件版本。</p>
+<h3 id="hwfly-nx"><a href="#hwfly-nx" class="headerlink" title="hwfly-nx"></a><strong>hwfly-nx</strong></h3><p>  开源的破解芯片固件， 由于Spacecraft-NX更新缓慢，一些开发者开发基于Spacecraft-NX创建了hwfly-nx固件。 <a href="https://github.com/hwfly-nx">Github地址</a></p>
+]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>switch硬破教程</tag>
+        <tag>switch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Switch硬件破解经验分享 - 破解芯片固件升级篇</title>
     <url>/posts/53cdbb65/</url>
     <content><![CDATA[<blockquote>
@@ -618,127 +670,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Switch硬件破解经验分享 - 术语篇</title>
-    <url>/posts/f96d7ec4/</url>
-    <content><![CDATA[<h3 id="RCM"><a href="#RCM" class="headerlink" title="RCM"></a><strong>RCM</strong></h3><p>  RCM 是 ReCovery Mode 的缩写, 即恢复模式.</p>
-<h3 id="Horizon-OS-HOS"><a href="#Horizon-OS-HOS" class="headerlink" title="Horizon OS (HOS)"></a><strong>Horizon OS (HOS)</strong></h3><p>  Horizon 是 Nintendo Switch 操作系统的名称.</p>
-<h3 id="OFW"><a href="#OFW" class="headerlink" title="OFW"></a><strong>OFW</strong></h3><p>  OFW 是 Original Firmware的缩写, 即官方原版胸固件.</p>
-<p>  这指的是你设备中没有被修改的原始系统固件.</p>
-<span id="more"></span>
-<h3 id="CFW"><a href="#CFW" class="headerlink" title="CFW"></a><strong>CFW</strong></h3><p>  CFW 是 Custom Firmware 的缩写, 即自制系统固件.</p>
-<p>  这指的是被修改的自制系统固件, 第三方自制程序(homebrew)被允许在此类系统固件上运行.</p>
-<h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><strong>Homebrew</strong></h3><p>  一般用于描述开发人员为锁定的(非开放的)系统创建的非官方软件.</p>
-<p>  对于 Switch 来说, 此类软件可以包括存档管理器, 模拟器或破解游戏.</p>
-<h3 id="Atmosphere"><a href="#Atmosphere" class="headerlink" title="Atmosphere"></a><strong>Atmosphere</strong></h3><p>  大气层自制固件(Atmosphere), 一个免费开源的第三方自制固件(CFW), <a href="https://github.com/Atmosphere-NX/Atmosphere">Github地址</a>.</p>
-<h3 id="SXOS"><a href="#SXOS" class="headerlink" title="SXOS"></a><strong>SXOS</strong></h3><p>  由 Team Xecuter 创建的付费并封闭源代码的自制固件(CFW), 由于TX团队已经由于破解盈利被抓捕, 所以相关固件也已经不再更新.</p>
-<p>  不适用于 11.0.0 以上的固件.</p>
-<h3 id="NAND"><a href="#NAND" class="headerlink" title="NAND"></a><strong>NAND</strong></h3><p>  NAND是switch设备中内置的存储(不要与 SD 卡存储混淆).</p>
-<p>  Switch 一般拥有 32GB 内置存储(25.9GB 可用存储, 其余被系统占用).</p>
-<h3 id="SysNAND"><a href="#SysNAND" class="headerlink" title="SysNAND"></a><strong>SysNAND</strong></h3><p>  SysNAND 是 “System NAND” 的缩写, 即设备机身内置存储.</p>
-<p>  SysNAND中的内容是存储在机身内置存储中的内容(不要与OFW混淆).</p>
-<p>  它包含从操作系统本身到游戏、屏幕截图、视频和保存文件的所有内容.</p>
-<p>  无论是被破解或未被破解的设备都有一个SysNAND.</p>
-<p>  我们常说的正版系统一般就存储在此.</p>
-<h3 id="EmuNAND"><a href="#EmuNAND" class="headerlink" title="EmuNAND"></a><strong>EmuNAND</strong></h3><p>  EmuNAND 是 “Emulated NAND”的缩写, 即虚拟内置存储.</p>
-<p>  EmuNAND 是 SysNAND的副本，它存储在 SD 卡上，而不是在设备内部存储器上.</p>
-<p>  可以把它想象成在你的 SD 卡上 有一个独立的额外的Nintendo Switch. </p>
-<p>  一般在 EmuNAND 中的任何更改或操作都不会影响您的 SysNAND，因为它是一个独立的副本。</p>
-<p>  我们常说的虚拟系统一般就存储在此.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注意: 使用 EmuNAND 并不能确保你不会被Ban. 单击此处了解有关如何避免被Ban的更多信息.</span><br></pre></td></tr></table></figure>
-<h3 id="Signature-Patches"><a href="#Signature-Patches" class="headerlink" title="Signature Patches"></a><strong>Signature Patches</strong></h3><p>  Signature Patches(签名补丁)或 SigPatches 允许您的设备绕过 Horizon 对已安装程序执行的签名检查.</p>
-<h3 id="Hekate"><a href="#Hekate" class="headerlink" title="Hekate"></a><strong>Hekate</strong></h3><p>  一个免费开源的自定义引导加载程序(bootloader)，可让您绕过熔断数检查, 并且其拥有许多有用的工具. <a href="https://github.com/CTCaer/hekate">Github地址</a>.</p>
-<p>  可用于启动 OFW、CFW、Android、Linux 和任何其他有效payload.</p>
-<h3 id="Fusee"><a href="#Fusee" class="headerlink" title="Fusee"></a><strong>Fusee</strong></h3><p>  一个迷你自定义引导加载程序(bootloader), 仅用于引导大气层自制固件(Atmosphere).<br>  Hekate 和 Fusee 之间的区别在于, Hekate 需要一个自定义配置文件来告诉Atmosphere它应该使用哪些 KIP、补丁和其他设置, 而Fusee会自动启动它们.</p>
-<h3 id="NSP"><a href="#NSP" class="headerlink" title="NSP"></a><strong>NSP</strong></h3><p>  NSP 是 Nintendo Submission Package 的缩写.</p>
-<p>  NSP是已安装title的转储安装程序包或可以安装的自制程序包. eShop中的数字版一般都为此格式.</p>
-<h3 id="XCI"><a href="#XCI" class="headerlink" title="XCI"></a><strong>XCI</strong></h3><p>  XCI 是 NX Card Image 的缩写.</p>
-<p>  XCI 是 switch 卡带dump文件镜像. switch 卡带中文件一般为此格式.</p>
-<h3 id="NSZ"><a href="#NSZ" class="headerlink" title="NSZ"></a><strong>NSZ</strong></h3><p>  一种压缩后的 NSP 文件.</p>
-<h3 id="XCZ"><a href="#XCZ" class="headerlink" title="XCZ"></a><strong>XCZ</strong></h3><p>  一种压缩后的 XCI 文件.</p>
-<h3 id="NRO"><a href="#NRO" class="headerlink" title="NRO"></a><strong>NRO</strong></h3><p>  homebrew 应用程序使用的扩展.</p>
-<h3 id="sx-core-x2F-lite"><a href="#sx-core-x2F-lite" class="headerlink" title="sx core&#x2F;lite"></a><strong>sx core&#x2F;lite</strong></h3><p>  TX小组研发的硬件破解芯片，目前小组成员被抓，相关产品停产，固件不再更新。</p>
-<h3 id="HWFLY"><a href="#HWFLY" class="headerlink" title="HWFLY"></a><strong>HWFLY</strong></h3><p>  国产芯片名称, 截止目前最新版本为第四代芯片。<a href="https://www.chipnx.com/">官网</a></p>
-<p>  其原理为开机触发脉冲漏洞破解 switch 主机，只要破解后芯片就不再工作, 后续工作交给 tf 卡上的自定义引导加载程序(bootloader), 只有关机后下次开机才需要重新触发。</p>
-<h3 id="Spacecraft-NX"><a href="#Spacecraft-NX" class="headerlink" title="Spacecraft-NX"></a><strong>Spacecraft-NX</strong></h3><p>  开源的破解芯片固件，<a href="https://github.com/Spacecraft-NX/firmware">Github地址</a></p>
-<p>  switch oled之后的版本请务必刷0.2以后的固件版本。</p>
-<h3 id="hwfly-nx"><a href="#hwfly-nx" class="headerlink" title="hwfly-nx"></a><strong>hwfly-nx</strong></h3><p>  开源的破解芯片固件， 由于Spacecraft-NX更新缓慢，一些开发者开发基于Spacecraft-NX创建了hwfly-nx固件。 <a href="https://github.com/hwfly-nx">Github地址</a></p>
-]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>switch硬破教程</tag>
-        <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Switch硬件破解经验分享 - 破解焊接篇</title>
-    <url>/posts/464772cb/</url>
-    <content><![CDATA[<blockquote>
-<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天自己动手焊接了switch的破解芯片，完成了对续航版switch硬件破解，在此分享下自己对硬件破解芯片焊接的一些经验。<br>这篇文章针对的是续航版，OLED和lite焊接难度较大，不建议自己焊接了；而普通版可以软破，也不建议焊接。</p>
-<p>在开始破解之前，想说明几点：</p>
-<ol>
-<li>首先要说的是，你要对自己有信心，我自己也是零焊接经验，通过几个视频，简单的练习，完成芯片焊接。只要你心态没有问题，手不抖，完全可以自己完成芯片焊接。</li>
-<li>其次是不要对自己过分自信，当你拆开后盖的一瞬间（也许你连后盖都拆不开），你会发现你要焊接的点位上的电容只有芝麻大小。所以在焊接工作前，做好充分的准备工作，放平心态，可以让你的焊接破解成功率提升不少。</li>
-<li>如果看完这篇文章后还是对自己没有信心，那我劝你放弃不要继续了，大概率可能会失败。<span id="more"></span></li>
-</ol>
-<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><p>工欲善其事必先利其器，想要做好这个手工活必须得有一些趁手的工具。以下是我为这次破解准备的一些工具。</p>
-<ul>
-<li><p><strong>电洛铁 + 锡丝</strong><br>  必需品。这个不需多说，没有电洛铁无法焊接芯片，这里我选择可恒温电洛铁，电洛铁头可以选择尖头，对新手相对友好。同时建议在网上看一些电洛铁操作入门教学，了解下基础操作，一般学习时长也就半小时左右。成本的话大概50左右，这个价位完全可以胜任本次操作，也不需要买太好。</p>
-</li>
-<li><p><strong>助焊剂</strong><br>  必需品。为了提高成功率，还是需要使用助焊剂的，助焊剂能使你的焊点更容易上锡，焊点更饱满，简单的说可以使焊接更简单。推荐使用半固态的助焊剂，我买的那种是有个针头可以把助焊剂推出来推到焊点上的那种，操作的时候可以推一点助焊剂到焊点上再焊接。成本的话大约几十块钱。</p>
-</li>
-<li><p><strong>绝缘隔热胶带</strong><br>  必需品。同样也是必须品，对于新手焊接来说，固定排线和保护别的原件是很重要的事情。这两件事情，绝缘隔热胶带能办到。这种胶带一般长的黄色透明，你可以在很多视频里看到他，一般可以隔绝300℃左右的高温，保护别的元器件不受干扰。成本大约几块钱。</p>
-</li>
-<li><p><strong>洗板水或无水酒精</strong><br>  建议。用于清理主板上的硅脂残留物以及焊接留下的助焊剂残渣，个人建议还是入手一瓶，成本大约十块左右。</p>
-</li>
-<li><p><strong>除锡带</strong><br>  可选。新手焊接难免会上锡上多或上少，上多的话可以用除锡带将多余的锡吸走。成本大约几块钱。</p>
-</li>
-<li><p><strong>螺丝刀 + 备用螺丝</strong><br>  建议。拆机需要用到1.5的十字螺丝刀以及1.5的Y字螺丝刀，需要提前准备好，如果螺丝坏了或者不小心掉了，可以使用备用螺丝顶上，总成本大约十来块钱。</p>
-</li>
-<li><p><strong>手机&#x2F;放大镜&#x2F;焊接显微镜</strong><br>  可选。CPU上的电容非常的小，建议搞个放大镜，如果有条件的可以上个PCB板焊接用的显微镜。我自己的话没这个条件，所以使用的是手机照相机。找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。</p>
-</li>
-</ul>
-<h2 id="芯片"><a href="#芯片" class="headerlink" title="芯片"></a>芯片</h2><p>准备完工具之后，还需要一块破解芯片，它是焊接的主角。</p>
-<p>我用的是hwfly国产第四代芯片，即所谓的国产山寨芯片。它是目前相对较容易拿到的芯片，同时也支持刷固件，可玩性较高。TX芯片没有接触过，现在市面上也较少，但焊接原理和国产芯片一样。</p>
-<p>芯片主要由芯片主体，排线，以及USB插排组成。<br><img data-src="/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg" alt="芯片"><br>排线的话由于我们是续航版，所以选择V2就行。V1是给普通版准备的排线。</p>
-<h2 id="拆机"><a href="#拆机" class="headerlink" title="拆机"></a>拆机</h2><p>破解的第一步就是拆机，千万千万要有耐心，特别是第一次拆机，一定要用对工具，否则原装螺丝容易滑丝，滑丝后就比较麻烦。如果真的不小心滑丝了，也不要着急，千万别听信网上说用胶水，用了胶水后壳可就真的废了。滑丝后靠谱的解法就是刻一字，然后用一字螺丝拧下，别问我为什么知道，因为我滑丝了。</p>
-<p>螺丝点位以下这张图描述的比较清楚，按这张图拧就行。<br><img data-src="/img/switch/c1.jpg" alt="螺丝点位"></p>
-<p>注意下后盖上面是有卡扣的，不要硬掰，抬起后盖下半部分，慢慢往下拉即可绕出卡扣。</p>
-<p>后盖拆下后，后面就比较简单了，按顺序拆除即可。</p>
-<p>正确的顺序是：后盖 -&gt; tf卡槽 -&gt; 金属屏蔽罩 -&gt; 散热铜管 -&gt; CPU屏蔽罩和 NAND 颗粒芯片，具体拆解方式可以参考下图。</p>
-<p><strong>tf卡槽和金属屏蔽罩</strong><br><img data-src="/img/switch/c2.jpg" alt="tf卡槽和金属屏蔽罩"></p>
-<p><strong>散热铜管</strong><br><img data-src="/img/switch/c3.jpg" alt="散热铜管"></p>
-<p><strong>CPU屏蔽罩</strong><br>CPU屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可以找个趁手的工具，将中间卡扣挑起，就比较容易拆。<br><img data-src="/img/switch/c4.jpg" alt="CPU屏蔽罩"></p>
-<p>拆完后CPU裸露处理，我们要做的是用洗板水或者酒精将硅脂擦干净，特别是电容边上的硅脂，后面焊接要用到。<br><img data-src="/img/switch/c5.jpg" alt="清洁"></p>
-<h2 id="焊接"><a href="#焊接" class="headerlink" title="焊接"></a>焊接</h2><p>焊接的方法主要就是下图，有一个重要的技巧，就是焊接前，一定要先在排线上上锡，然后再把上过锡的排线固定在CPU上，用之前准备的绝缘隔热胶带将要焊接的电容边上的电容都贴起来挡住，防止焊坏边上的原件。之后使用电洛铁接触排线上的焊点2-3秒，同时向电容方向轻轻的推即可。<br><img data-src="/img/switch/c6.jpg" alt="焊接"></p>
-<p>焊完之后应该是这样的：<br><img data-src="/img/switch/c7.jpg" alt="焊完"></p>
-<p>这里有个焊接的视频讲的非常详细与到位，可以参考下：</p>
-<iframe src="//player.bilibili.com/player.html?aid=969301681&bvid=BV1rp4y1v7zh&cid=225560839&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<p><a href="https://www.bilibili.com/video/BV1rp4y1v7zh">https://www.bilibili.com/video/BV1rp4y1v7zh</a></p>
-<p>对于CPU上的电容非常的小看不清的问题。我自己使用的是手机的照相机，找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。</p>
-<h2 id="装机"><a href="#装机" class="headerlink" title="装机"></a>装机</h2><p>接下来只要将Nand插在芯片，然后将CPU上的排线插上芯片，芯片插在之前查Nand的插座上就行。参考下图<br><img data-src="/img/switch/c8.jpg" alt="装机"></p>
-<p>开机测试下，第一次开机时间可能较长，一般来说LED应该是 黄（闪烁） -&gt; 紫（闪烁） -&gt; 绿(常亮)这个顺序，则表示安装没问题，否则则检查焊接是否到位，是否安装错误。</p>
-<p>最后装上CPU屏蔽罩，安好之前拆下来的散热铜管，将芯片如下图安放即可，一般来说都会将芯片下的金属屏蔽罩剪掉一块，这样的话后盖不会凸起来。注意记得在CPU屏蔽罩上贴上绝缘隔热胶带，这样防止芯片短路。<br><img data-src="/img/switch/c9.jpg" alt="装机2"></p>
-<p>安装完后，再用绝缘胶固定好芯片，按回后盖，就基本大功告成了。</p>
-<hr>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<ol>
-<li><a href="https://baijiahao.baidu.com/s?id=1683417071721969170&wfr=spider&for=pc">关于Switch国行续航版TX芯片硬破的建议</a></li>
-<li><a href="https://www.marsshen.com/2022/05/29/switch-hack-terminology/">Switch硬件破解经验分享 - 术语篇</a></li>
-<li><a href="https://tieba.baidu.com/p/6747262057?red_tag=1250614440">switch贴吧-这个焊接教程挺详细的</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>switch硬破教程</tag>
-        <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Scrapy]如何使用RabbitMQ控制Scrapy爬虫</title>
     <url>/posts/39fb172e/</url>
     <content><![CDATA[<h1 id="如何使用RabbitMQ控制Scrapy爬虫"><a href="#如何使用RabbitMQ控制Scrapy爬虫" class="headerlink" title="如何使用RabbitMQ控制Scrapy爬虫"></a>如何使用RabbitMQ控制Scrapy爬虫</h1><blockquote>
@@ -774,6 +705,75 @@
         <tag>原创</tag>
         <tag>互联网技术</tag>
         <tag>淘秀网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Switch硬件破解经验分享 - 破解焊接篇</title>
+    <url>/posts/464772cb/</url>
+    <content><![CDATA[<blockquote>
+<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天自己动手焊接了switch的破解芯片，完成了对续航版switch硬件破解，在此分享下自己对硬件破解芯片焊接的一些经验。<br>这篇文章针对的是续航版，OLED和lite焊接难度较大，不建议自己焊接了；而普通版可以软破，也不建议焊接。</p>
+<p>在开始破解之前，想说明几点：</p>
+<ol>
+<li>首先要说的是，你要对自己有信心，我自己也是零焊接经验，通过几个视频，简单的练习，完成芯片焊接。只要你心态没有问题，手不抖，完全可以自己完成芯片焊接。</li>
+<li>其次是不要对自己过分自信，当你拆开后盖的一瞬间（也许你连后盖都拆不开），你会发现你要焊接的点位上的电容只有芝麻大小。所以在焊接工作前，做好充分的准备工作，放平心态，可以让你的焊接破解成功率提升不少。</li>
+<li>如果看完这篇文章后还是对自己没有信心，那我劝你放弃不要继续了，大概率可能会失败。<span id="more"></span></li>
+</ol>
+<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><p>工欲善其事必先利其器，想要做好这个手工活必须得有一些趁手的工具。以下是我为这次破解准备的一些工具。</p>
+<ul>
+<li><p><strong>电洛铁 + 锡丝</strong><br>  必需品。这个不需多说，没有电洛铁无法焊接芯片，这里我选择可恒温电洛铁，电洛铁头可以选择尖头，对新手相对友好。同时建议在网上看一些电洛铁操作入门教学，了解下基础操作，一般学习时长也就半小时左右。成本的话大概50左右，这个价位完全可以胜任本次操作，也不需要买太好。</p>
+</li>
+<li><p><strong>助焊剂</strong><br>  必需品。为了提高成功率，还是需要使用助焊剂的，助焊剂能使你的焊点更容易上锡，焊点更饱满，简单的说可以使焊接更简单。推荐使用半固态的助焊剂，我买的那种是有个针头可以把助焊剂推出来推到焊点上的那种，操作的时候可以推一点助焊剂到焊点上再焊接。成本的话大约几十块钱。</p>
+</li>
+<li><p><strong>绝缘隔热胶带</strong><br>  必需品。同样也是必须品，对于新手焊接来说，固定排线和保护别的原件是很重要的事情。这两件事情，绝缘隔热胶带能办到。这种胶带一般长的黄色透明，你可以在很多视频里看到他，一般可以隔绝300℃左右的高温，保护别的元器件不受干扰。成本大约几块钱。</p>
+</li>
+<li><p><strong>洗板水或无水酒精</strong><br>  建议。用于清理主板上的硅脂残留物以及焊接留下的助焊剂残渣，个人建议还是入手一瓶，成本大约十块左右。</p>
+</li>
+<li><p><strong>除锡带</strong><br>  可选。新手焊接难免会上锡上多或上少，上多的话可以用除锡带将多余的锡吸走。成本大约几块钱。</p>
+</li>
+<li><p><strong>螺丝刀 + 备用螺丝</strong><br>  建议。拆机需要用到1.5的十字螺丝刀以及1.5的Y字螺丝刀，需要提前准备好，如果螺丝坏了或者不小心掉了，可以使用备用螺丝顶上，总成本大约十来块钱。</p>
+</li>
+<li><p><strong>手机&#x2F;放大镜&#x2F;焊接显微镜</strong><br>  可选。CPU上的电容非常的小，建议搞个放大镜，如果有条件的可以上个PCB板焊接用的显微镜。我自己的话没这个条件，所以使用的是手机照相机。找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。</p>
+</li>
+</ul>
+<h2 id="芯片"><a href="#芯片" class="headerlink" title="芯片"></a>芯片</h2><p>准备完工具之后，还需要一块破解芯片，它是焊接的主角。</p>
+<p>我用的是hwfly国产第四代芯片，即所谓的国产山寨芯片。它是目前相对较容易拿到的芯片，同时也支持刷固件，可玩性较高。TX芯片没有接触过，现在市面上也较少，但焊接原理和国产芯片一样。</p>
+<p>芯片主要由芯片主体，排线，以及USB插排组成。<br><img data-src="/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg" alt="hwfly芯片"><br>排线的话由于我们是续航版，所以选择V2就行。V1是给普通版准备的排线。</p>
+<h2 id="拆机"><a href="#拆机" class="headerlink" title="拆机"></a>拆机</h2><p>破解的第一步就是拆机，千万千万要有耐心，特别是第一次拆机，一定要用对工具，否则原装螺丝容易滑丝，滑丝后就比较麻烦。如果真的不小心滑丝了，也不要着急，千万别听信网上说用胶水，用了胶水后壳可就真的废了。滑丝后靠谱的解法就是刻一字，然后用一字螺丝拧下，别问我为什么知道，因为我滑丝了。</p>
+<p>螺丝点位以下这张图描述的比较清楚，按这张图拧就行。<br><img data-src="/img/switch/c1.jpg" alt="拆机螺丝点位"></p>
+<p>注意下后盖上面是有卡扣的，不要硬掰，抬起后盖下半部分，慢慢往下拉即可绕出卡扣。</p>
+<p>后盖拆下后，后面就比较简单了，按顺序拆除即可。</p>
+<p>正确的顺序是：后盖 -&gt; tf卡槽 -&gt; 金属屏蔽罩 -&gt; 散热铜管 -&gt; CPU屏蔽罩和 NAND 颗粒芯片，具体拆解方式可以参考下图。</p>
+<p><strong>tf卡槽和金属屏蔽罩</strong><br><img data-src="/img/switch/c2.jpg" alt="TF卡槽和金属屏蔽罩"></p>
+<p><strong>散热铜管</strong><br><img data-src="/img/switch/c3.jpg" alt="SOC散热铜管"></p>
+<p><strong>CPU屏蔽罩</strong><br>SOC屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可以找个趁手的工具，将中间卡扣挑起，就比较容易拆。<br><img data-src="/img/switch/c4.jpg" alt="SOC屏蔽罩"></p>
+<p>拆完后CPU裸露处理，我们要做的是用洗板水或者酒精将硅脂擦干净，特别是电容边上的硅脂，后面焊接要用到。<br><img data-src="/img/switch/c5.jpg" alt="清洁硅脂"></p>
+<h2 id="焊接"><a href="#焊接" class="headerlink" title="焊接"></a>焊接</h2><p>焊接的方法主要就是下图，有一个重要的技巧，就是焊接前，一定要先在排线上上锡，然后再把上过锡的排线固定在CPU上，用之前准备的绝缘隔热胶带将要焊接的电容边上的电容都贴起来挡住，防止焊坏边上的原件。之后使用电洛铁接触排线上的焊点2-3秒，同时向电容方向轻轻的推即可。<br><img data-src="/img/switch/c6.jpg" alt="焊接焊点"></p>
+<p>焊完之后应该是这样的：<br><img data-src="/img/switch/c7.jpg" alt="焊接效果"></p>
+<p>这里有个焊接的视频讲的非常详细与到位，可以参考下：</p>
+<iframe src="//player.bilibili.com/player.html?aid=969301681&bvid=BV1rp4y1v7zh&cid=225560839&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://www.bilibili.com/video/BV1rp4y1v7zh">https://www.bilibili.com/video/BV1rp4y1v7zh</a></p>
+<p>对于CPU上的电容非常的小看不清的问题。我自己使用的是手机的照相机，找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。</p>
+<h2 id="装机"><a href="#装机" class="headerlink" title="装机"></a>装机</h2><p>接下来只要将Nand插在芯片，然后将CPU上的排线插上芯片，芯片插在之前查Nand的插座上就行。参考下图<br><img data-src="/img/switch/c8.jpg" alt="装机图"></p>
+<p>开机测试下，第一次开机时间可能较长，一般来说LED应该是 黄（闪烁） -&gt; 紫（闪烁） -&gt; 绿(常亮)这个顺序，则表示安装没问题，否则则检查焊接是否到位，是否安装错误。</p>
+<p>最后装上CPU屏蔽罩，安好之前拆下来的散热铜管，将芯片如下图安放即可，一般来说都会将芯片下的金属屏蔽罩剪掉一块，这样的话后盖不会凸起来。注意记得在CPU屏蔽罩上贴上绝缘隔热胶带，这样防止芯片短路。<br><img data-src="/img/switch/c9.jpg" alt="装机图"></p>
+<p>安装完后，再用绝缘胶固定好芯片，按回后盖，就基本大功告成了。</p>
+<hr>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<ol>
+<li><a href="https://baijiahao.baidu.com/s?id=1683417071721969170&wfr=spider&for=pc">关于Switch国行续航版TX芯片硬破的建议</a></li>
+<li><a href="https://www.marsshen.com/2022/05/29/switch-hack-terminology/">Switch硬件破解经验分享 - 术语篇</a></li>
+<li><a href="https://tieba.baidu.com/p/6747262057?red_tag=1250614440">switch贴吧-这个焊接教程挺详细的</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>switch硬破教程</tag>
+        <tag>switch</tag>
       </tags>
   </entry>
 </search>
