@@ -1333,12 +1333,6 @@ header.header {
 .links-of-author a {
   font-size: 0.8125em;
 }
-.links-of-author .fa,
-.links-of-author .fab,
-.links-of-author .far,
-.links-of-author .fas {
-  margin-right: 2px;
-}
 .sidebar .sidebar-button:not(:first-child) {
   margin-top: 15px;
 }
@@ -1716,16 +1710,6 @@ header.header {
 }
 .back-to-top.back-to-top-on {
   bottom: 30px;
-}
-.reading-progress-bar {
-  --progress: 0;
-  background: #37c6c0;
-  height: 3px;
-  position: fixed;
-  z-index: 50;
-  width: var(--progress);
-  left: 0;
-  top: 0;
 }
 .rtl.post-body p,
 .rtl.post-body a,
@@ -2560,6 +2544,24 @@ mark.search-keyword {
   color: #ff2a2a;
   font-weight: bold;
 }
+.popular-posts-header {
+  border-bottom: 1px solid #eee;
+  font-size: 1.125em;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+.popular-posts {
+  padding: 0;
+}
+.popular-posts .popular-posts-item {
+  margin-left: 2em;
+}
+.popular-posts .popular-posts-item .popular-posts-title {
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 2.4;
+  margin: 0;
+}
 .use-motion .animated {
   animation-fill-mode: none;
   visibility: inherit;
@@ -2764,7 +2766,6 @@ mark.search-keyword {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
 }
 .links-of-author-item a {
   box-sizing: border-box;
