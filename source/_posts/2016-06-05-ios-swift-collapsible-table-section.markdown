@@ -7,15 +7,13 @@ header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
 multilingual: false
 tags:
-
-- 原创
-- 翻译
-- 互联网技术
-- IOS开发
-- swift
-  abbrlink: 95d092ba
-  date: 2016-06-06 12:00:00
-
+  - 原创
+  - 翻译
+  - 互联网技术
+  - IOS开发
+  - swift
+abbrlink: 95d092ba
+date: 2016-06-06 12:00:00
 ---
 
 <blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
@@ -25,7 +23,6 @@ tags:
 <!-- more -->
 
 #### 第一步:准备数据
-
 <p>
 假设我们有下面这些分好组的数据,每一组是一个 <code>Section</code> 对象
 ```Swift
@@ -34,22 +31,20 @@ struct Section {
   var items: [String]!
   var collapsed: Bool!
 
-init(name: String, items: [String], collapsed: Bool = false) {
-self.name = name
-self.items = items
-self.collapsed = collapsed
-}
+  init(name: String, items: [String], collapsed: Bool = false) {
+    self.name = name
+    self.items = items
+    self.collapsed = collapsed
+  }
 }
 
 var sections = [Section]()
 
 sections = [
-Section(name: "Mac",
-items: ["MacBook", "MacBook Air", "MacBook Pro", "iMac", "Mac Pro", "Mac mini", "Accessories", "OS X El Capitan"]),
-Section(name: "iPad", items: ["iPad Pro", "iPad Air 2", "iPad mini 4", "Accessories"]),
-Section(name: "iPhone", items: ["iPhone 6s", "iPhone 6", "iPhone SE", "Accessories"])
+  Section(name: "Mac", items: ["MacBook", "MacBook Air", "MacBook Pro", "iMac", "Mac Pro", "Mac mini", "Accessories", "OS X El Capitan"]),
+  Section(name: "iPad", items: ["iPad Pro", "iPad Air 2", "iPad mini 4", "Accessories"]),
+  Section(name: "iPhone", items: ["iPhone 6s", "iPhone 6", "iPhone SE", "Accessories"])
 ]
-
 ```
 <code>collapsed</code> 表明了现在是否是折叠状态,默认为false.
 </p>
@@ -68,7 +63,6 @@ class CollapsibleTableViewHeader: UITableViewCell {
 
 }
 ```
-
 <p>创建一个 prototype cell 和一个继承自 UITableViewCell 的类, 有这两点好处:</p>
 <ul>
 <li>我们能可视化的设计我们的 header</li>
@@ -97,16 +91,14 @@ override func tableView(tableView: UITableView, numberOfRowsInSection section: I
 override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
   let header = tableView.dequeueReusableCellWithIdentifier("header") as! CollapsibleTableViewHeader
 
-header.titleLabel.text = sections[section].name
-header.toggleButton.tag = section
-header.toggleButton.addTarget(self, action: #selector(CollapsibleTableViewController.toggleCollapse), forControlEvents:
-.TouchUpInside)
+  header.titleLabel.text = sections[section].name
+  header.toggleButton.tag = section
+  header.toggleButton.addTarget(self, action: #selector(CollapsibleTableViewController.toggleCollapse), forControlEvents: .TouchUpInside)
 
-header.toggleButton.rotate(sections[section].collapsed! ? 0.0 : CGFloat(M_PI_2))
+  header.toggleButton.rotate(sections[section].collapsed! ? 0.0 : CGFloat(M_PI_2))
 
-return header.contentView
+  return header.contentView
 }
-
 ```
 <p>注意我们为我们的接切换按钮 (UIButton) 注册了一个touch up inside 事件, 一旦这个按钮被按下, 它将会触发 toggleCollapse 方法.</p>
 <p>最后, 我们的 row cell 看起来像这样:</p>
@@ -119,20 +111,18 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
   return cell
 }
 ```
-
 <p>这个是 toggleCollapse 方法:</p>
 ```Swift
 func toggleCollapse(sender: UIButton) {
   let section = sender.tag
   let collapsed = sections[section].collapsed
 
-// Toggle collapse
-sections[section].collapsed = !collapsed
+  // Toggle collapse
+  sections[section].collapsed = !collapsed
 
-// Reload section
-tableView.reloadSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
+  // Reload section
+  tableView.reloadSections(NSIndexSet(index: section), withRowAnimation: .Automatic)
 }
-
 ```
 <p>好啦,就是这么简单,如果你需要看源代码,请到顶部原文链接中,你可以在那个链接中找到具体的实现代码</p>
 

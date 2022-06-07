@@ -7,25 +7,21 @@ header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
 multilingual: false
 tags:
-
-- 原创
-- Spring Boot
-- Mybatis
-- Dubbo
-- Druid
-- 互联网技术
-- Java
-  abbrlink: 34fb554c
-  date: 2018-03-10 12:00:00
-
+  - 原创
+  - Spring Boot
+  - Mybatis
+  - Dubbo
+  - Druid
+  - 互联网技术
+  - Java
+abbrlink: 34fb554c
+date: 2018-03-10 12:00:00
 ---
 
 <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
 # Spring Boot部分
-
 #### 生成一个简单的Spring Boot项目
-
 <p>
 	首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
 	<img src="{{ site.baseurl }}/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
@@ -142,7 +138,6 @@ import com.alibaba.dubbo.config.annotation.Service;
 public class MemberServiceImpl implements MemberService {
 //...
 }
-
 ```
 
 #### Dubbo Admin的使用
@@ -172,7 +167,6 @@ public class MemberServiceImpl implements MemberService {
      <version>5.1.44</version>
 </dependency>
 ```
-
 <p>
 	修改application.properties中的配置, 使用Druid链接数据库:
 </p>
@@ -224,14 +218,13 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatasourceConfig {
-@Bean
-@ConfigurationProperties(prefix = "spring.datasource")
-public DataSource druidDataSource() {
-DruidDataSource druidDataSource = new DruidDataSource();
-return druidDataSource;
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource druidDataSource() {
+        DruidDataSource druidDataSource = new DruidDataSource();
+        return druidDataSource;
+    }
 }
-}
-
 ```
 <p>
 	在启动类中加入<code>@ServletComponentScan</code>和<code>@MapperScan("cn.example.manager.mapper")</code>:定义mapper所在的包
@@ -244,7 +237,6 @@ public class ServiceSpringbootApplication {
 //...
 }
 ```
-
 <p>
 	至此, 整个整合基本就配置完成.
 </p>

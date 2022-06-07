@@ -7,12 +7,10 @@ header-img: img/Header/jiamitu-hd.jpg
 catalog: true
 multilingual: false
 tags:
-
-- 原创
-- 区块链
-  abbrlink: a9eae027
-  date: 2018-03-23 12:00:00
-
+  - 原创
+  - 区块链
+abbrlink: a9eae027
+date: 2018-03-23 12:00:00
 ---
 
 # 自动化抢小米加密兔辅助工具
@@ -22,22 +20,18 @@ tags:
 </p>
 
 #### 使用方法
-
 * 使用前请先在Chrome下载Tampermonkey插件.
 * 下载脚本文件XiaoMi-JiaMiTu-Tools.zip至本地.
 * 将文件XiaoMi-JiaMiTu-Tools.zip导入Tampermonkey.
 * 前往 <code><a href="https://jiamitu.mi.com/home">https://jiamitu.mi.com/home</a></code> 小米加密兔领养页面并登陆你自己的账号.
-* 确保当前页面Tampermonkey中我们的脚本为开启状态.
+* 确保当前页面Tampermonkey中我们的脚本为开启状态. 
 * 当活动时间开始前1分钟点击**开始抢加密兔**,然后耐心等待脚本运行. 当页面提示你已抢到, 说明抢领成功, 如果长时间没领到加密兔, 可能加密兔已经被领完, 请第二天再尝试.
 * 如果需要更新, 请在Tampermonkey插件更新插件.
 
-下载链接: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools/raw/master/XiaoMi-JiaMiTu-Tools.zip">
-点我下载</a></code>
+下载链接: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools/raw/master/XiaoMi-JiaMiTu-Tools.zip">点我下载</a></code> 
 源码地址: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools">点我查看</a></code>
 <!-- more -->
-
 #### 脚本原理
-
 <p>
 脚本模拟用户点击, 运行时循环向小米服务器发用户送点击请求.
 </p>

@@ -6,11 +6,9 @@ author: Mars Shen
 header-img: img/Header/coder-doom-dos-code-hd.jpg
 catalog: true
 tags:
-
-- 原创
-- switch硬破教程
-- switch
-
+  - 原创
+  - switch硬破教程
+  - switch
 ---
 
 ## Switch 破解术语
