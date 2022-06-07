@@ -127,3 +127,8 @@ symbols_count_time:
   awl: 4
   wpm: 275
   suffix: "mins."
+ 
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
