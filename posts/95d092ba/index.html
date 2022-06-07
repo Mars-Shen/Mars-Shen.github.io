@@ -27,19 +27,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.marsshen.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="原文链接以及源代码:原文地址原文作者:Yong Su @ Box Inc. # 如何在IOS中实现可折叠&#x2F;展开的Table Section?">
+    <meta name="description" content="原文链接以及源代码:原文地址原文作者:Yong Su @ Box Inc.  如何在IOS中实现可折叠&#x2F;展开的Table Section?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在IOS中实现可折叠&#x2F;展开的Table Section">
 <meta property="og:url" content="https://www.marsshen.com/posts/95d092ba/index.html">
 <meta property="og:site_name" content="Mars&#39;s Blog">
-<meta property="og:description" content="原文链接以及源代码:原文地址原文作者:Yong Su @ Box Inc. # 如何在IOS中实现可折叠&#x2F;展开的Table Section?">
+<meta property="og:description" content="原文链接以及源代码:原文地址原文作者:Yong Su @ Box Inc.  如何在IOS中实现可折叠&#x2F;展开的Table Section?">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat">
 <meta property="og:image" content="https://www.marsshen.com/img/IOSection/demo.gif">
 <meta property="og:image" content="https://www.marsshen.com/img/IOSection/cell.png">
 <meta property="og:image" content="https://www.marsshen.com/img/IOSection/otherDemo.gif">
 <meta property="article:published_time" content="2016-06-06T04:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-07T16:08:49.548Z">
+<meta property="article:modified_time" content="2022-06-07T16:17:45.038Z">
 <meta property="article:author" content="Mars Shen">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="翻译">
@@ -165,7 +165,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">第一步:准备数据</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8IOS%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%8F%AF%E6%8A%98%E5%8F%A0-x2F-%E5%B1%95%E5%BC%80%E7%9A%84Table-Section"><span class="nav-number">1.</span> <span class="nav-text">如何在IOS中实现可折叠&#x2F;展开的Table Section?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">第一步:准备数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E8%AE%BE%E8%AE%A1-Header-%E5%92%8C-Cell"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">第二步:设计 Header 和 Cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-UITableViewDelegate"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">第三步: UITableViewDelegate</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -268,7 +268,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-08 00:08:49" itemprop="dateModified" datetime="2022-06-08T00:08:49+08:00">2022-06-08</time>
+      <time title="修改时间：2022-06-08 00:17:45" itemprop="dateModified" datetime="2022-06-08T00:17:45+08:00">2022-06-08</time>
     </span>
 
   
@@ -297,8 +297,8 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>原文链接以及源代码:<a target="_blank" rel="noopener" href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
-# 如何在IOS中实现可折叠/展开的Table Section?
-<img data-src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
+
+<h1 id="如何在IOS中实现可折叠-x2F-展开的Table-Section"><a href="#如何在IOS中实现可折叠-x2F-展开的Table-Section" class="headerlink" title="如何在IOS中实现可折叠&#x2F;展开的Table Section?"></a>如何在IOS中实现可折叠&#x2F;展开的Table Section?</h1><img data-src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
 <img data-src="/img/IOSection/demo.gif" width="60%" heigh="60%">
 <span id="more"></span>
 
@@ -307,8 +307,8 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Section</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> name: <span class="type">String</span>!</span><br><span class="line">  <span class="keyword">var</span> items: [<span class="type">String</span>]<span class="operator">!</span></span><br><span class="line">  <span class="keyword">var</span> collapsed: <span class="type">Bool</span>!</span><br><span class="line"></span><br><span class="line">  <span class="keyword">init</span>(<span class="params">name</span>: <span class="type">String</span>, <span class="params">items</span>: [<span class="type">String</span>], <span class="params">collapsed</span>: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">false</span>) &#123;</span><br><span class="line">    <span class="keyword">self</span>.name <span class="operator">=</span> name</span><br><span class="line">    <span class="keyword">self</span>.items <span class="operator">=</span> items</span><br><span class="line">    <span class="keyword">self</span>.collapsed <span class="operator">=</span> collapsed</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sections <span class="operator">=</span> [<span class="type">Section</span>]()</span><br><span class="line"></span><br><span class="line">sections <span class="operator">=</span> [</span><br><span class="line">  <span class="type">Section</span>(name: <span class="string">&quot;Mac&quot;</span>, items: [<span class="string">&quot;MacBook&quot;</span>, <span class="string">&quot;MacBook Air&quot;</span>, <span class="string">&quot;MacBook Pro&quot;</span>, <span class="string">&quot;iMac&quot;</span>, <span class="string">&quot;Mac Pro&quot;</span>, <span class="string">&quot;Mac mini&quot;</span>, <span class="string">&quot;Accessories&quot;</span>, <span class="string">&quot;OS X El Capitan&quot;</span>]),</span><br><span class="line">  <span class="type">Section</span>(name: <span class="string">&quot;iPad&quot;</span>, items: [<span class="string">&quot;iPad Pro&quot;</span>, <span class="string">&quot;iPad Air 2&quot;</span>, <span class="string">&quot;iPad mini 4&quot;</span>, <span class="string">&quot;Accessories&quot;</span>]),</span><br><span class="line">  <span class="type">Section</span>(name: <span class="string">&quot;iPhone&quot;</span>, items: [<span class="string">&quot;iPhone 6s&quot;</span>, <span class="string">&quot;iPhone 6&quot;</span>, <span class="string">&quot;iPhone SE&quot;</span>, <span class="string">&quot;Accessories&quot;</span>])</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <code>collapsed</code> 表明了现在是否是折叠状态,默认为false.
 </p>
-#### 第二步:设计 Header 和 Cell
-<p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
+
+<h4 id="第二步-设计-Header-和-Cell"><a href="#第二步-设计-Header-和-Cell" class="headerlink" title="第二步:设计 Header 和 Cell"></a>第二步:设计 Header 和 Cell</h4><p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
 <img data-src="/img/IOSection/cell.png" width="60%" heigh="60%">
 <p>添加一个 UIButton (用做切换折叠状态) 和一个 Label 到 header 的 prototype cell 中, 创建一个继承自 <code>UITableViewCell</code> 的 swift 文件并且命名为<code> CollapsibleTableViewHeader.swift</code>. 这个文件很简单, 有两个 IBOutlets, 一个用做链接切换按钮 (UIButton), 另外一个用做链接 Label. 最后我们设置这个 header 的 Class 为 我们自定义的类 <code>CollapsibleTableViewHeader</code> 并且在类中正确的链接 IBOutlets.</p>
 <p>现在这个文件应该看起来像这样:</p>
@@ -320,8 +320,8 @@
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nib <span class="operator">=</span> <span class="type">UINib</span>(nibName: <span class="string">&quot;TableSectionHeader&quot;</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: <span class="string">&quot;TableSectionHeader&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>个人而言, 我不喜欢在我的项目中有 nib 文件, 并且如果我们用了 <code>dequeueReusableHeaderFooterViewWithIdentifier</code>, 好像我们必须在那个 section 中最少拥有一行 row, 但这里我们需要 0 row!</p>
-#### 第三步: UITableViewDelegate
-<p>首先,用 sections.count 正确的表示 section 的数量:</p>
+
+<h4 id="第三步-UITableViewDelegate"><a href="#第三步-UITableViewDelegate" class="headerlink" title="第三步: UITableViewDelegate"></a>第三步: UITableViewDelegate</h4><p>首先,用 sections.count 正确的表示 section 的数量:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">numberOfSectionsInTableView</span>(<span class="params">tableView</span>: <span class="type">UITableView</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> sections.count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>对于那些每个 section 中的 row 的数量, 我们使用 <code>collapsed</code> 变量去控制它, 如果 collapsed 是 true, 我们就返回 0, 否则返回他真实 items 的数量:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="keyword">func</span> <span class="title function_">tableView</span>(<span class="params">tableView</span>: <span class="type">UITableView</span>, <span class="params">numberOfRowsInSection</span> <span class="params">section</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (sections[section].collapsed<span class="operator">!</span>) <span class="operator">?</span> <span class="number">0</span> : sections[section].items.count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
