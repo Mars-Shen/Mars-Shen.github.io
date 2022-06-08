@@ -20,6 +20,15 @@
   </url>
   
   <url>
+    <loc>https://www.marsshen.com/categories/index.html</loc>
+    
+    <lastmod>2022-06-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.marsshen.com/posts/95d092ba/</loc>
     
     <lastmod>2022-06-08</lastmod>
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/posts/4878be23/</loc>
+    <loc>https://www.marsshen.com/posts/2492827d/</loc>
     
     <lastmod>2022-06-08</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/posts/2492827d/</loc>
+    <loc>https://www.marsshen.com/posts/4878be23/</loc>
     
     <lastmod>2022-06-08</lastmod>
     
@@ -136,15 +145,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://www.marsshen.com/categories/index.html</loc>
-    
-    <lastmod>2022-06-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://www.marsshen.com/</loc>
@@ -169,6 +169,20 @@
   </url>
   
   <url>
+    <loc>https://www.marsshen.com/tags/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2022-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.marsshen.com/tags/RabbitMQ/</loc>
+    <lastmod>2022-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.marsshen.com/tags/switch%E7%A1%AC%E7%A0%B4%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-06-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -183,13 +197,6 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.marsshen.com/tags/IOS%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-06-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -198,13 +205,6 @@
   
   <url>
     <loc>https://www.marsshen.com/tags/swift/</loc>
-    <lastmod>2022-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.marsshen.com/tags/RabbitMQ/</loc>
     <lastmod>2022-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -260,14 +260,14 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/Ubuntu/</loc>
+    <loc>https://www.marsshen.com/tags/ELK/</loc>
     <lastmod>2022-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/ELK/</loc>
+    <loc>https://www.marsshen.com/tags/Ubuntu/</loc>
     <lastmod>2022-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
