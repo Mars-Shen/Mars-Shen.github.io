@@ -1,11 +1,8 @@
 ---
 layout: post
 title: 淘秀网架构与使用技术总览
-subtitle: >-
-  基于Elasticsearch/SpringBoot/Redis/RabbitMQ/Mybatis/Dubbo/Vue/MySql，结合Scrapy爬虫数据挖掘的网站建设
+subtitle: 基于Elasticsearch/SpringBoot/Redis/RabbitMQ/Mybatis/Dubbo/Vue/MySql，结合Scrapy爬虫数据挖掘的网站建设
 author: Mars Shen
-header-img: img/Header/taoshow-header.jpeg
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -13,6 +10,7 @@ tags:
   - 淘秀网
 abbrlink: 26b6aa29
 date: 2018-05-23 12:00:00
+updated: 2018-05-23 12:00:00
 ---
 # 淘秀网架构与使用技术总览
 

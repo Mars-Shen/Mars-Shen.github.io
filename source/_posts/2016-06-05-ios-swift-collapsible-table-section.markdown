@@ -3,8 +3,6 @@ layout: post
 title: 如何在IOS中实现可折叠/展开的Table Section
 subtitle: 使用swift2.2在IOS中实现可折叠/展开的Table Section
 author: Mars Shen
-header-img: img/Header/coder-doom-dos-code-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -14,6 +12,7 @@ tags:
   - swift
 abbrlink: 95d092ba
 date: 2016-06-06 12:00:00
+updated: 2016-06-06 12:00:00
 ---
 
 <blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>

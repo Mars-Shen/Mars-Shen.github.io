@@ -3,8 +3,6 @@ layout: post
 title: Ubuntu下RabbitMQ的安装与配置
 subtitle: ''
 author: Mars Shen
-header-img: img/Header/rabbitmq-install-hd.png
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -13,6 +11,7 @@ tags:
   - Ubuntu
 abbrlink: 4878be23
 date: 2018-05-05 12:00:00
+updated: 2018-05-05 12:00:00
 ---
 
 # Ubuntu下RabbitMQ的安装与配置

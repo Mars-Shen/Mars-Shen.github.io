@@ -3,8 +3,6 @@ layout: post
 title: Ubuntu下Elasticsearch安装与问题记录
 subtitle: ''
 author: Mars Shen
-header-img: img/Header/elasticsearch-hd.png
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -13,6 +11,7 @@ tags:
   - Ubuntu
 abbrlink: 2492827d
 date: 2018-04-23 12:00:00
+updated: 2018-04-23 12:00:00
 ---
 
 # Ubuntu下Elasticsearch安装与问题记录

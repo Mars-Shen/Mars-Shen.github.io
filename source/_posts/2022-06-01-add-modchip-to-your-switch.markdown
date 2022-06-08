@@ -2,8 +2,6 @@
 layout: post
 title: Switch硬件破解经验分享 - 破解焊接篇
 author: Mars Shen
-header-img: img/Header/coder-doom-dos-code-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -12,7 +10,8 @@ tags:
 published: true
 subtitle: 国产破解芯片焊接教程
 abbrlink: 464772cb
-date: 2022-06-02T12:00:00.000Z
+date: 2022-06-02 12:00:00
+updated: 2022-06-05 12:00:00
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 

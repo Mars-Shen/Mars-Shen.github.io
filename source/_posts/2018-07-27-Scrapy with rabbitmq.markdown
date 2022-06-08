@@ -3,8 +3,6 @@ layout: post
 title: '[Scrapy]如何使用RabbitMQ控制Scrapy爬虫'
 subtitle: ''
 author: Mars Shen
-header-img: img/Header/taoshow-header.jpeg
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -12,6 +10,7 @@ tags:
   - 淘秀网
 abbrlink: 39fb172e
 date: 2018-07-27 12:00:00
+updated: 2018-07-27 12:00:00
 ---
 # 如何使用RabbitMQ控制Scrapy爬虫
 

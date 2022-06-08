@@ -2,8 +2,6 @@
 layout: post
 title: Switch硬件破解经验分享 - 术语篇
 author: Mars Shen
-header-img: img/Header/coder-doom-dos-code-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -11,7 +9,8 @@ tags:
   - switch
 published: true
 abbrlink: f96d7ec4
-date: 2022-05-29 12:00:00
+date: 2022-05-29 12:00:00 
+updated: 2022-05-29 12:00:00
 ---
 ### **RCM**
 

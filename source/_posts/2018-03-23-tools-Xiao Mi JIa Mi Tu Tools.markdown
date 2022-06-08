@@ -3,14 +3,13 @@ layout: post
 title: 自动化抢小米加密兔辅助工具
 subtitle: ''
 author: Mars Shen
-header-img: img/Header/jiamitu-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - 原创
   - 区块链
 abbrlink: a9eae027
 date: 2018-03-23 12:00:00
+updated: 2018-03-23 12:00:00
 ---
 
 # 自动化抢小米加密兔辅助工具

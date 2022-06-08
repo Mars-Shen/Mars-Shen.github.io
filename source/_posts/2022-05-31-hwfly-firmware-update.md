@@ -2,8 +2,6 @@
 layout: post
 title: Switch硬件破解经验分享 - 破解芯片固件升级篇
 author: Mars Shen
-header-img: img/Header/coder-doom-dos-code-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - 原创
@@ -12,7 +10,8 @@ tags:
 published: true
 subtitle: 教你如何升级国产破解芯片固件
 abbrlink: 53cdbb65
-date: 2022-05-31 12:00:00
+date: 2022-05-31 12:00:00 
+updated: 2022-05-31 12:00:00
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 

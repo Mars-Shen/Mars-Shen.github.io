@@ -3,14 +3,13 @@ layout: post
 title: 记一次Http劫持分析
 subtitle: ''
 author: Mars Shen
-header-img: img/Header/http-jiechi-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - 原创
   - 互联网技术
 abbrlink: 89408fe7
 date: 2018-03-29 12:00:00
+updated: 2018-03-29 12:00:00
 ---
 
 # 记一次Http劫持分析

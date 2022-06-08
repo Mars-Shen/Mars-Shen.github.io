@@ -3,14 +3,13 @@ layout: post
 title: 使用MetaMask钱包完成EOS钱包映射
 subtitle: ''
 author: Mars Shen
-header-img: img/Header/eos-hd.jpg
-catalog: true
 multilingual: false
 tags:
   - EOS
   - 区块链
 abbrlink: 8a7a7578
 date: 2018-03-16 12:00:00
+updated: 2018-03-16 12:00:00
 ---
 
 <blockquote>前提条件:
