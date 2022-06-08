@@ -52,4 +52,4 @@ jobs:
           npm i
       - name: Deploy hexo
         run: |
-          hexo clean && hexo generate && hexo deploy
+          hexo clean && hexo recommend && hexo generate && hexo deploy
