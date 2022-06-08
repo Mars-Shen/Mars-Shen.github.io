@@ -34,7 +34,7 @@
 <meta property="og:description" content="Ubuntu下Elasticsearch安装与问题记录 Elasticsearch 是一个分布式、可扩展、实时的搜索与数据分析引擎。 它能从项目一开始就赋予你的数据以搜索、分析和探索的能力。 –&lt;&lt;Elasticsearch: 权威指南&gt;&gt;  就像Elasticsearch: 权威指南里说的，开源的 Elasticsearch是目前全文搜索引擎的首选。它可以快速地储存、搜索">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-04-23T04:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-08T08:45:09.110Z">
+<meta property="article:modified_time" content="2022-06-08T09:38:41.021Z">
 <meta property="article:author" content="Mars Shen">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="互联网技术">
@@ -158,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu%E4%B8%8BElasticsearch%E5%AE%89%E8%A3%85%E4%B8%8E%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu下Elasticsearch安装与问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Elasticsearch%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">安装Elasticsearch注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87tar%E5%8C%85%E5%AE%89%E8%A3%85Elasticsearch"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">通过tar包安装Elasticsearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85Elasticsearch"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">通过Docker安装Elasticsearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Elasticsearch%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">安装Elasticsearch常见错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85elasticsearch-head%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">安装elasticsearch-head插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85elasticsearch-analysis-ik%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">安装elasticsearch-analysis-ik插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85x-pack%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">安装x-pack插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%88%97%E8%A1%A8"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">资源列表</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu%E4%B8%8BElasticsearch%E5%AE%89%E8%A3%85%E4%B8%8E%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu下Elasticsearch安装与问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Elasticsearch%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">安装Elasticsearch注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87tar%E5%8C%85%E5%AE%89%E8%A3%85Elasticsearch"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">通过tar包安装Elasticsearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87Docker%E5%AE%89%E8%A3%85Elasticsearch"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">通过Docker安装Elasticsearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Elasticsearch%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">安装Elasticsearch常见错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85elasticsearch-head%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">安装elasticsearch-head插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85elasticsearch-analysis-ik%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">安装elasticsearch-analysis-ik插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85x-pack%E6%8F%92%E4%BB%B6"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">安装x-pack插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%88%97%E8%A1%A8"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">资源列表</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">推荐文章</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -261,7 +261,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-08 16:45:09" itemprop="dateModified" datetime="2022-06-08T16:45:09+08:00">2022-06-08</time>
+      <time title="修改时间：2022-06-08 17:38:41" itemprop="dateModified" datetime="2022-06-08T17:38:41+08:00">2022-06-08</time>
     </span>
 
   
@@ -422,7 +422,7 @@
 <li><code><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a></code>， 这个是中文版的，容易看懂，但是有个问题就是版本有点老，最新版中已经移除type概念，这个指南中还存在这个概念，可以一看但更推荐看英文最新文档。</li>
 <li><code><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">最新文档</a></code>，最新的英文文档，推荐阅读。</li>
 </ul>
-
+<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li></ul></div>
     </div>
 
     
