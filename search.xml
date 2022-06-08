@@ -5,8 +5,8 @@
     <url>/posts/95d092ba/</url>
     <content><![CDATA[<blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
 
-<h1 id="如何在IOS中实现可折叠-x2F-展开的Table-Section"><a href="#如何在IOS中实现可折叠-x2F-展开的Table-Section" class="headerlink" title="如何在IOS中实现可折叠&#x2F;展开的Table Section?"></a>如何在IOS中实现可折叠&#x2F;展开的Table Section?</h1><img data-src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
-<img data-src="/img/IOSection/demo.gif" width="60%" heigh="60%">
+<h1 id="如何在IOS中实现可折叠-x2F-展开的Table-Section"><a href="#如何在IOS中实现可折叠-x2F-展开的Table-Section" class="headerlink" title="如何在IOS中实现可折叠&#x2F;展开的Table Section?"></a>如何在IOS中实现可折叠&#x2F;展开的Table Section?</h1><img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
+<img src="/img/IOSection/demo.gif" width="60%" heigh="60%">
 <span id="more"></span>
 
 <h4 id="第一步-准备数据"><a href="#第一步-准备数据" class="headerlink" title="第一步:准备数据"></a>第一步:准备数据</h4><p>
@@ -16,7 +16,7 @@
 </p>
 
 <h4 id="第二步-设计-Header-和-Cell"><a href="#第二步-设计-Header-和-Cell" class="headerlink" title="第二步:设计 Header 和 Cell"></a>第二步:设计 Header 和 Cell</h4><p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
-<img data-src="/img/IOSection/cell.png" width="60%" heigh="60%">
+<img src="/img/IOSection/cell.png" width="60%" heigh="60%">
 <p>添加一个 UIButton (用做切换折叠状态) 和一个 Label 到 header 的 prototype cell 中, 创建一个继承自 <code>UITableViewCell</code> 的 swift 文件并且命名为<code> CollapsibleTableViewHeader.swift</code>. 这个文件很简单, 有两个 IBOutlets, 一个用做链接切换按钮 (UIButton), 另外一个用做链接 Label. 最后我们设置这个 header 的 Class 为 我们自定义的类 <code>CollapsibleTableViewHeader</code> 并且在类中正确的链接 IBOutlets.</p>
 <p>现在这个文件应该看起来像这样:</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CollapsibleTableViewHeader</span>: <span class="title class_">UITableViewCell</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">@IBOutlet</span> <span class="keyword">var</span> titleLabel: <span class="type">UILabel</span>!</span><br><span class="line">  <span class="keyword">@IBOutlet</span> <span class="keyword">var</span> toggleButton: <span class="type">UIButton</span>!</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -44,7 +44,7 @@
 <p><b>更多的可折叠Demo</b></p>
 <p>有时你可能要在grouped-style table中实现一些可折叠的cells, 我有一些单独的Demo在<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section">链接</a>中. 他的实现和今天我们学的这个非常相似,只有一点点小不同,如果有兴趣可以去看下.</p>
 
-<img data-src="/img/IOSection/otherDemo.gif" width="60%" heigh="60%">
+<img src="/img/IOSection/otherDemo.gif" width="60%" heigh="60%">
 ]]></content>
       <tags>
         <tag>原创</tag>
@@ -61,7 +61,7 @@
 
 <h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>
     首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
-    <img data-src="/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
+    <img src="/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
     点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
 </p>
 
@@ -80,7 +80,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.log4j12.Log4jLoggerFactory loaded from file:/Users/MarsShen/Project/SSM/xmall/xmall-manager/xmall-manager-service-springboot/target/xmall-manager-service-springboot-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.8.0-alpha2.jar). If you are using WebLogic you will need to add &#x27;org.slf4j&#x27; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.log4j12.Log4jLoggerFactory</span><br><span class="line">	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:637)</span><br><span class="line">	at org.springframework.util.Assert.isInstanceOf(Assert.java:537)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:274)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:99)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:191)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:170)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)</span><br><span class="line">	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:68)</span><br><span class="line">	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:155)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:135)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:87)</span><br><span class="line">	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:172)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)</span><br><span class="line">	... 43 more</span><br></pre></td></tr></table></figure>
 <p>
     这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件
-    <img data-src="/img/SpringBoot/SpringBoot-2.png" width="100%" heigh="100%">
+    <img src="/img/SpringBoot/SpringBoot-2.png" width="100%" heigh="100%">
     解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.
 </p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -162,19 +162,19 @@
 <h4 id="安装MetaMask钱包插件-生成钱包"><a href="#安装MetaMask钱包插件-生成钱包" class="headerlink" title="安装MetaMask钱包插件, 生成钱包"></a>安装MetaMask钱包插件, 生成钱包</h4><p>
     这一步很简单, 首先在Chrome插件中心搜索MetaMask并且安装. 
 </p>
-<img data-src="/img/EOSMapping/metamask.png" width="80%" heigh="80%">
+<img src="/img/EOSMapping/metamask.png" width="80%" heigh="80%">
 <p>
     打开这个插件. 点击接受协议, 第二次协议出现时, 需要将协议滚到最下面接受按钮才会亮:
 </p>
-<img data-src="/img/EOSMapping/metamaskstep1.png" width="60%" heigh="60%">
+<img src="/img/EOSMapping/metamaskstep1.png" width="60%" heigh="60%">
 <p>
     创建一个新密码, 这个密码是用来登陆本地钱包账户的, 请牢记:
 </p>
-<img data-src="/img/EOSMapping/metamaskstep2.png" width="60%" heigh="60%">
+<img src="/img/EOSMapping/metamaskstep2.png" width="60%" heigh="60%">
 <p>
     他会给你12个英文单词, 找个安全的地方记好这12个单词, 因为这是唯一恢复你钱包的方法, 完了之后点击<code>I'VE COPIED IT SOMEWHERE SAFE</code>进入下一步:
 </p>
-<img data-src="/img/EOSMapping/metamaskstep3.png" width="60%" heigh="60%">
+<img src="/img/EOSMapping/metamaskstep3.png" width="60%" heigh="60%">
 <p>
     至此钱包部分就已经完成了, 你可以自己探索下这个钱包, 找到钱包的私钥保存好, 不要泄露.
 </p>
@@ -182,19 +182,19 @@
 <h4 id="EOS公钥私钥的生成"><a href="#EOS公钥私钥的生成" class="headerlink" title="EOS公钥私钥的生成"></a>EOS公钥私钥的生成</h4><p>
     这一步网上有很多工具可以一键生成EOS公钥和私钥, 但我没用过, 所以这里说的是官网生成方法, 首先进入EOS官网, 点击GOT. 注意这个按钮必须科学上网才能点, 因为EOS规定美国公民和中国公民无法参加这个EOS项目, 所以你得找个不是美国以及中国的ip才能点这个按钮.
 </p>
-<img data-src="/img/EOSMapping/geteos.png" width="90%" heigh="90%">
+<img src="/img/EOSMapping/geteos.png" width="90%" heigh="90%">
 <p>
     勾选所有选项, 进入下一页, 找到<code>Participation Instructions</code>选择<code>REGISTER</code>:
 </p>
-<img data-src="/img/EOSMapping/regbutton.png" width="90%" heigh="90%">
+<img src="/img/EOSMapping/regbutton.png" width="90%" heigh="90%">
 <p>
     选择<code>METAMASK</code>, 打开你的Chrome MetaMask插件, 然后在网页上点击<code>EOS token distribution</code>按钮:
 </p>
-<img data-src="/img/EOSMapping/regmaskinfo.png" width="90%" heigh="90%">
+<img src="/img/EOSMapping/regmaskinfo.png" width="90%" heigh="90%">
 <p>
     这里页面上左边一栏从上到下分别是合约地址,你钱包的地址,以后映射完你EOS公钥的地址,EOS余额. 然后点击<code>REGISTER EOS KEY</code>按钮, 系统会生成一对新的EOS公钥和私钥, 请牢记你的公钥和私钥, 特别是私钥, 不要给别人, 自己妥善保管:
 </p>
-<img data-src="/img/EOSMapping/RegisterEOSkey.png" width="90%" heigh="90%">
+<img src="/img/EOSMapping/RegisterEOSkey.png" width="90%" heigh="90%">
 <p>
     妥善处置好你的私钥后, 将私钥填入确认框, 点击下一步:
 </p>
@@ -202,18 +202,18 @@
 <h4 id="签署智能合约-完成映射"><a href="#签署智能合约-完成映射" class="headerlink" title="签署智能合约, 完成映射"></a>签署智能合约, 完成映射</h4><p>
     当点击下一步以后, 系统会自动生成一个智能合约, 签署智能合约的过程就类似于一次交易, 需要一定的GAS, 也就是一定数量的ETH才能完成, 如果你没有ETH, 请先冲ETH进入你的钱包:
 </p>
-<img data-src="/img/EOSMapping/signcontract.png" width="70%" heigh="70%">
+<img src="/img/EOSMapping/signcontract.png" width="70%" heigh="70%">
 <p>
     点击提交, 完成智能合约签署, 签署过程的时间由你给的GAS决定, 给的GAS越大, 处理起来越快, 我这里给了1GWEI, 处理了大概一晚上.
 </p>
 <p>
     如果想看进度, 可以点击MetaMask右上角三个点, 查看账户信息:
 </p>
-<img data-src="/img/EOSMapping/viewaccount.png" width="70%" heigh="70%">
+<img src="/img/EOSMapping/viewaccount.png" width="70%" heigh="70%">
 <p>
     这个页面可以看到详细的账户信息, 可以看到交易现在的状态:
 </p>
-<img data-src="/img/EOSMapping/accountinfo.png" width="100%" heigh="100%">
+<img src="/img/EOSMapping/accountinfo.png" width="100%" heigh="100%">
 <p>
     智能合约签署完成, 一般也就意味着映射的完成, 如何查看自己映射成功呢? 在刚才注册的网页, 也就是<code>EOS token distribution</code>页面上, 如果之前为空的EOS public key一项变成了你刚才生成的EOS公钥, 那就说明钱包与EOS公网已经完成映射.
 </p>
@@ -254,8 +254,8 @@
 <li>本脚本不会获取你的个人信息并且开源, 想了解具体信息请查看上面源码链接中代码.</li>
 </ul>
 <!-- 开启前效果:
-<img data-src="/img/jiamitu/jiamitu-0.png" width="80%" heigh="80%"> -->
-<p>开启后效果:<br><img data-src="/img/jiamitu/jiamitu-1.png" width="70%" heigh="70%"></p>
+<img src="/img/jiamitu/jiamitu-0.png" width="80%" heigh="80%"> -->
+<p>开启后效果:<br><img src="/img/jiamitu/jiamitu-1.png" width="70%" heigh="70%"></p>
 ]]></content>
       <tags>
         <tag>原创</tag>
@@ -265,7 +265,7 @@
   <entry>
     <title>记一次Http劫持分析</title>
     <url>/posts/89408fe7/</url>
-    <content><![CDATA[<h1 id="记一次Http劫持分析"><a href="#记一次Http劫持分析" class="headerlink" title="记一次Http劫持分析"></a>记一次Http劫持分析</h1><p>最近在家用手机访问我自己的博客的时候，无论我用什么手机浏览器总是会在第一次加载页面的时候，在页面上加载了各种奇怪的广告，我顿时觉得很疑惑，我什么时候在网站上放广告了？我是失忆了，还是我喝醉了？<br><img data-src="/img/HttpJieChi/blog-1.jpeg" width="50%" heigh="50%"><br>看着这满屏的广告瞬间觉得很厌恶，本身很干净的网页像被贴了膏药一样的恶心，而且这些广告就像老鼠一般，一会有一会没有，神出鬼没。一看就是那些见不得光的人做出来的见不得光的事。愤怒过后，静下心来仔细分析了下，得出了一个结论: <code><b>我可能是被Http劫持了</b></code>。</p>
+    <content><![CDATA[<h1 id="记一次Http劫持分析"><a href="#记一次Http劫持分析" class="headerlink" title="记一次Http劫持分析"></a>记一次Http劫持分析</h1><p>最近在家用手机访问我自己的博客的时候，无论我用什么手机浏览器总是会在第一次加载页面的时候，在页面上加载了各种奇怪的广告，我顿时觉得很疑惑，我什么时候在网站上放广告了？我是失忆了，还是我喝醉了？<br><img src="/img/HttpJieChi/blog-1.jpeg" width="50%" heigh="50%"><br>看着这满屏的广告瞬间觉得很厌恶，本身很干净的网页像被贴了膏药一样的恶心，而且这些广告就像老鼠一般，一会有一会没有，神出鬼没。一看就是那些见不得光的人做出来的见不得光的事。愤怒过后，静下心来仔细分析了下，得出了一个结论: <code><b>我可能是被Http劫持了</b></code>。</p>
 <span id="more"></span>
 <h4 id="Http劫持"><a href="#Http劫持" class="headerlink" title="Http劫持"></a>Http劫持</h4><p>HTTP劫持是在使用者与其目的网络服务所建立的专用数据通道中，监视特定数据信息，提示当满足设定的条件时，就会在正常的数据流中插入精心设计的网络数据报文，目的是让用户端程序解释“错误”的数据，并在使用者界面展示宣传性广告或者直接显示某网站的内容。以上内容来自百度百科，通俗点说就是<code><b>HTTP劫持就像是你开车去目的地的时候，半路经过了个过路站，有人开了你车门上车给你塞小广告，你带着小广告去了目的地。</b></code>没错，我给别人当了免费顺风车司机。</p>
 <h4 id="谁在劫持我？"><a href="#谁在劫持我？" class="headerlink" title="谁在劫持我？"></a>谁在劫持我？</h4><p>那到底是谁在给我塞小广告呢？ 到这个时候我心中已经有三个怀疑对象:</p>
@@ -275,7 +275,7 @@
 <li>电信宽带运营商</li>
 </ul>
 <p>首先是百度云加速，为什么会想到他呢，因为这个网站在发生劫持的时候，用的正是百度云加速的DNS，理论上讲他有机会截取并修改我的Http内容。但我觉得他使坏的可能性不大，网上搜索的结果显示不出任何百度云加速会进行劫持的迹象，没有先例，虽然广告内容是百度百意的，但我觉得他应该只是个内容服务提供商，不会也没必要作恶做的那么明显，所以暂时先排除这一个可能。<br>剩下的就是路由器和运营商，这两个家伙都有很大可能进行Http劫持的，经过网上的搜索发现他们以前的所作所为，可谓劣迹斑斑。谷歌百度一搜一大片，小米15年的时候有个著名的<code>404Http劫持事件</code>，电信运营商的劣迹更是数不胜数，具体是谁看样子还得继续分析下去才能知道。</p>
-<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><p>通过Safari的代码分析得知，在网页的最下面，莫名其妙的被插入了<code>iframe</code>节点。这就是Http劫持做的好事！<br><img data-src="/img/HttpJieChi/blog-code-1.png" width="100%" heigh="100%"><br>从代码中可以得知，可能是由百度提供了内容(cpu.baidu.com)，这个叫做<code>zmeng</code>的公司编写了插入的js。最后由路由器或者运营商执行了Http劫持，插入了代码。<br><img data-src="/img/HttpJieChi/blog-code-5.png" width="100%" heigh="100%"><br>谷歌了一下这个cpu.baidu.com和zmeng(可能是众盟)，并没有得到什么特别有价值的信息。于是向下个网址入手。<code><a href="http://x.hao61.net/frqctrl.html">http://x.hao61.net/frqctrl.html</a></code><br><img data-src="/img/HttpJieChi/blog-code-2.png" width="100%" heigh="100%">查询这个网址的whois，发现没什么有用的信息，域名全设置成隐私保护，看不出什么特别的东西。只能从加载这个网址的地方入手了。<br>从上面的图可以看出来这个<code>iframe</code>是由<code>zm.js:2029</code>初始化而来的，而这个zm.js是哪里来的呢？<br><img data-src="/img/HttpJieChi/blog-code-3.png" width="100%" heigh="100%"><br>这个zm.js是从<code><a href="http://js.union-wifi.com/zm.js">http://js.union-wifi.com/zm.js</a></code>加载来的，这个看起来很像联通wifi的网址(并不是2333)，谷歌了一下发现又是个什么联盟的，没什么具体的信息，不过已经有人反映这个网址出现在别的网站Http劫持中，看起来有人和我同命相连了，遗憾的是他并没有具体的解决方法，我们只好继续往下看。<br><img data-src="/img/HttpJieChi/blog-code-4.png" width="100%" heigh="100%"><br>最终我们追溯到源头了(并没有2333)。这个<code><a href="http://a.liuzhi520.com/">http://a.liuzhi520.com</a></code>下面的<code>rt_adjs_common.php</code>是一切js加载的源头，是初始化广告加载js的网址，同样谷歌之后没有有用的信息，线索到这里就断了。</p>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><p>通过Safari的代码分析得知，在网页的最下面，莫名其妙的被插入了<code>iframe</code>节点。这就是Http劫持做的好事！<br><img src="/img/HttpJieChi/blog-code-1.png" width="100%" heigh="100%"><br>从代码中可以得知，可能是由百度提供了内容(cpu.baidu.com)，这个叫做<code>zmeng</code>的公司编写了插入的js。最后由路由器或者运营商执行了Http劫持，插入了代码。<br><img src="/img/HttpJieChi/blog-code-5.png" width="100%" heigh="100%"><br>谷歌了一下这个cpu.baidu.com和zmeng(可能是众盟)，并没有得到什么特别有价值的信息。于是向下个网址入手。<code><a href="http://x.hao61.net/frqctrl.html">http://x.hao61.net/frqctrl.html</a></code><br><img src="/img/HttpJieChi/blog-code-2.png" width="100%" heigh="100%">查询这个网址的whois，发现没什么有用的信息，域名全设置成隐私保护，看不出什么特别的东西。只能从加载这个网址的地方入手了。<br>从上面的图可以看出来这个<code>iframe</code>是由<code>zm.js:2029</code>初始化而来的，而这个zm.js是哪里来的呢？<br><img src="/img/HttpJieChi/blog-code-3.png" width="100%" heigh="100%"><br>这个zm.js是从<code><a href="http://js.union-wifi.com/zm.js">http://js.union-wifi.com/zm.js</a></code>加载来的，这个看起来很像联通wifi的网址(并不是2333)，谷歌了一下发现又是个什么联盟的，没什么具体的信息，不过已经有人反映这个网址出现在别的网站Http劫持中，看起来有人和我同命相连了，遗憾的是他并没有具体的解决方法，我们只好继续往下看。<br><img src="/img/HttpJieChi/blog-code-4.png" width="100%" heigh="100%"><br>最终我们追溯到源头了(并没有2333)。这个<code><a href="http://a.liuzhi520.com/">http://a.liuzhi520.com</a></code>下面的<code>rt_adjs_common.php</code>是一切js加载的源头，是初始化广告加载js的网址，同样谷歌之后没有有用的信息，线索到这里就断了。</p>
 <h4 id="解决办法以及总结"><a href="#解决办法以及总结" class="headerlink" title="解决办法以及总结"></a>解决办法以及总结</h4><p>分析了一通，其实我并没有找到真正的源头，由于手上没有别的路由器(懒)，所以没有将小米路由器替换掉进行测试，但刚才谷歌<code>a.liuzhi520.com</code>的时候发现有人和我有一样的问题，<code><a href="http://www.cnblogs.com/cyq1162/p/6096283.html">这篇文章</a></code>讲述了他是怎么分析Http劫持的，至此我的分析更倾向于电信运营商在作怪。既然源头这么难找，那解决办法呢？解决办法还是有的！Http协议是明文传输的，本身的特点导致了他非常容易被劫持，最终，我将自己的网站改成<strong>全站强制Https访问</strong>，并且在家里路由中，<strong>将加载脚本的网址屏蔽</strong>。至此，这次Http劫持事件算是告一段落，但要根本的解决问题，我想还是要从运营商这个源头去处理这件事。在调查这次事件过程中，让我清楚的意识到Http网站是多么不安全以及容易被劫持，插小广告劫持还算好，万一劫持者插了一段JS，获取你当前在页面上输入的账户密码，理论上讲也是轻而易举的。总之如果各位以后遇到Http的页面，不管是开发还是普通的访问，都尽可能小心点吧。</p>
 <p>完</p>
 ]]></content>
@@ -503,7 +503,7 @@
 <li><strong>前端服务</strong><ul>
 <li>Vue</li>
 <li>element-ui<span id="more"></span>
-<h3 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h3><img data-src="/img/taoshow/taoshow_ architecture.JPG" width="100%" heigh="100%"></li>
+<h3 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h3><img src="/img/taoshow/taoshow_ architecture.JPG" width="100%" heigh="100%"></li>
 </ul>
 </li>
 </ul>
@@ -588,7 +588,7 @@
 <ul>
 <li><p><strong>如何判断当前芯片是否为国产四代芯片:</strong></p>
 <p>芯片左上角为MV1-7以上,即为四代或更新的芯片, 如下图</p>
-<p> <img data-src="/img/switch/Flashable-Core-SWD.jpg" alt="四代"></p>
+<p> <img src="/img/switch/Flashable-Core-SWD.jpg" alt="四代"></p>
 </li>
 </ul>
 <h2 id="hwfly-nx固件介绍"><a href="#hwfly-nx固件介绍" class="headerlink" title="hwfly-nx固件介绍"></a>hwfly-nx固件介绍</h2><p>hwfly-nx（<a href="https://github.com/hwfly-nx/firmware/releases/latest">最新固件下载地址</a>）是一个完全开源的芯片固件，用于链式引导您自己的playload，其支持SX Core &#x2F; Lite&#x2F; hwfly等芯片</p>
@@ -600,12 +600,12 @@
 <li>在开机期间按住 VOL+ 和 VOL- 直到脉冲完成（绿灯亮起），会绕过任何有效的playload 并启动到 OFW。</li>
 </ul>
 <h3 id="LED诊断"><a href="#LED诊断" class="headerlink" title="LED诊断"></a>LED诊断</h3><p>  安装完成后的第一次启动，固件将自动进行脉冲破解训练。这时候主板上的LED灯呈黄色闪烁状态，最多可能需要 5 分钟。当完成第一次脉冲破解训练后，后续引导会快得多。有关可能的 LED 模式的完整概述，请参阅下图，这可能有助于对芯片安装完成后但不工作的情况下进行诊断。</p>
-<p><img data-src="/img/switch/switch-modchip-led-pattern.gif" alt="诊断"></p>
+<p><img src="/img/switch/switch-modchip-led-pattern.gif" alt="诊断"></p>
 <h3 id="如何更新破解芯片"><a href="#如何更新破解芯片" class="headerlink" title="如何更新破解芯片"></a>如何更新破解芯片</h3><p>  可以使用以下 3 种方法之一进行更新破解芯片：</p>
 <p><strong>方法 a) - 使用 USB 引导加载程序（首选）</strong></p>
 <ol>
 <li>完全关闭你的switch主机。</li>
-<li>在<strong>芯片上</strong>插入 USB 电缆。<strong>注意不要插入错误！！！ 不要插反！如果插反这会完全破坏芯片上的 USB 功能。正确插法如下图所示，注意up朝向!</strong><br><img data-src="/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg" alt="正确插法"></li>
+<li>在<strong>芯片上</strong>插入 USB 电缆。<strong>注意不要插入错误！！！ 不要插反！如果插反这会完全破坏芯片上的 USB 功能。正确插法如下图所示，注意up朝向!</strong><br><img src="/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg" alt="正确插法"></li>
 <li>运行<a href="https://github.com/hwfly-nx/firmware/releases/latest">最新固件下载地址</a>中的flash.bat。这会更新引导加载程序（bootloader）和破解固件（firmware），运行过完成后LED灯呈蓝色闪烁状态。<strong>如果刷固件时PC上出现错误，需要重新拔出USB，换个USB口子再重新执行刷固件程序，否则将会清除当前芯片上的固件。</strong></li>
 <li>拔下 USB 电缆。</li>
 <li>重新打开你的switch主机。</li>
@@ -629,7 +629,7 @@
 <li>提供的bootloader.bin应该在0x080000000处被刷入。提供的payload.bin应在0x08003000处被刷入。</li>
 </ol>
 <p><strong>注意</strong>：上面的三个方法没有一个可将无法更新固件的4代以前的芯片变成可更新固件的芯片。（不可更新固件的芯片在主板上使用一个 BGA FPGA类型控制芯片，而可更新固件的芯片主板上使用的是QFN FPGA类型控制芯片，硬件上是不通的）。</p>
-<p><strong>安装完成后：</strong><br>使用以上方法升级完后，开机如果显示如下画面，则说明刷成功<br><img data-src="/img/switch/maxresdefault.jpg" alt="成功"></p>
+<p><strong>安装完成后：</strong><br>使用以上方法升级完后，开机如果显示如下画面，则说明刷成功<br><img src="/img/switch/maxresdefault.jpg" alt="成功"></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="无法关机Bug和解决办法"><a href="#无法关机Bug和解决办法" class="headerlink" title="无法关机Bug和解决办法"></a>无法关机Bug和解决办法</h3><p>国产芯片刷完最新固件（0.7.0）后目前主要 Bug 是在系统关机上，mariko 机型特别明显。简单说就是你选择关机之后，机器自动开机，芯片开始工作。</p>
 <p>这个不管真实（正版）系统、真实（破解）系统，还是虚拟系统下，都一 样。而且不管你是通过按住电源键选择“关闭电源”关机，还是 goldleaf 里面 按 ZL&#x2F;ZR 后点击 shutdown 关机，也都一样。</p>
 <p>假如在 bootloader&#x2F;hekate_ipl.ini 中配置 autoboot&#x3D;0，则自动开机会停 留在 hekate 的 RCM 菜单里，这就带来一个严重问题，首先机器会非常耗电且 机器热量也会立刻增加，假如长时间放在包里，其实不利于机器散热，容易造成硬件隐患。</p>
@@ -740,26 +740,26 @@
 </ul>
 <h2 id="芯片"><a href="#芯片" class="headerlink" title="芯片"></a>芯片</h2><p>准备完工具之后，还需要一块破解芯片，它是焊接的主角。</p>
 <p>我用的是hwfly国产第四代芯片，即所谓的国产山寨芯片。它是目前相对较容易拿到的芯片，同时也支持刷固件，可玩性较高。TX芯片没有接触过，现在市面上也较少，但焊接原理和国产芯片一样。</p>
-<p>芯片主要由芯片主体，排线，以及USB插排组成。<br><img data-src="/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg" alt="hwfly芯片"><br>排线的话由于我们是续航版，所以选择V2就行。V1是给普通版准备的排线。</p>
+<p>芯片主要由芯片主体，排线，以及USB插排组成。<br><img src="/img/switch/Hwfly-for-switch-lite-oled-chip-ic-cable-black-board-payment-sx-cx.png_320x320.jpg" alt="hwfly芯片"><br>排线的话由于我们是续航版，所以选择V2就行。V1是给普通版准备的排线。</p>
 <h2 id="拆机"><a href="#拆机" class="headerlink" title="拆机"></a>拆机</h2><p>破解的第一步就是拆机，千万千万要有耐心，特别是第一次拆机，一定要用对工具，否则原装螺丝容易滑丝，滑丝后就比较麻烦。如果真的不小心滑丝了，也不要着急，千万别听信网上说用胶水，用了胶水后壳可就真的废了。滑丝后靠谱的解法就是刻一字，然后用一字螺丝拧下，别问我为什么知道，因为我滑丝了。</p>
-<p>螺丝点位以下这张图描述的比较清楚，按这张图拧就行。<br><img data-src="/img/switch/c1.jpg" alt="拆机螺丝点位"></p>
+<p>螺丝点位以下这张图描述的比较清楚，按这张图拧就行。<br><img src="/img/switch/c1.jpg" alt="拆机螺丝点位"></p>
 <p>注意下后盖上面是有卡扣的，不要硬掰，抬起后盖下半部分，慢慢往下拉即可绕出卡扣。</p>
 <p>后盖拆下后，后面就比较简单了，按顺序拆除即可。</p>
 <p>正确的顺序是：后盖 -&gt; tf卡槽 -&gt; 金属屏蔽罩 -&gt; 散热铜管 -&gt; CPU屏蔽罩和 NAND 颗粒芯片，具体拆解方式可以参考下图。</p>
-<p><strong>tf卡槽和金属屏蔽罩</strong><br><img data-src="/img/switch/c2.jpg" alt="TF卡槽和金属屏蔽罩"></p>
-<p><strong>散热铜管</strong><br><img data-src="/img/switch/c3.jpg" alt="SOC散热铜管"></p>
-<p><strong>CPU屏蔽罩</strong><br>SOC屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可以找个趁手的工具，将中间卡扣挑起，就比较容易拆。<br><img data-src="/img/switch/c4.jpg" alt="SOC屏蔽罩"></p>
-<p>拆完后CPU裸露处理，我们要做的是用洗板水或者酒精将硅脂擦干净，特别是电容边上的硅脂，后面焊接要用到。<br><img data-src="/img/switch/c5.jpg" alt="清洁硅脂"></p>
-<h2 id="焊接"><a href="#焊接" class="headerlink" title="焊接"></a>焊接</h2><p>焊接的方法主要就是下图，有一个重要的技巧，就是焊接前，一定要先在排线上上锡，然后再把上过锡的排线固定在CPU上，用之前准备的绝缘隔热胶带将要焊接的电容边上的电容都贴起来挡住，防止焊坏边上的原件。之后使用电洛铁接触排线上的焊点2-3秒，同时向电容方向轻轻的推即可。<br><img data-src="/img/switch/c6.jpg" alt="焊接焊点"></p>
-<p>焊完之后应该是这样的：<br><img data-src="/img/switch/c7.jpg" alt="焊接效果"></p>
+<p><strong>tf卡槽和金属屏蔽罩</strong><br><img src="/img/switch/c2.jpg" alt="TF卡槽和金属屏蔽罩"></p>
+<p><strong>散热铜管</strong><br><img src="/img/switch/c3.jpg" alt="SOC散热铜管"></p>
+<p><strong>CPU屏蔽罩</strong><br>SOC屏蔽罩拆解有点难度，一般拆完都比较容易变形，最好可以找个趁手的工具，将中间卡扣挑起，就比较容易拆。<br><img src="/img/switch/c4.jpg" alt="SOC屏蔽罩"></p>
+<p>拆完后CPU裸露处理，我们要做的是用洗板水或者酒精将硅脂擦干净，特别是电容边上的硅脂，后面焊接要用到。<br><img src="/img/switch/c5.jpg" alt="清洁硅脂"></p>
+<h2 id="焊接"><a href="#焊接" class="headerlink" title="焊接"></a>焊接</h2><p>焊接的方法主要就是下图，有一个重要的技巧，就是焊接前，一定要先在排线上上锡，然后再把上过锡的排线固定在CPU上，用之前准备的绝缘隔热胶带将要焊接的电容边上的电容都贴起来挡住，防止焊坏边上的原件。之后使用电洛铁接触排线上的焊点2-3秒，同时向电容方向轻轻的推即可。<br><img src="/img/switch/c6.jpg" alt="焊接焊点"></p>
+<p>焊完之后应该是这样的：<br><img src="/img/switch/c7.jpg" alt="焊接效果"></p>
 <p>这里有个焊接的视频讲的非常详细与到位，可以参考下：</p>
 <iframe src="//player.bilibili.com/player.html?aid=969301681&bvid=BV1rp4y1v7zh&cid=225560839&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 <p><a href="https://www.bilibili.com/video/BV1rp4y1v7zh">https://www.bilibili.com/video/BV1rp4y1v7zh</a></p>
 <p>对于CPU上的电容非常的小看不清的问题。我自己使用的是手机的照相机，找个手机支架，然后开摄像模式，对准焊接的点位进行放大，一般来说就看到清楚了，这样相对肉眼容易焊接一点。</p>
-<h2 id="装机"><a href="#装机" class="headerlink" title="装机"></a>装机</h2><p>接下来只要将Nand插在芯片，然后将CPU上的排线插上芯片，芯片插在之前查Nand的插座上就行。参考下图<br><img data-src="/img/switch/c8.jpg" alt="装机图"></p>
+<h2 id="装机"><a href="#装机" class="headerlink" title="装机"></a>装机</h2><p>接下来只要将Nand插在芯片，然后将CPU上的排线插上芯片，芯片插在之前查Nand的插座上就行。参考下图<br><img src="/img/switch/c8.jpg" alt="装机图"></p>
 <p>开机测试下，第一次开机时间可能较长，一般来说LED应该是 黄（闪烁） -&gt; 紫（闪烁） -&gt; 绿(常亮)这个顺序，则表示安装没问题，否则则检查焊接是否到位，是否安装错误。</p>
-<p>最后装上CPU屏蔽罩，安好之前拆下来的散热铜管，将芯片如下图安放即可，一般来说都会将芯片下的金属屏蔽罩剪掉一块，这样的话后盖不会凸起来。注意记得在CPU屏蔽罩上贴上绝缘隔热胶带，这样防止芯片短路。<br><img data-src="/img/switch/c9.jpg" alt="装机图"></p>
+<p>最后装上CPU屏蔽罩，安好之前拆下来的散热铜管，将芯片如下图安放即可，一般来说都会将芯片下的金属屏蔽罩剪掉一块，这样的话后盖不会凸起来。注意记得在CPU屏蔽罩上贴上绝缘隔热胶带，这样防止芯片短路。<br><img src="/img/switch/c9.jpg" alt="装机图"></p>
 <p>安装完后，再用绝缘胶固定好芯片，按回后盖，就基本大功告成了。</p>
 <hr>
 <blockquote>
