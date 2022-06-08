@@ -727,8 +727,8 @@ leancloud_visitors:
 firestore:
   enable: false
   collection: articles # Required, a string collection name to access firestore database
-  apiKey: AIzaSyCM-45N7hfs0S1wD-s0Fq43DDJ0LlJeX_s
-  projectId: marsblog-43041
+  apiKey: # Required
+  projectId: # Required
 
 # Show Views / Visitors of the website / page with busuanzi.
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
