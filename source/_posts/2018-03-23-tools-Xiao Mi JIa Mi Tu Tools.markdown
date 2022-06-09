@@ -43,4 +43,4 @@ updated: 2018-03-23 12:00:00
 <!-- 开启前效果:
 <img src="{{ site.baseurl }}/img/jiamitu/jiamitu-0.png" width="80%" heigh="80%"> -->
 开启后效果:
-<img src="{{ site.baseurl }}/img/jiamitu/jiamitu-1.png" width="70%" heigh="70%">
+![开启后效果](/img/jiamitu/jiamitu-1.png)

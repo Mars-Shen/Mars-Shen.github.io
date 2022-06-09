@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spring Boot/Mybatis/Dubbo/Druid整合
-subtitle: '使用Spring Boot与Mybatis/Dubbo/Druid整合,并且记录过程中出现的问题'
+subtitle: 使用Spring Boot与Mybatis/Dubbo/Druid整合,并且记录过程中出现的问题
 author: Mars Shen
 multilingual: false
 tags:
@@ -21,11 +21,11 @@ updated: 2018-03-10 12:00:00
 
 # Spring Boot部分
 #### 生成一个简单的Spring Boot项目
-<p>
-	首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
-	<img src="{{ site.baseurl }}/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
-	点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
-</p>
+
+首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
+![](/img/SpringBoot/SpringBoot-1.png)
+点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
+
 
 #### Spring Boot Pom文件修改默认继承关系及引用
 <p>
@@ -77,11 +77,11 @@ Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback Lo
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
 	... 43 more
 ```
-<p>
-	这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件
-	<img src="{{ site.baseurl }}/img/SpringBoot/SpringBoot-2.png" width="100%" heigh="100%">
-	解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.
-</p>
+
+这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件
+![](/img/SpringBoot/SpringBoot-2.png)
+解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.
+
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -232,6 +232,7 @@ public class DatasourceConfig {
 <p>
 	在启动类中加入<code>@ServletComponentScan</code>和<code>@MapperScan("cn.example.manager.mapper")</code>:定义mapper所在的包
 </p>
+
 ```java
 @SpringBootApplication
 @ServletComponentScan

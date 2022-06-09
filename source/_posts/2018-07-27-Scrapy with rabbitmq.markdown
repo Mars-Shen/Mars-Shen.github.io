@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Scrapy]如何使用RabbitMQ控制Scrapy爬虫'
+title: '如何使用RabbitMQ控制Scrapy爬虫'
 subtitle: ''
 author: Mars Shen
 multilingual: false
@@ -8,6 +8,8 @@ tags:
   - 原创
   - 互联网技术
   - 淘秀网
+  - scrapy
+  - python
 abbrlink: 39fb172e
 date: 2018-07-27 12:00:00
 updated: 2018-07-27 12:00:00

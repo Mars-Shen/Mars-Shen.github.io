@@ -14,13 +14,11 @@ abbrlink: 95d092ba
 date: 2016-06-06 12:00:00
 updated: 2016-06-06 12:00:00
 ---
+![](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)
+>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.
 
-<blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
-
-# 如何在IOS中实现可折叠/展开的Table Section?
-
-<img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
-<img src="{{ site.baseurl }}/img/IOSection/demo.gif" width="60%" heigh="60%">
+# 如何在IOS中实现可折叠/展开的Table Section?! 
+![Demo效果](/img/IOSection/demo.gif)
 <!-- more -->
 
 #### 第一步:准备数据
@@ -52,7 +50,7 @@ sections = [
 
 #### 第二步:设计 Header 和 Cell
 <p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
-<img src="{{ site.baseurl }}/img/IOSection/cell.png" width="60%" heigh="60%">
+![](/img/IOSection/cell.png)
 <p>添加一个 UIButton (用做切换折叠状态) 和一个 Label 到 header 的 prototype cell 中, 创建一个继承自 <code>UITableViewCell</code> 的 swift 文件并且命名为<code> CollapsibleTableViewHeader.swift</code>. 这个文件很简单, 有两个 IBOutlets, 一个用做链接切换按钮 (UIButton), 另外一个用做链接 Label. 最后我们设置这个 header 的 Class 为 我们自定义的类 <code>CollapsibleTableViewHeader</code> 并且在类中正确的链接 IBOutlets.</p>
 <p>现在这个文件应该看起来像这样:</p>
 ```Swift
@@ -132,4 +130,4 @@ func toggleCollapse(sender: UIButton) {
 <p><b>更多的可折叠Demo</b></p>
 <p>有时你可能要在grouped-style table中实现一些可折叠的cells, 我有一些单独的Demo在<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section">链接</a>中. 他的实现和今天我们学的这个非常相似,只有一点点小不同,如果有兴趣可以去看下.</p>
 
-<img src="{{ site.baseurl }}/img/IOSection/otherDemo.gif" width="60%" heigh="60%">
+![排序效果](/img/IOSection/otherDemo.gif)
