@@ -1,0 +1,4 @@
+User-agent: *
+
+Sitemap: https://www.marsshen.com/sitemap.xml
+Sitemap: https://www.marsshen.com/baidusitemap.xml
