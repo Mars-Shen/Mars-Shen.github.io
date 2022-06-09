@@ -3,10 +3,11 @@
   <entry>
     <title>如何在IOS中实现可折叠/展开的Table Section</title>
     <url>/posts/95d092ba/</url>
-    <content><![CDATA[<blockquote>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</blockquote>
-
-<h1 id="如何在IOS中实现可折叠-x2F-展开的Table-Section"><a href="#如何在IOS中实现可折叠-x2F-展开的Table-Section" class="headerlink" title="如何在IOS中实现可折叠&#x2F;展开的Table Section?"></a>如何在IOS中实现可折叠&#x2F;展开的Table Section?</h1><img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat" width="60">
-<img src="/img/IOSection/demo.gif" width="60%" heigh="60%">
+    <content><![CDATA[<p><img src="https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat"></p>
+<blockquote>
+<p>原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.</p>
+</blockquote>
+<h1 id="如何在IOS中实现可折叠-x2F-展开的Table-Section"><a href="#如何在IOS中实现可折叠-x2F-展开的Table-Section" class="headerlink" title="如何在IOS中实现可折叠&#x2F;展开的Table Section?!"></a>如何在IOS中实现可折叠&#x2F;展开的Table Section?!</h1><p><img src="/img/IOSection/demo.gif" alt="Demo效果"></p>
 <span id="more"></span>
 
 <h4 id="第一步-准备数据"><a href="#第一步-准备数据" class="headerlink" title="第一步:准备数据"></a>第一步:准备数据</h4><p>
@@ -16,7 +17,7 @@
 </p>
 
 <h4 id="第二步-设计-Header-和-Cell"><a href="#第二步-设计-Header-和-Cell" class="headerlink" title="第二步:设计 Header 和 Cell"></a>第二步:设计 Header 和 Cell</h4><p>在story board中选择 <code>Table View</code>, 选择 <code>Dynamic Prototypes</code>并且设置 <code>Prototype Cells</code> 的值为 2, 一个给我们的自定义 Header,另外一个给我们每一行的 Cell, 然后将各自的 <code>Identifier</code> 设置为为 header 和 cell.</p>
-<img src="/img/IOSection/cell.png" width="60%" heigh="60%">
+![](/img/IOSection/cell.png)
 <p>添加一个 UIButton (用做切换折叠状态) 和一个 Label 到 header 的 prototype cell 中, 创建一个继承自 <code>UITableViewCell</code> 的 swift 文件并且命名为<code> CollapsibleTableViewHeader.swift</code>. 这个文件很简单, 有两个 IBOutlets, 一个用做链接切换按钮 (UIButton), 另外一个用做链接 Label. 最后我们设置这个 header 的 Class 为 我们自定义的类 <code>CollapsibleTableViewHeader</code> 并且在类中正确的链接 IBOutlets.</p>
 <p>现在这个文件应该看起来像这样:</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CollapsibleTableViewHeader</span>: <span class="title class_">UITableViewCell</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">@IBOutlet</span> <span class="keyword">var</span> titleLabel: <span class="type">UILabel</span>!</span><br><span class="line">  <span class="keyword">@IBOutlet</span> <span class="keyword">var</span> toggleButton: <span class="type">UIButton</span>!</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -44,7 +45,7 @@
 <p><b>更多的可折叠Demo</b></p>
 <p>有时你可能要在grouped-style table中实现一些可折叠的cells, 我有一些单独的Demo在<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section">链接</a>中. 他的实现和今天我们学的这个非常相似,只有一点点小不同,如果有兴趣可以去看下.</p>
 
-<img src="/img/IOSection/otherDemo.gif" width="60%" heigh="60%">
+<p><img src="/img/IOSection/otherDemo.gif" alt="排序效果"></p>
 <div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
@@ -59,12 +60,7 @@
     <url>/posts/34fb554c/</url>
     <content><![CDATA[<blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
-<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>
-    首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
-    <img src="/img/SpringBoot/SpringBoot-1.png" width="100%" heigh="100%">
-    点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
-</p>
-
+<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code><br><img src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
 <h4 id="Spring-Boot-Pom文件修改默认继承关系及引用"><a href="#Spring-Boot-Pom文件修改默认继承关系及引用" class="headerlink" title="Spring Boot Pom文件修改默认继承关系及引用"></a>Spring Boot Pom文件修改默认继承关系及引用</h4><p>
     默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
 </p>
@@ -78,15 +74,10 @@
     项目中出现:
 </p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.log4j12.Log4jLoggerFactory loaded from file:/Users/MarsShen/Project/SSM/xmall/xmall-manager/xmall-manager-service-springboot/target/xmall-manager-service-springboot-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.8.0-alpha2.jar). If you are using WebLogic you will need to add &#x27;org.slf4j&#x27; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.log4j12.Log4jLoggerFactory</span><br><span class="line">	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:637)</span><br><span class="line">	at org.springframework.util.Assert.isInstanceOf(Assert.java:537)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:274)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:99)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:191)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:170)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)</span><br><span class="line">	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:68)</span><br><span class="line">	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:155)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:135)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:87)</span><br><span class="line">	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:172)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)</span><br><span class="line">	... 43 more</span><br></pre></td></tr></table></figure>
-<p>
-    这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件
-    <img src="/img/SpringBoot/SpringBoot-2.png" width="100%" heigh="100%">
-    解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.
-</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-# Spring Boot与Dubbo整合
 
-<h4 id="Spring-Boot与Dubbo整合"><a href="#Spring-Boot与Dubbo整合" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h4><p>
+<p>这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件<br><img src="/img/SpringBoot/SpringBoot-2.png"><br>解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Spring-Boot与Dubbo整合"><a href="#Spring-Boot与Dubbo整合" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h1><h4 id="Spring-Boot与Dubbo整合-1"><a href="#Spring-Boot与Dubbo整合-1" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h4><p>
     Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
 </p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.dubbo.springboot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.sgroschupf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zkclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -118,6 +109,7 @@
 <p>
     在启动类中加入<code>@ServletComponentScan</code>和<code>@MapperScan("cn.example.manager.mapper")</code>:定义mapper所在的包
 </p>
+
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ServletComponentScan</span></span><br><span class="line"><span class="meta">@MapperScan(&quot;cn.example.manager.mapper&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServiceSpringbootApplication</span> &#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>
     至此, 整个整合基本就配置完成.
@@ -162,19 +154,23 @@
 <h4 id="安装MetaMask钱包插件-生成钱包"><a href="#安装MetaMask钱包插件-生成钱包" class="headerlink" title="安装MetaMask钱包插件, 生成钱包"></a>安装MetaMask钱包插件, 生成钱包</h4><p>
     这一步很简单, 首先在Chrome插件中心搜索MetaMask并且安装. 
 </p>
-<img src="/img/EOSMapping/metamask.png" width="80%" heigh="80%">
+
+<p><img src="/img/EOSMapping/metamask.png"></p>
 <p>
     打开这个插件. 点击接受协议, 第二次协议出现时, 需要将协议滚到最下面接受按钮才会亮:
 </p>
-<img src="/img/EOSMapping/metamaskstep1.png" width="60%" heigh="60%">
+
+<p><img src="/img/EOSMapping/metamaskstep1.png"></p>
 <p>
     创建一个新密码, 这个密码是用来登陆本地钱包账户的, 请牢记:
 </p>
-<img src="/img/EOSMapping/metamaskstep2.png" width="60%" heigh="60%">
+
+<p><img src="/img/EOSMapping/metamaskstep2.png"></p>
 <p>
     他会给你12个英文单词, 找个安全的地方记好这12个单词, 因为这是唯一恢复你钱包的方法, 完了之后点击<code>I'VE COPIED IT SOMEWHERE SAFE</code>进入下一步:
 </p>
-<img src="/img/EOSMapping/metamaskstep3.png" width="60%" heigh="60%">
+
+<p><img src="/img/EOSMapping/metamaskstep3.png"></p>
 <p>
     至此钱包部分就已经完成了, 你可以自己探索下这个钱包, 找到钱包的私钥保存好, 不要泄露.
 </p>
@@ -182,19 +178,23 @@
 <h4 id="EOS公钥私钥的生成"><a href="#EOS公钥私钥的生成" class="headerlink" title="EOS公钥私钥的生成"></a>EOS公钥私钥的生成</h4><p>
     这一步网上有很多工具可以一键生成EOS公钥和私钥, 但我没用过, 所以这里说的是官网生成方法, 首先进入EOS官网, 点击GOT. 注意这个按钮必须科学上网才能点, 因为EOS规定美国公民和中国公民无法参加这个EOS项目, 所以你得找个不是美国以及中国的ip才能点这个按钮.
 </p>
-<img src="/img/EOSMapping/geteos.png" width="90%" heigh="90%">
+
+<p><img src="/img/EOSMapping/geteos.png"></p>
 <p>
     勾选所有选项, 进入下一页, 找到<code>Participation Instructions</code>选择<code>REGISTER</code>:
 </p>
-<img src="/img/EOSMapping/regbutton.png" width="90%" heigh="90%">
+
+<p><img src="/img/EOSMapping/regbutton.png"></p>
 <p>
     选择<code>METAMASK</code>, 打开你的Chrome MetaMask插件, 然后在网页上点击<code>EOS token distribution</code>按钮:
 </p>
-<img src="/img/EOSMapping/regmaskinfo.png" width="90%" heigh="90%">
+
+<p><img src="/img/EOSMapping/regmaskinfo.png"></p>
 <p>
     这里页面上左边一栏从上到下分别是合约地址,你钱包的地址,以后映射完你EOS公钥的地址,EOS余额. 然后点击<code>REGISTER EOS KEY</code>按钮, 系统会生成一对新的EOS公钥和私钥, 请牢记你的公钥和私钥, 特别是私钥, 不要给别人, 自己妥善保管:
 </p>
-<img src="/img/EOSMapping/RegisterEOSkey.png" width="90%" heigh="90%">
+
+<p><img src="/img/EOSMapping/RegisterEOSkey.png"></p>
 <p>
     妥善处置好你的私钥后, 将私钥填入确认框, 点击下一步:
 </p>
@@ -202,18 +202,21 @@
 <h4 id="签署智能合约-完成映射"><a href="#签署智能合约-完成映射" class="headerlink" title="签署智能合约, 完成映射"></a>签署智能合约, 完成映射</h4><p>
     当点击下一步以后, 系统会自动生成一个智能合约, 签署智能合约的过程就类似于一次交易, 需要一定的GAS, 也就是一定数量的ETH才能完成, 如果你没有ETH, 请先冲ETH进入你的钱包:
 </p>
-<img src="/img/EOSMapping/signcontract.png" width="70%" heigh="70%">
+
+<p><img src="/img/EOSMapping/signcontract.png"></p>
 <p>
     点击提交, 完成智能合约签署, 签署过程的时间由你给的GAS决定, 给的GAS越大, 处理起来越快, 我这里给了1GWEI, 处理了大概一晚上.
 </p>
 <p>
     如果想看进度, 可以点击MetaMask右上角三个点, 查看账户信息:
 </p>
-<img src="/img/EOSMapping/viewaccount.png" width="70%" heigh="70%">
+
+<p><img src="/img/EOSMapping/viewaccount.png"></p>
 <p>
     这个页面可以看到详细的账户信息, 可以看到交易现在的状态:
 </p>
-<img src="/img/EOSMapping/accountinfo.png" width="100%" heigh="100%">
+
+<p><img src="/img/EOSMapping/accountinfo.png"></p>
 <p>
     智能合约签署完成, 一般也就意味着映射的完成, 如何查看自己映射成功呢? 在刚才注册的网页, 也就是<code>EOS token distribution</code>页面上, 如果之前为空的EOS public key一项变成了你刚才生成的EOS公钥, 那就说明钱包与EOS公网已经完成映射.
 </p>
@@ -255,7 +258,7 @@
 </ul>
 <!-- 开启前效果:
 <img src="/img/jiamitu/jiamitu-0.png" width="80%" heigh="80%"> -->
-<p>开启后效果:<br><img src="/img/jiamitu/jiamitu-1.png" width="70%" heigh="70%"></p>
+<p>开启后效果:<br><img src="/img/jiamitu/jiamitu-1.png" alt="开启后效果"></p>
 <div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a href="https://stellarkey.github.io/%E6%8C%96%E7%9F%BF%E5%85%A5%E9%97%A8/">挖矿入门</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
@@ -265,8 +268,9 @@
   <entry>
     <title>记一次Http劫持分析</title>
     <url>/posts/89408fe7/</url>
-    <content><![CDATA[<h1 id="记一次Http劫持分析"><a href="#记一次Http劫持分析" class="headerlink" title="记一次Http劫持分析"></a>记一次Http劫持分析</h1><p>最近在家用手机访问我自己的博客的时候，无论我用什么手机浏览器总是会在第一次加载页面的时候，在页面上加载了各种奇怪的广告，我顿时觉得很疑惑，我什么时候在网站上放广告了？我是失忆了，还是我喝醉了？<br><img src="/img/HttpJieChi/blog-1.jpeg" width="50%" heigh="50%"><br>看着这满屏的广告瞬间觉得很厌恶，本身很干净的网页像被贴了膏药一样的恶心，而且这些广告就像老鼠一般，一会有一会没有，神出鬼没。一看就是那些见不得光的人做出来的见不得光的事。愤怒过后，静下心来仔细分析了下，得出了一个结论: <code><b>我可能是被Http劫持了</b></code>。</p>
+    <content><![CDATA[<h1 id="记一次Http劫持分析"><a href="#记一次Http劫持分析" class="headerlink" title="记一次Http劫持分析"></a>记一次Http劫持分析</h1><p>最近在家用手机访问我自己的博客的时候，无论我用什么手机浏览器总是会在第一次加载页面的时候，在页面上加载了各种奇怪的广告，我顿时觉得很疑惑，我什么时候在网站上放广告了？我是失忆了，还是我喝醉了？<br><img src="/img/HttpJieChi/blog-1.jpeg" alt="劫持效果"><br>看着这满屏的广告瞬间觉得很厌恶，本身很干净的网页像被贴了膏药一样的恶心，而且这些广告就像老鼠一般，一会有一会没有，神出鬼没。一看就是那些见不得光的人做出来的见不得光的事。愤怒过后，静下心来仔细分析了下，得出了一个结论: <code><b>我可能是被Http劫持了</b></code>。</p>
 <span id="more"></span>
+
 <h4 id="Http劫持"><a href="#Http劫持" class="headerlink" title="Http劫持"></a>Http劫持</h4><p>HTTP劫持是在使用者与其目的网络服务所建立的专用数据通道中，监视特定数据信息，提示当满足设定的条件时，就会在正常的数据流中插入精心设计的网络数据报文，目的是让用户端程序解释“错误”的数据，并在使用者界面展示宣传性广告或者直接显示某网站的内容。以上内容来自百度百科，通俗点说就是<code><b>HTTP劫持就像是你开车去目的地的时候，半路经过了个过路站，有人开了你车门上车给你塞小广告，你带着小广告去了目的地。</b></code>没错，我给别人当了免费顺风车司机。</p>
 <h4 id="谁在劫持我？"><a href="#谁在劫持我？" class="headerlink" title="谁在劫持我？"></a>谁在劫持我？</h4><p>那到底是谁在给我塞小广告呢？ 到这个时候我心中已经有三个怀疑对象:</p>
 <ul>
@@ -275,10 +279,9 @@
 <li>电信宽带运营商</li>
 </ul>
 <p>首先是百度云加速，为什么会想到他呢，因为这个网站在发生劫持的时候，用的正是百度云加速的DNS，理论上讲他有机会截取并修改我的Http内容。但我觉得他使坏的可能性不大，网上搜索的结果显示不出任何百度云加速会进行劫持的迹象，没有先例，虽然广告内容是百度百意的，但我觉得他应该只是个内容服务提供商，不会也没必要作恶做的那么明显，所以暂时先排除这一个可能。<br>剩下的就是路由器和运营商，这两个家伙都有很大可能进行Http劫持的，经过网上的搜索发现他们以前的所作所为，可谓劣迹斑斑。谷歌百度一搜一大片，小米15年的时候有个著名的<code>404Http劫持事件</code>，电信运营商的劣迹更是数不胜数，具体是谁看样子还得继续分析下去才能知道。</p>
-<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><p>通过Safari的代码分析得知，在网页的最下面，莫名其妙的被插入了<code>iframe</code>节点。这就是Http劫持做的好事！<br><img src="/img/HttpJieChi/blog-code-1.png" width="100%" heigh="100%"><br>从代码中可以得知，可能是由百度提供了内容(cpu.baidu.com)，这个叫做<code>zmeng</code>的公司编写了插入的js。最后由路由器或者运营商执行了Http劫持，插入了代码。<br><img src="/img/HttpJieChi/blog-code-5.png" width="100%" heigh="100%"><br>谷歌了一下这个cpu.baidu.com和zmeng(可能是众盟)，并没有得到什么特别有价值的信息。于是向下个网址入手。<code><a href="http://x.hao61.net/frqctrl.html">http://x.hao61.net/frqctrl.html</a></code><br><img src="/img/HttpJieChi/blog-code-2.png" width="100%" heigh="100%">查询这个网址的whois，发现没什么有用的信息，域名全设置成隐私保护，看不出什么特别的东西。只能从加载这个网址的地方入手了。<br>从上面的图可以看出来这个<code>iframe</code>是由<code>zm.js:2029</code>初始化而来的，而这个zm.js是哪里来的呢？<br><img src="/img/HttpJieChi/blog-code-3.png" width="100%" heigh="100%"><br>这个zm.js是从<code><a href="http://js.union-wifi.com/zm.js">http://js.union-wifi.com/zm.js</a></code>加载来的，这个看起来很像联通wifi的网址(并不是2333)，谷歌了一下发现又是个什么联盟的，没什么具体的信息，不过已经有人反映这个网址出现在别的网站Http劫持中，看起来有人和我同命相连了，遗憾的是他并没有具体的解决方法，我们只好继续往下看。<br><img src="/img/HttpJieChi/blog-code-4.png" width="100%" heigh="100%"><br>最终我们追溯到源头了(并没有2333)。这个<code><a href="http://a.liuzhi520.com/">http://a.liuzhi520.com</a></code>下面的<code>rt_adjs_common.php</code>是一切js加载的源头，是初始化广告加载js的网址，同样谷歌之后没有有用的信息，线索到这里就断了。</p>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><p>通过Safari的代码分析得知，在网页的最下面，莫名其妙的被插入了<code>iframe</code>节点。这就是Http劫持做的好事！<br><img src="/img/HttpJieChi/blog-code-1.png" alt="劫持分析"><br>从代码中可以得知，可能是由百度提供了内容(cpu.baidu.com)，这个叫做<code>zmeng</code>的公司编写了插入的js。最后由路由器或者运营商执行了Http劫持，插入了代码。<br><img src="/img/HttpJieChi/blog-code-5.png" alt="劫持分析"><br>谷歌了一下这个cpu.baidu.com和zmeng(可能是众盟)，并没有得到什么特别有价值的信息。于是向下个网址入手。<code><a href="http://x.hao61.net/frqctrl.html">http://x.hao61.net/frqctrl.html</a></code><br><img src="/img/HttpJieChi/blog-code-2.png" alt="劫持分析"><br>从上面的图可以看出来这个<code>iframe</code>是由<code>zm.js:2029</code>初始化而来的，而这个zm.js是哪里来的呢？<br><img src="/img/HttpJieChi/blog-code-3.png" alt="劫持分析"><br>这个zm.js是从<code><a href="http://js.union-wifi.com/zm.js">http://js.union-wifi.com/zm.js</a></code>加载来的，这个看起来很像联通wifi的网址(并不是2333)，谷歌了一下发现又是个什么联盟的，没什么具体的信息，不过已经有人反映这个网址出现在别的网站Http劫持中，看起来有人和我同命相连了，遗憾的是他并没有具体的解决方法，我们只好继续往下看。<br><img src="/img/HttpJieChi/blog-code-4.png" alt="劫持分析"><br>最终我们追溯到源头了(并没有2333)。这个<code><a href="http://a.liuzhi520.com/">http://a.liuzhi520.com</a></code>下面的<code>rt_adjs_common.php</code>是一切js加载的源头，是初始化广告加载js的网址，同样谷歌之后没有有用的信息，线索到这里就断了。</p>
 <h4 id="解决办法以及总结"><a href="#解决办法以及总结" class="headerlink" title="解决办法以及总结"></a>解决办法以及总结</h4><p>分析了一通，其实我并没有找到真正的源头，由于手上没有别的路由器(懒)，所以没有将小米路由器替换掉进行测试，但刚才谷歌<code>a.liuzhi520.com</code>的时候发现有人和我有一样的问题，<code><a href="http://www.cnblogs.com/cyq1162/p/6096283.html">这篇文章</a></code>讲述了他是怎么分析Http劫持的，至此我的分析更倾向于电信运营商在作怪。既然源头这么难找，那解决办法呢？解决办法还是有的！Http协议是明文传输的，本身的特点导致了他非常容易被劫持，最终，我将自己的网站改成<strong>全站强制Https访问</strong>，并且在家里路由中，<strong>将加载脚本的网址屏蔽</strong>。至此，这次Http劫持事件算是告一段落，但要根本的解决问题，我想还是要从运营商这个源头去处理这件事。在调查这次事件过程中，让我清楚的意识到Http网站是多么不安全以及容易被劫持，插小广告劫持还算好，万一劫持者插了一段JS，获取你当前在页面上输入的账户密码，理论上讲也是轻而易举的。总之如果各位以后遇到Http的页面，不管是开发还是普通的访问，都尽可能小心点吧。</p>
-<p>完</p>
-<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li></ul></div>]]></content>
+<h2 id="完"><a href="#完" class="headerlink" title="完"></a>完</h2><div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>互联网技术</tag>
@@ -531,7 +534,7 @@
       </tags>
   </entry>
   <entry>
-    <title>[Scrapy]如何使用RabbitMQ控制Scrapy爬虫</title>
+    <title>如何使用RabbitMQ控制Scrapy爬虫</title>
     <url>/posts/39fb172e/</url>
     <content><![CDATA[<h1 id="如何使用RabbitMQ控制Scrapy爬虫"><a href="#如何使用RabbitMQ控制Scrapy爬虫" class="headerlink" title="如何使用RabbitMQ控制Scrapy爬虫"></a>如何使用RabbitMQ控制Scrapy爬虫</h1><blockquote>
 <p>本文将介绍如何使用RabbitMQ整合Scrapy来控制Scrapy爬虫进行目标网页内容爬取。我们假设你已经使用过Scrapy和RabbitMQ或者对其有一定了解。</p>
@@ -561,11 +564,13 @@
 <h3 id="完整版代码"><a href="#完整版代码" class="headerlink" title="完整版代码"></a>完整版代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># !/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pika</span><br><span class="line"><span class="keyword">from</span> crochet <span class="keyword">import</span> setup</span><br><span class="line"><span class="keyword">from</span> scrapy.crawler <span class="keyword">import</span> CrawlerRunner</span><br><span class="line"><span class="keyword">from</span> scrapy.utils.log <span class="keyword">import</span> configure_logging</span><br><span class="line"><span class="keyword">from</span> scrapy.utils.project <span class="keyword">import</span> get_project_settings</span><br><span class="line"><span class="comment"># 导入我们自己写的蜘蛛</span></span><br><span class="line"><span class="keyword">from</span> mars.spiders.myspider <span class="keyword">import</span> Spider</span><br><span class="line"></span><br><span class="line">setup()</span><br><span class="line"><span class="comment"># 获取setting.py文件</span></span><br><span class="line">settings = get_project_settings()</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(<span class="string">&#x27;begin.py&#x27;</span>)</span><br><span class="line"></span><br><span class="line">configure_logging(settings)</span><br><span class="line">logger.info(<span class="string">&#x27; [*] Starting begin.py...&#x27;</span>)</span><br><span class="line">rabbit_host = settings.get(<span class="string">&quot;RABBITMQ_HOST&quot;</span>)</span><br><span class="line">rabbit_port = settings.get(<span class="string">&quot;RABBITMQ_PORT&quot;</span>)</span><br><span class="line">rabbit_user = settings.get(<span class="string">&quot;RABBITMQ_USERNAME&quot;</span>)</span><br><span class="line">rabbit_pass = settings.get(<span class="string">&quot;RABBITMQ_PASSWORD&quot;</span>)</span><br><span class="line">rabbit_exchange = settings.get(<span class="string">&quot;MY_EXCHANGE&quot;</span>)</span><br><span class="line">rabbit_queue = settings.get(<span class="string">&quot;MY_SCRAPY_QUEUE&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">callback</span>(<span class="params">used_channel, basic_deliver, properties, body</span>):</span><br><span class="line">    <span class="comment"># 获取到消息队列中的消息</span></span><br><span class="line">    decodebody = <span class="built_in">bytes</span>.decode(body)</span><br><span class="line">    logger.info(<span class="string">&quot; [x] Received %r&quot;</span> % decodebody)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        run_spider(key_word_arg=decodebody, used_channel=used_channel, delivery_tag=basic_deliver.delivery_tag)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> error:</span><br><span class="line">        logger.error(error)</span><br><span class="line">        <span class="comment"># 告诉生产者，消息未处理完成</span></span><br><span class="line">        channel.basic_reject(delivery_tag=basic_deliver.delivery_tag)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_spider</span>(<span class="params">key_word_arg, used_channel, delivery_tag</span>):</span><br><span class="line">    <span class="comment"># 使用CrawlerRunner运行蜘蛛</span></span><br><span class="line">    crawler = CrawlerRunner(settings)</span><br><span class="line">    <span class="comment"># 运行我们自己写的蜘蛛</span></span><br><span class="line">    crawler.crawl(Spider, key_word_arg=key_word_arg, channel=used_channel, delivery_tag=delivery_tag)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 创建连接认证条件</span></span><br><span class="line">        pika_credentials = pika.credentials.PlainCredentials(rabbit_user, rabbit_pass)</span><br><span class="line">        <span class="comment"># 创建一个Blocking的连接</span></span><br><span class="line">        connection = pika.BlockingConnection(pika.ConnectionParameters(</span><br><span class="line">            rabbit_host, port=rabbit_port, credentials=pika_credentials, connection_attempts=<span class="number">10</span>, socket_timeout=<span class="number">20</span>,</span><br><span class="line">            heartbeat=<span class="number">360</span>))</span><br><span class="line">        channel = connection.channel()</span><br><span class="line">        <span class="comment"># 声明交换器，这里应该和你消息生产者端保持一致设置</span></span><br><span class="line">        channel.exchange_declare(exchange=rabbit_exchange, exchange_type=<span class="string">&#x27;topic&#x27;</span>, durable=<span class="literal">True</span>, auto_delete=<span class="literal">False</span>)</span><br><span class="line">        <span class="comment"># 声明队列，这里应该和你消息生产者端保持一致设置</span></span><br><span class="line">        channel.queue_declare(queue=rabbit_queue, durable=<span class="literal">True</span>, exclusive=<span class="literal">False</span>, auto_delete=<span class="literal">False</span>)</span><br><span class="line">        <span class="comment"># 绑定操作</span></span><br><span class="line">        channel.queue_bind(exchange=rabbit_exchange,</span><br><span class="line">                           queue=rabbit_queue,</span><br><span class="line">                           routing_key=rabbit_queue)</span><br><span class="line">        <span class="comment"># 类似权重，按能力分发，如果有一个消息，就不在给你发，控制单个蜘蛛消费数量</span></span><br><span class="line">        channel.basic_qos(prefetch_count=<span class="number">1</span>)  </span><br><span class="line">        channel.basic_consume(  <span class="comment"># 消费消息</span></span><br><span class="line">            callback,           <span class="comment"># 如果收到消息，就调用Callback</span></span><br><span class="line">                                <span class="comment"># 这里的Callback函数我们下文将会提到，其实就是运行我们的Scrapy蜘蛛语句</span></span><br><span class="line">            queue=rabbit_queue, <span class="comment"># 队列</span></span><br><span class="line">            <span class="comment"># no_ack=True       # 一般不写，处理完接收处理结果。宕机则发给其他消费者</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        logger.info(<span class="string">&#x27; [*] Waiting for messages. To exit press CTRL+C&#x27;</span>)</span><br><span class="line">        <span class="comment"># 开启RabbitMQ接收模式，这代码会阻塞运行，直到爬虫完成任务，才会继续</span></span><br><span class="line">        channel.start_consuming()</span><br><span class="line">    <span class="comment"># 对一些连接错误进行处理，将继续执行循环，从而完成重连</span></span><br><span class="line">    <span class="keyword">except</span> pika.exceptions.ConnectionClosed:</span><br><span class="line">        <span class="comment"># Uncomment this to make the example not attempt recovery</span></span><br><span class="line">        <span class="comment"># from server-initiated connection closure, including</span></span><br><span class="line">        <span class="comment"># when the node is stopped cleanly</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># break</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="comment"># Do not recover on channel errors</span></span><br><span class="line">    <span class="keyword">except</span> pika.exceptions.AMQPChannelError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Caught a channel error: &#123;&#125;, stopping...&quot;</span>.<span class="built_in">format</span>(err))</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="comment"># Recover on all other connection errors</span></span><br><span class="line">    <span class="keyword">except</span> pika.exceptions.AMQPConnectionError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Connection was closed, retrying...&quot;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
 
 <p>完</p>
-<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li></ul></div>]]></content>
+<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a href="http://example.com/2021/12/29/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8/">正则表达式的使用</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>互联网技术</tag>
+        <tag>python</tag>
         <tag>淘秀网</tag>
+        <tag>scrapy</tag>
       </tags>
   </entry>
   <entry>
@@ -649,7 +654,7 @@
 <li><a href="https://www.marsshen.com/2022/05/29/switch-hack-terminology/">Switch硬件破解经验分享 - 术语篇</a></li>
 <li><a href="http://www.265xh.com/nszhinan/4246.html">简析国产三种NS芯片区别及Spacecraft固件Bug</a></li>
 </ol>
-<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a href="https://www.marsshen.com/posts/39fb172e/">[Scrapy]如何使用RabbitMQ控制Scrapy爬虫</a></li></ul></div>]]></content>
+<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a href="https://www.marsshen.com/posts/39fb172e/">如何使用RabbitMQ控制Scrapy爬虫</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>switch硬破教程</tag>
@@ -704,7 +709,7 @@
 <h3 id="Spacecraft-NX"><a href="#Spacecraft-NX" class="headerlink" title="Spacecraft-NX"></a><strong>Spacecraft-NX</strong></h3><p>  开源的破解芯片固件，<a href="https://github.com/Spacecraft-NX/firmware">Github地址</a></p>
 <p>  switch oled之后的版本请务必刷0.2以后的固件版本。</p>
 <h3 id="hwfly-nx"><a href="#hwfly-nx" class="headerlink" title="hwfly-nx"></a><strong>hwfly-nx</strong></h3><p>  开源的破解芯片固件， 由于Spacecraft-NX更新缓慢，一些开发者开发基于Spacecraft-NX创建了hwfly-nx固件。 <a href="https://github.com/hwfly-nx">Github地址</a></p>
-<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/39fb172e/">[Scrapy]如何使用RabbitMQ控制Scrapy爬虫</a></li></ul></div>]]></content>
+<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/39fb172e/">如何使用RabbitMQ控制Scrapy爬虫</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>switch硬破教程</tag>
@@ -773,7 +778,7 @@
 <li><a href="https://www.marsshen.com/2022/05/29/switch-hack-terminology/">Switch硬件破解经验分享 - 术语篇</a></li>
 <li><a href="https://tieba.baidu.com/p/6747262057?red_tag=1250614440">switch贴吧-这个焊接教程挺详细的</a></li>
 </ol>
-<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a href="https://www.marsshen.com/posts/39fb172e/">[Scrapy]如何使用RabbitMQ控制Scrapy爬虫</a></li></ul></div>]]></content>
+<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a href="https://www.marsshen.com/posts/39fb172e/">如何使用RabbitMQ控制Scrapy爬虫</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>switch硬破教程</tag>

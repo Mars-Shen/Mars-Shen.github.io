@@ -26,7 +26,7 @@
 
     <meta name="description" content="如何使用RabbitMQ控制Scrapy爬虫 本文将介绍如何使用RabbitMQ整合Scrapy来控制Scrapy爬虫进行目标网页内容爬取。我们假设你已经使用过Scrapy和RabbitMQ或者对其有一定了解。  为什么要使用RabbitMQ来控制爬虫？Scrapy爬虫其实有自己的一套生产环境部署控制系统Scrapyd，这是一个开源的项目，他给Scrapy提供了服务器端的HTTP API，使其拥有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Scrapy]如何使用RabbitMQ控制Scrapy爬虫">
+<meta property="og:title" content="如何使用RabbitMQ控制Scrapy爬虫">
 <meta property="og:url" content="https://www.marsshen.com/posts/39fb172e/index.html">
 <meta property="og:site_name" content="Mars&#39;s Blog">
 <meta property="og:description" content="如何使用RabbitMQ控制Scrapy爬虫 本文将介绍如何使用RabbitMQ整合Scrapy来控制Scrapy爬虫进行目标网页内容爬取。我们假设你已经使用过Scrapy和RabbitMQ或者对其有一定了解。  为什么要使用RabbitMQ来控制爬虫？Scrapy爬虫其实有自己的一套生产环境部署控制系统Scrapyd，这是一个开源的项目，他给Scrapy提供了服务器端的HTTP API，使其拥有">
@@ -36,7 +36,9 @@
 <meta property="article:author" content="Mars Shen">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="互联网技术">
+<meta property="article:tag" content="python">
 <meta property="article:tag" content="淘秀网">
+<meta property="article:tag" content="scrapy">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,10 +46,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.marsshen.com/posts/39fb172e/","path":"posts/39fb172e/","title":"[Scrapy]如何使用RabbitMQ控制Scrapy爬虫"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.marsshen.com/posts/39fb172e/","path":"posts/39fb172e/","title":"如何使用RabbitMQ控制Scrapy爬虫"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[Scrapy]如何使用RabbitMQ控制Scrapy爬虫 | Mars's Blog</title>
+<title>如何使用RabbitMQ控制Scrapy爬虫 | Mars's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP35QWXE67"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-VP35QWXE67","only_pageview":false}</script>
@@ -98,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -176,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -235,12 +237,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[Scrapy]如何使用RabbitMQ控制Scrapy爬虫 | Mars's Blog">
+      <meta itemprop="name" content="如何使用RabbitMQ控制Scrapy爬虫 | Mars's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Scrapy]如何使用RabbitMQ控制Scrapy爬虫
+          如何使用RabbitMQ控制Scrapy爬虫
         </h1>
 
         <div class="post-meta-container">
@@ -314,7 +316,7 @@
 <h3 id="完整版代码"><a href="#完整版代码" class="headerlink" title="完整版代码"></a>完整版代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># !/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pika</span><br><span class="line"><span class="keyword">from</span> crochet <span class="keyword">import</span> setup</span><br><span class="line"><span class="keyword">from</span> scrapy.crawler <span class="keyword">import</span> CrawlerRunner</span><br><span class="line"><span class="keyword">from</span> scrapy.utils.log <span class="keyword">import</span> configure_logging</span><br><span class="line"><span class="keyword">from</span> scrapy.utils.project <span class="keyword">import</span> get_project_settings</span><br><span class="line"><span class="comment"># 导入我们自己写的蜘蛛</span></span><br><span class="line"><span class="keyword">from</span> mars.spiders.myspider <span class="keyword">import</span> Spider</span><br><span class="line"></span><br><span class="line">setup()</span><br><span class="line"><span class="comment"># 获取setting.py文件</span></span><br><span class="line">settings = get_project_settings()</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(<span class="string">&#x27;begin.py&#x27;</span>)</span><br><span class="line"></span><br><span class="line">configure_logging(settings)</span><br><span class="line">logger.info(<span class="string">&#x27; [*] Starting begin.py...&#x27;</span>)</span><br><span class="line">rabbit_host = settings.get(<span class="string">&quot;RABBITMQ_HOST&quot;</span>)</span><br><span class="line">rabbit_port = settings.get(<span class="string">&quot;RABBITMQ_PORT&quot;</span>)</span><br><span class="line">rabbit_user = settings.get(<span class="string">&quot;RABBITMQ_USERNAME&quot;</span>)</span><br><span class="line">rabbit_pass = settings.get(<span class="string">&quot;RABBITMQ_PASSWORD&quot;</span>)</span><br><span class="line">rabbit_exchange = settings.get(<span class="string">&quot;MY_EXCHANGE&quot;</span>)</span><br><span class="line">rabbit_queue = settings.get(<span class="string">&quot;MY_SCRAPY_QUEUE&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">callback</span>(<span class="params">used_channel, basic_deliver, properties, body</span>):</span><br><span class="line">    <span class="comment"># 获取到消息队列中的消息</span></span><br><span class="line">    decodebody = <span class="built_in">bytes</span>.decode(body)</span><br><span class="line">    logger.info(<span class="string">&quot; [x] Received %r&quot;</span> % decodebody)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        run_spider(key_word_arg=decodebody, used_channel=used_channel, delivery_tag=basic_deliver.delivery_tag)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> error:</span><br><span class="line">        logger.error(error)</span><br><span class="line">        <span class="comment"># 告诉生产者，消息未处理完成</span></span><br><span class="line">        channel.basic_reject(delivery_tag=basic_deliver.delivery_tag)  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_spider</span>(<span class="params">key_word_arg, used_channel, delivery_tag</span>):</span><br><span class="line">    <span class="comment"># 使用CrawlerRunner运行蜘蛛</span></span><br><span class="line">    crawler = CrawlerRunner(settings)</span><br><span class="line">    <span class="comment"># 运行我们自己写的蜘蛛</span></span><br><span class="line">    crawler.crawl(Spider, key_word_arg=key_word_arg, channel=used_channel, delivery_tag=delivery_tag)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 创建连接认证条件</span></span><br><span class="line">        pika_credentials = pika.credentials.PlainCredentials(rabbit_user, rabbit_pass)</span><br><span class="line">        <span class="comment"># 创建一个Blocking的连接</span></span><br><span class="line">        connection = pika.BlockingConnection(pika.ConnectionParameters(</span><br><span class="line">            rabbit_host, port=rabbit_port, credentials=pika_credentials, connection_attempts=<span class="number">10</span>, socket_timeout=<span class="number">20</span>,</span><br><span class="line">            heartbeat=<span class="number">360</span>))</span><br><span class="line">        channel = connection.channel()</span><br><span class="line">        <span class="comment"># 声明交换器，这里应该和你消息生产者端保持一致设置</span></span><br><span class="line">        channel.exchange_declare(exchange=rabbit_exchange, exchange_type=<span class="string">&#x27;topic&#x27;</span>, durable=<span class="literal">True</span>, auto_delete=<span class="literal">False</span>)</span><br><span class="line">        <span class="comment"># 声明队列，这里应该和你消息生产者端保持一致设置</span></span><br><span class="line">        channel.queue_declare(queue=rabbit_queue, durable=<span class="literal">True</span>, exclusive=<span class="literal">False</span>, auto_delete=<span class="literal">False</span>)</span><br><span class="line">        <span class="comment"># 绑定操作</span></span><br><span class="line">        channel.queue_bind(exchange=rabbit_exchange,</span><br><span class="line">                           queue=rabbit_queue,</span><br><span class="line">                           routing_key=rabbit_queue)</span><br><span class="line">        <span class="comment"># 类似权重，按能力分发，如果有一个消息，就不在给你发，控制单个蜘蛛消费数量</span></span><br><span class="line">        channel.basic_qos(prefetch_count=<span class="number">1</span>)  </span><br><span class="line">        channel.basic_consume(  <span class="comment"># 消费消息</span></span><br><span class="line">            callback,           <span class="comment"># 如果收到消息，就调用Callback</span></span><br><span class="line">                                <span class="comment"># 这里的Callback函数我们下文将会提到，其实就是运行我们的Scrapy蜘蛛语句</span></span><br><span class="line">            queue=rabbit_queue, <span class="comment"># 队列</span></span><br><span class="line">            <span class="comment"># no_ack=True       # 一般不写，处理完接收处理结果。宕机则发给其他消费者</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        logger.info(<span class="string">&#x27; [*] Waiting for messages. To exit press CTRL+C&#x27;</span>)</span><br><span class="line">        <span class="comment"># 开启RabbitMQ接收模式，这代码会阻塞运行，直到爬虫完成任务，才会继续</span></span><br><span class="line">        channel.start_consuming()</span><br><span class="line">    <span class="comment"># 对一些连接错误进行处理，将继续执行循环，从而完成重连</span></span><br><span class="line">    <span class="keyword">except</span> pika.exceptions.ConnectionClosed:</span><br><span class="line">        <span class="comment"># Uncomment this to make the example not attempt recovery</span></span><br><span class="line">        <span class="comment"># from server-initiated connection closure, including</span></span><br><span class="line">        <span class="comment"># when the node is stopped cleanly</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># break</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="comment"># Do not recover on channel errors</span></span><br><span class="line">    <span class="keyword">except</span> pika.exceptions.AMQPChannelError <span class="keyword">as</span> err:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Caught a channel error: &#123;&#125;, stopping...&quot;</span>.<span class="built_in">format</span>(err))</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="comment"># Recover on all other connection errors</span></span><br><span class="line">    <span class="keyword">except</span> pika.exceptions.AMQPConnectionError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Connection was closed, retrying...&quot;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
 
 <p>完</p>
-<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li></ul></div>
+<div><h1>推荐文章</h1><ul><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 破解焊接篇</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li><li><a href="https://www.marsshen.com/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li><li><a target="_blank" rel="noopener" href="http://example.com/2021/12/29/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8/">正则表达式的使用</a></li></ul></div>
     </div>
 
     
@@ -347,7 +349,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://www.marsshen.com/posts/39fb172e/" title="[Scrapy]如何使用RabbitMQ控制Scrapy爬虫">https://www.marsshen.com/posts/39fb172e/</a>
+      <a href="https://www.marsshen.com/posts/39fb172e/" title="如何使用RabbitMQ控制Scrapy爬虫">https://www.marsshen.com/posts/39fb172e/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -358,7 +360,9 @@
           <div class="post-tags">
               <a href="/tags/%E5%8E%9F%E5%88%9B/" rel="tag"><i class="fa fa-tag"></i> 原创</a>
               <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/" rel="tag"><i class="fa fa-tag"></i> 互联网技术</a>
+              <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
               <a href="/tags/%E6%B7%98%E7%A7%80%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 淘秀网</a>
+              <a href="/tags/scrapy/" rel="tag"><i class="fa fa-tag"></i> scrapy</a>
           </div>
 
         
