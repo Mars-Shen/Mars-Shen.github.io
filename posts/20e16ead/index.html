@@ -268,7 +268,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.5k</span>
+      <span>3.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -303,7 +303,8 @@
 <ul>
 <li><strong>准备TF卡：</strong> 将TF卡分区表设置成 MBR 格式，GPT 格式 Switch 无法识别，通过格式化分区为 exfat。</li>
 </ul>
-<h2 id="制作自己的整合包"><a href="#制作自己的整合包" class="headerlink" title="制作自己的整合包"></a>制作自己的整合包</h2><div class="admonition info"><p><strong>这里介绍快捷制作自己整合包的方法，完全手动整合就不进一步介绍了，各位有兴趣可以自行研究。</strong></p>
+<h2 id="制作自己的整合包"><a href="#制作自己的整合包" class="headerlink" title="制作自己的整合包"></a>制作自己的整合包</h2><div class="admonition info"><p class="admonition-title">说明
+</p><p><strong>这里介绍快捷制作自己整合包的方法，完全手动整合就不进一步介绍了，各位有兴趣可以自行研究。</strong></p>
 </div>
 
 <p>首先制作基础整合包。这里介绍两种基础整合包获取方式</p>
@@ -315,7 +316,8 @@
 </ol>
 </li>
 </ul>
-<div class="admonition info"><p><strong>PS: payloads文件夹中<code>Lockpick_RCM.bin</code>可以用来备份主机key，有需要的同学可以自行搜索用法，这里就不赘述。</strong></p>
+<div class="admonition info"><p class="admonition-title">关于Lockpick_RCM.bin
+</p><p><strong>payloads文件夹中<code>Lockpick_RCM.bin</code>可以用来备份主机key，有需要的同学可以自行搜索用法，这里就不赘述。</strong></p>
 </div>
 
 <ul>
@@ -337,8 +339,8 @@
 <ol>
 <li>进入hekate，选择<code>emuMMC-&gt;Create emuMMC-&gt;SD File</code>，制作一个基于TF卡文件的虚拟系统，完成后我们的双系统就制作完成了。</li>
 </ol>
-<div class="admonition info"><p>这里稍微说下基于TF卡文件与基于TF卡分区的区别。</p>
-<p><strong>基于SD卡分区的虚拟系统：</strong></p>
+<div class="admonition info"><p class="admonition-title">这里稍微说下基于TF卡文件与基于TF卡分区的区别。
+</p><p><strong>基于SD卡分区的虚拟系统：</strong></p>
 <ul>
 <li>优点：
 出错的可能性最小。</li>
@@ -367,33 +369,59 @@
 </ul>
 </li>
 </ol>
-<h3 id="处理虚拟系统"><a href="#处理虚拟系统" class="headerlink" title="处理虚拟系统"></a>处理虚拟系统</h3><p>关机拔掉 SD 卡连电脑</p>
+<h3 id="处理虚拟系统"><a href="#处理虚拟系统" class="headerlink" title="处理虚拟系统"></a>处理虚拟系统</h3><div class="admonition info"><p class="admonition-title">准备下一步前
+</p><p><strong>关机并拔出 TF 卡，将TF卡连接电脑。</strong></p>
+</div>
+
+    
 <ul>
-<li><p>虚拟系统删除序列号：</p>
-<ol>
+<li>删除虚拟系统序列号：<ol>
 <li>复制 <code>atmosphere/config_templates/exosphere.ini</code> 到 SD 卡根目录 <code>blank_prodinfo_emummc</code> 改为 1</li>
 </ol>
 </li>
+</ul>
+<div class="admonition warning"><p class="admonition-title">注意  
+</p><p><strong>使用删除虚拟系统序列号并不能确保你不会被 Ban。</strong></p>
+</div>
+
+<ul>
 <li><p>虚拟系统屏蔽任天堂服务器</p>
 <ol>
 <li>编辑 <code>atmosphere/config/system_settings.ini</code> 文件</li>
 <li>取消 <code>enable_dns_mitm = u8!0x1</code> 前的注释</li>
-<li>新建 <code>atmosphere/hosts/emummc.txt</code> 文件  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Block Nintendo Servers</span></span><br><span class="line">127.0.0.1 *nintendo.*</span><br><span class="line">127.0.0.1 *nintendo-europe.com</span><br><span class="line">127.0.0.1 *nintendoswitch.*</span><br><span class="line">95.216.149.205 *conntest.nintendowifi.net</span><br><span class="line">95.216.149.205 *ctest.cdn.nintendo.net</span><br></pre></td></tr></table></figure></li>
+<li>新建 <code>atmosphere/hosts/emummc.txt</code> 文件，文件内容如下：  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Block Nintendo Servers</span></span><br><span class="line">127.0.0.1 *nintendo.*</span><br><span class="line">127.0.0.1 *nintendo-europe.com</span><br><span class="line">127.0.0.1 *nintendoswitch.*</span><br><span class="line">95.216.149.205 *conntest.nintendowifi.net</span><br><span class="line">95.216.149.205 *ctest.cdn.nintendo.net</span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
-<li><p>打破解补丁：<a target="_blank" rel="noopener" href="https://github.com/ITotalJustice/patches">ITotalJustice&#x2F;patches</a>，直接解压到根目录，这样才能运行破解游戏</p>
+<li><p>打签名破解补丁：</p>
+<ol>
+<li>下载<a target="_blank" rel="noopener" href="https://github.com/ITotalJustice/patches">ITotalJustice&#x2F;patches</a>，直接解压到根目录，这样才能运行破解游戏。</li>
+<li>编辑 <code>bootloader/hekate_ipl.ini</code> 文件，在[CFW (EMUMMC)] 下新增一行 <code>kip1patch=nosigchk</code>，我只在虚拟系统下开启破解补丁。</li>
+</ol>
 </li>
 </ul>
-<ol>
-<li>编辑 <code>bootloader/hekate_ipl.ini</code> 文件</li>
-<li>[CFW (EMUMMC)] 下新增一行 <code>kip1patch=nosigchk</code>，我只在虚拟系统下开启破解补丁</li>
-</ol>
-<div class="admonition info"><p><strong>如果使用Fusee方式引导进入大气层，则不需要添加<code>kip1patch=nosigchk</code></strong></p>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p><strong>大气层默认是不允许运行破解软件的，需要额外添加签名破解补丁才可以运行破解软件。</strong></p>
+</div>
+
+<div class="admonition info"><p class="admonition-title">关于启动虚拟系统的方式
+</p><p><strong>如果使用Fusee方式引导进入大气层，则不需要添加<code>kip1patch=nosigchk</code>。</strong></p>
 </div>
 
 <ul>
-<li>下载金手指：<a target="_blank" rel="noopener" href="https://gbatemp.net/download/cheat-codes-sxos-and-ams-main-cheat-file-updated.36311/">gbatemp.net</a>，解压到 <code>atmosphere/contents/</code> 目录</li>
-<li>下载游戏：<a target="_blank" rel="noopener" href="https://nxbrew.com/">nxbrew.com</a></li>
+<li><p>金手指下载：</p>
+<ol>
+<li>进入<a target="_blank" rel="noopener" href="https://gbatemp.net/download/cheat-codes-sxos-and-ams-main-cheat-file-updated.36311/">gbatemp.net</a>，下载金手指内容。</li>
+<li>将下载的金手指内容解压到 <code>atmosphere/contents/</code> 目录</li>
+</ol>
+</li>
+<li><p>游戏下载：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://nxbrew.com/">nxbrew.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://switch520.com/">switch520</a></li>
+<li><a target="_blank" rel="noopener" href="https://rpgonly.com/">rpgonly.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://switchvip.com/">switchvip</a></li>
+</ol>
+</li>
 </ul>
 <p>开机，Enjoy～</p>
 <h3 id="使用原则"><a href="#使用原则" class="headerlink" title="使用原则"></a>使用原则</h3><ul>
@@ -509,7 +537,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">47k</span>
+    <span title="站点总字数">48k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
