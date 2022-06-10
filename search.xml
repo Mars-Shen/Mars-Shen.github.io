@@ -795,42 +795,34 @@
 <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>安装完破解芯片后，每次重新开启switch主机，破解芯片将进行工作，将诱导主机载入我们自己的playload，通过这个自制playload，可以进一步引到主机运行自制固件。通常来说，目前主流的自制playload为Hekate，主流的自制固件为Atmosphere（也就是所谓的大气层固件）。所以我们现在要做的就是将整合了playload和大气层的文件整合包，塞到TF卡根目录。这个整合包可以自己做，也可以找网上别人做好的现成的整合包，下面简单介绍下如何制作整合包。</p>
 <span id="more"></span>
 
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li><strong>检查是否破解成功：</strong> 如果机器正常破解，破解芯片正常安装，这时候按电源开机，应该提示 “NO SD”</li>
-</ul>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p><strong>检查是否破解成功：</strong><br>    如果机器正常破解，破解芯片正常安装，这时候按电源开机，应该提示 “NO SD”。</p>
 <div class="admonition warning"><p class="admonition-title">注意
 </p><p><strong>不同的芯片固件可能会显示不同，但是都会提示类似没有插入TF卡。</strong></p>
 </div>
 
-<ul>
-<li><strong>准备TF卡：</strong> 将TF卡分区表设置成 MBR 格式，GPT 格式 Switch 无法识别，通过格式化分区为 exfat。</li>
-</ul>
+<p><strong>准备TF卡：</strong><br>    将TF卡分区表设置成 MBR 格式，GPT 格式 Switch 无法识别，通过格式化分区为 exfat。</p>
 <h2 id="制作自己的整合包"><a href="#制作自己的整合包" class="headerlink" title="制作自己的整合包"></a>制作自己的整合包</h2><div class="admonition info"><p class="admonition-title">说明
 </p><p><strong>这里介绍快捷制作自己整合包的方法，完全手动整合就不进一步介绍了，各位有兴趣可以自行研究。</strong></p>
 </div>
 
 <p>首先制作基础整合包。这里介绍两种基础整合包获取方式</p>
-<ul>
-<li><strong>通过sdsetup网站获取自定义基础整合包</strong><br>这个网站专门用来定制自己的整合包，这里面的固件、组件等都是最新版本的更新非常快。<ol>
+<p><strong>通过sdsetup网站获取自定义基础整合包：</strong><br>  这个网站专门用来定制自己的整合包，这里面的固件、组件等都是最新版本的更新非常快。</p>
+<ol>
 <li>进入(<a href="https://www.sdsetup.com/console?switch">sdsetup官网下载页</a>)。</li>
 <li>选择Recommended Defaults或自己选择自己需要的组件后拉到最下面点击Download your ZIP下载。</li>
 <li>解压下载下来的zip包，你会看到2个文件夹，sd和payloads，将sd卡里面的内容全部复制到TF卡根目录，然后将payloads中<code>hekate_ctcaer_x.x.x.bin</code>更名成<code>playload.bin</code>放入TF卡根目录。</li>
 </ol>
-</li>
-</ul>
 <div class="admonition info"><p class="admonition-title">关于Lockpick_RCM.bin
 </p><p><strong>payloads文件夹中<code>Lockpick_RCM.bin</code>可以用来备份主机key，有需要的同学可以自行搜索用法，这里就不赘述。</strong></p>
 </div>
 
-<ul>
-<li><strong>通过 DeepSea 获取整合包</strong><br>使用国外Neptune 团队的 DeepSea 整合包<ol>
+<p><strong>获取Neptune 团队的 DeepSea 基础整合包：</strong><br>  这是国外Neptune 团队的 DeepSea 整合包，维护很专业，通常更新也比较迅速。</p>
+<ol>
 <li>进入（<a href="https://github.com/Team-Neptune/DeepSea/releases">DeepSea整合包下载页面</a>)下载最新的发布版本，三个版本随意 (我用的全功能版)。</li>
-<li>解压放入tf卡根目录，并将<code>hekate_ctcaer_x.x.x.bin</code>更名成<code>playload.bin</code>。</li>
+<li>解压放入TF卡根目录，并将<code>hekate_ctcaer_x.x.x.bin</code>更名成<code>playload.bin</code>。</li>
 </ol>
-</li>
-</ul>
-<p>完成上述两种方式之一后，将TF卡塞进switch主机，此刻开机后会进入 hekate 引导程序。<br>如果你是国产芯片，关机后会变成重启，进入hekate后设置<code>options-&gt;Auto HOS Power Off</code>即可。</p>
-<h3 id="备份-eMMC"><a href="#备份-eMMC" class="headerlink" title="备份 eMMC"></a>备份 eMMC</h3><p>Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、GPP，GPP 内又包含 N 个子分区，比较重要的有两个 SYS (包含系统)、USER (包含用户数据)，USER 分区占用空间大约有 60G，因此一般不需要备份</p>
+<p>完成上述两种方式任意一种后，将TF卡塞进switch主机，此刻正常情况下，开机后会进入 hekate 引导程序，如果没进入，请考虑是否整合包有问题。<br>如果你是国产芯片，关机后会变成重启，进入hekate后设置<code>options-&gt;Auto HOS Power Off</code>即可。</p>
+<h3 id="备份-eMMC"><a href="#备份-eMMC" class="headerlink" title="备份 eMMC"></a>备份 eMMC</h3><p>Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、GPP，GPP 内又包含 N 个子分区，比较重要的有两个 SYS (包含系统)、USER (包含用户数据)，USER 分区占用空间大约有 60G，因此一般不需要备份。</p>
 <ol>
 <li>进入hekate选择<code>Tools-&gt;Backup eMMC</code></li>
 <li>备份 <code>eMMC BOOT0 &amp; BOOT1 + eMMC SYS</code>。</li>
@@ -876,31 +868,25 @@
 </div>
 
     
-<ul>
-<li>删除虚拟系统序列号：<ol>
+<p><strong>删除虚拟系统序列号：</strong></p>
+<ol>
 <li>复制 <code>atmosphere/config_templates/exosphere.ini</code> 到 SD 卡根目录 <code>blank_prodinfo_emummc</code> 改为 1</li>
 </ol>
-</li>
-</ul>
 <div class="admonition warning"><p class="admonition-title">注意  
 </p><p><strong>使用删除虚拟系统序列号并不能确保你不会被 Ban。</strong></p>
 </div>
 
-<ul>
-<li><p>虚拟系统屏蔽任天堂服务器</p>
+<p><strong>虚拟系统屏蔽任天堂服务器</strong></p>
 <ol>
 <li>编辑 <code>atmosphere/config/system_settings.ini</code> 文件</li>
 <li>取消 <code>enable_dns_mitm = u8!0x1</code> 前的注释</li>
-<li>新建 <code>atmosphere/hosts/emummc.txt</code> 文件，文件内容如下：  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Block Nintendo Servers</span></span><br><span class="line">127.0.0.1 *nintendo.*</span><br><span class="line">127.0.0.1 *nintendo-europe.com</span><br><span class="line">127.0.0.1 *nintendoswitch.*</span><br><span class="line">95.216.149.205 *conntest.nintendowifi.net</span><br><span class="line">95.216.149.205 *ctest.cdn.nintendo.net</span><br></pre></td></tr></table></figure></li>
+<li>新建 <code>atmosphere/hosts/emummc.txt</code> 文件，文件内容如下：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Block Nintendo Servers</span></span><br><span class="line">127.0.0.1 *nintendo.*</span><br><span class="line">127.0.0.1 *nintendo-europe.com</span><br><span class="line">127.0.0.1 *nintendoswitch.*</span><br><span class="line">95.216.149.205 *conntest.nintendowifi.net</span><br><span class="line">95.216.149.205 *ctest.cdn.nintendo.net</span><br></pre></td></tr></table></figure></li>
 </ol>
-</li>
-<li><p>打签名破解补丁：</p>
+<p><strong>打签名破解补丁：</strong></p>
 <ol>
 <li>下载<a href="https://github.com/ITotalJustice/patches">ITotalJustice&#x2F;patches</a>，直接解压到根目录，这样才能运行破解游戏。</li>
 <li>编辑 <code>bootloader/hekate_ipl.ini</code> 文件，在[CFW (EMUMMC)] 下新增一行 <code>kip1patch=nosigchk</code>，我只在虚拟系统下开启破解补丁。</li>
 </ol>
-</li>
-</ul>
 <div class="admonition warning"><p class="admonition-title">注意
 </p><p><strong>大气层默认是不允许运行破解软件的，需要额外添加签名破解补丁才可以运行破解软件。</strong></p>
 </div>
@@ -909,35 +895,35 @@
 </p><p><strong>如果使用Fusee方式引导进入大气层，则不需要添加<code>kip1patch=nosigchk</code>。</strong></p>
 </div>
 
-<ul>
-<li><p>金手指下载：</p>
+<p><strong>金手指下载：</strong></p>
 <ol>
-<li>进入<a href="https://gbatemp.net/download/cheat-codes-sxos-and-ams-main-cheat-file-updated.36311/">gbatemp.net</a>，下载金手指内容。</li>
+<li>进入<a href="https://gbatemp.net/download/cheat-codes-sxos-and-ams-main-cheat-file-updated.36311/">gbatemp.net</a>这个网址，下载金手指内容。</li>
 <li>将下载的金手指内容解压到 <code>atmosphere/contents/</code> 目录</li>
+<li>如果搜不到想要的金手指，也可以去下面几个网站碰碰运气<br>  <a href="http://www.hasheji.cn/forum-56-1.html">http://www.hasheji.cn/forum-56-1.html</a><br>  <a href="https://www.91tvg.com/forum-133-1.html">https://www.91tvg.com/forum-133-1.html</a><br>  <a href="https://github.com/ibnux/switch-cheat">另一个金手指发布地址</a></li>
 </ol>
-</li>
-<li><p>游戏下载：</p>
+<p><strong>游戏下载：</strong></p>
 <ol>
 <li><a href="https://nxbrew.com/">nxbrew.com</a></li>
 <li><a href="https://switch520.com/">switch520</a></li>
 <li><a href="https://rpgonly.com/">rpgonly.com</a></li>
 <li><a href="https://switchvip.com/">switchvip</a></li>
 </ol>
-</li>
+<p>至此，所有工作都完成了，开机，享受你折腾的成果吧。</p>
+<div class="admonition error"><p class="admonition-title">使用原则
+</p><ul>
+<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
+<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
+<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
+<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
+<li><strong>按照此原则，任何系统随意联网，随意联机游戏，目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
 </ul>
-<p>开机，Enjoy～</p>
-<h3 id="使用原则"><a href="#使用原则" class="headerlink" title="使用原则"></a>使用原则</h3><ul>
-<li>只在虚拟系统下安装破解游戏及 NSP 格式的插件</li>
-<li>真实系统只插卡带玩或下载正版数字版游戏</li>
-<li>真实系统可联机的游戏联机时不要开金手指，除非你有把握</li>
-<li>真实系统可联机的游戏存档不要改的太过分，除非你有把握</li>
-<li>按照此原则，任何系统随意联网，随意联机游戏，目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</li>
-</ul>
-<h3 id="其他有用的插件"><a href="#其他有用的插件" class="headerlink" title="其他有用的插件"></a>其他有用的插件</h3><p><a href="https://github.com/developersu/ns-usbloader">NS-USBloader</a>：[PC 端] 使用 USB 数据线连接 Switch 安装破解游戏时，需要在电脑上安装此软件，另外还需要 Java 运行环境<br><a href="https://github.com/eliboa/NxNandManager">NxNandManager</a>：[PC 端] 虚拟系统占用了 64G 的 SD 卡空间，可以用这个软件缩小 USER 分区占用的空间 (只需要存游戏存档就可)，具体教程搜索互联网。<br><a href="https://github.com/julesontheroad/NSC_BUILDER/releases">NSCbuilder</a>: [PC 端] 魔改ROM神器，可以整合，转换，提取rom，具体教程搜索互联网。<br><a href="https://github.com/shchmue/Lockpick_RCM">Lockpick_RCM</a>：[Switch 端・引导界面] 用于提取本机密钥，在 Hekate 这个 BootLoader 的引导界面下使用<br><a href="https://github.com/meganukebmp/Switch_90DNS_tester">90DNS Tester</a>：[Switch 端] 确定当前系统有无屏蔽任天堂服务器<br><a href="https://github.com/XorTroll/Goldleaf">Goldleaf</a>：[Switch 端] 虚拟系统要和任天堂服务器确认后才能退出并删除不用的账号，这是做不到，金叶子还有这个附加功能可以删除账号<br><a href="https://github.com/ibnux/switch-cheat">另一个金手指发布地址</a></p>
+</div>
+
+<h3 id="其他有用的插件"><a href="#其他有用的插件" class="headerlink" title="其他有用的插件"></a>其他有用的插件</h3><p><strong>[PC 端]</strong> <a href="https://github.com/developersu/ns-usbloader">NS-USBloader</a>：使用 USB 数据线连接 Switch 安装破解游戏时，需要在电脑上安装此软件，另外还需要 Java 运行环境<br><strong>[PC 端]</strong> <a href="https://github.com/eliboa/NxNandManager">NxNandManager</a>：虚拟系统占用了 32-64G 的 SD 卡空间，可以用这个软件缩小 USER 分区占用的空间 (只需要存游戏存档就可)，具体教程搜索互联网。<br><strong>[PC 端]</strong> <a href="https://github.com/julesontheroad/NSC_BUILDER/releases">NSCbuilder</a>: 魔改Rom神器，可以整合，转换，提取Rom，具体教程搜索互联网。<br><strong>[Switch 端 - 引导界面]</strong> <a href="https://github.com/shchmue/Lockpick_RCM">Lockpick_RCM</a>：用于提取本机密钥，在 Hekate 这个 BootLoader 的引导界面下使用<br><strong>[Switch 端]</strong> <a href="https://github.com/meganukebmp/Switch_90DNS_tester">90DNS Tester</a>：确定当前系统有无屏蔽任天堂服务器<br><strong>[Switch 端]</strong> <a href="https://github.com/XorTroll/Goldleaf">Goldleaf</a>：虚拟系统要和任天堂服务器确认后才能退出并删除不用的账号，这是做不到，金叶子还有这个附加功能可以删除账号<br><strong>[Switch 端]</strong> <a href="https://tinfoil.io/Download">Tinfoil</a>：游戏或者软件安装器，推荐。<br><strong>[Switch 端]</strong> <a href="https://github.com/rashevskyv/dbi/releases">DBI</a>：类似于3DS时代的FBI，游戏或者软件安装器，功能较为强大，推荐。<br><strong>[Switch 端]</strong> <a href="https://github.com/Huntereb/Awoo-Installer">Awoo-Installer</a>：另一款游戏或者软件安装器，同样功能强大，网上资源有时候装完了会用不了，我个人是多个安装器轮流安装，有时候一个安装器安装完资源不能正常运行，但换另外个安装器安装就可以，所以主机上可以多装几个安装器，推荐。<br><strong>[Switch 端]</strong> <a href="https://github.com/tomvita/EdiZon-SE">EdiZon-SE</a>：金手指软件，具体使用请自行搜索。</p>
 <h3 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h3><p>等待 <a href="https://github.com/CTCaer/hekate">Hekate</a> 这个 BootLoader，<a href="https://github.com/Atmosphere-NX/Atmosphere/releases">大气层系统</a>，<a href="https://github.com/ITotalJustice/patches">破解补丁</a>更新，确保三者已支持最新系统，或直接等整合包 DeapSea 更新</p>
 <ol>
 <li>正确安装上述三者</li>
-<li>真实系统：开机进入 Stock (SYSNAND)，直接联网并更新，等待自动重启</li>
+<li>真实系统：开机进入<code>Stock (SYSNAND)</code>，直接联网并更新，等待自动重启</li>
 <li>虚拟系统：</li>
 <li>下载固件：<a href="https://darthsternie.net/switch-firmwares/">https://darthsternie.net/switch-firmwares/</a></li>
 <li>解压到根目录</li>
