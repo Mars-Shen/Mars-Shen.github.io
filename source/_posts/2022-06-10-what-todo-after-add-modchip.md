@@ -34,7 +34,7 @@ updated: 2022-06-10 12:00:00
 
 ## 制作自己的整合包
 
-!!! info ""
+!!! info "说明"
     **这里介绍快捷制作自己整合包的方法，完全手动整合就不进一步介绍了，各位有兴趣可以自行研究。**
 
 首先制作基础整合包。这里介绍两种基础整合包获取方式
@@ -45,8 +45,8 @@ updated: 2022-06-10 12:00:00
   2. 选择Recommended Defaults或自己选择自己需要的组件后拉到最下面点击Download your ZIP下载。
   3. 解压下载下来的zip包，你会看到2个文件夹，sd和payloads，将sd卡里面的内容全部复制到TF卡根目录，然后将payloads中```hekate_ctcaer_x.x.x.bin```更名成```playload.bin```放入TF卡根目录。
 
-!!! info ""
-    **PS: payloads文件夹中```Lockpick_RCM.bin```可以用来备份主机key，有需要的同学可以自行搜索用法，这里就不赘述。**
+!!! info "关于Lockpick_RCM.bin"
+    **payloads文件夹中```Lockpick_RCM.bin```可以用来备份主机key，有需要的同学可以自行搜索用法，这里就不赘述。**
 
 - **通过 DeepSea 获取整合包**
   使用国外Neptune 团队的 DeepSea 整合包
@@ -69,9 +69,7 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
 制作系统前先进入真实系统 ```Launch -> Stock (SYSNAND)```，从内置存储启动系统且不加载破解，删除所有 WiFi，并开启飞行模式，重启。
 1. 进入hekate，选择```emuMMC->Create emuMMC->SD File```，制作一个基于TF卡文件的虚拟系统，完成后我们的双系统就制作完成了。
 
-!!! info ""
-    这里稍微说下基于TF卡文件与基于TF卡分区的区别。
-
+!!! info "这里稍微说下基于TF卡文件与基于TF卡分区的区别。"
     **基于SD卡分区的虚拟系统：**
     - 优点：
       出错的可能性最小。
@@ -96,17 +94,19 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
 
 ### 处理虚拟系统
 
-关机拔掉 SD 卡连电脑
-
-- 虚拟系统删除序列号：
-
+!!! info "准备下一步前"
+    **关机并拔出 TF 卡，将TF卡连接电脑。**
+	
+- 删除虚拟系统序列号：
   1. 复制 ```atmosphere/config_templates/exosphere.ini``` 到 SD 卡根目录 ```blank_prodinfo_emummc``` 改为 1
 
-- 虚拟系统屏蔽任天堂服务器
+!!! warning "注意"  
+    **使用删除虚拟系统序列号并不能确保你不会被 Ban。**
 
+- 虚拟系统屏蔽任天堂服务器
   1. 编辑 ```atmosphere/config/system_settings.ini``` 文件
   2. 取消 ```enable_dns_mitm = u8!0x1``` 前的注释
-  3. 新建 ```atmosphere/hosts/emummc.txt``` 文件
+  3. 新建 ```atmosphere/hosts/emummc.txt``` 文件，文件内容如下：
     ```shell
         # Block Nintendo Servers
         127.0.0.1 *nintendo.*
@@ -116,21 +116,29 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
         95.216.149.205 *ctest.cdn.nintendo.net
     ```
 
-- 打破解补丁：[ITotalJustice/patches](https://github.com/ITotalJustice/patches)，直接解压到根目录，这样才能运行破解游戏
+- 打签名破解补丁：
+  1. 下载[ITotalJustice/patches](https://github.com/ITotalJustice/patches)，直接解压到根目录，这样才能运行破解游戏。
+  2. 编辑 ```bootloader/hekate_ipl.ini``` 文件，在[CFW (EMUMMC)] 下新增一行 ```kip1patch=nosigchk```，我只在虚拟系统下开启破解补丁。
 
-1. 编辑 ```bootloader/hekate_ipl.ini``` 文件
-2. [CFW (EMUMMC)] 下新增一行 ```kip1patch=nosigchk```，我只在虚拟系统下开启破解补丁
+!!! warning "注意"
+    **大气层默认是不允许运行破解软件的，需要额外添加签名破解补丁才可以运行破解软件。**
 
-!!! info ""
-    **如果使用Fusee方式引导进入大气层，则不需要添加```kip1patch=nosigchk```**
+!!! info "关于启动虚拟系统的方式"
+    **如果使用Fusee方式引导进入大气层，则不需要添加```kip1patch=nosigchk```。**
 
-- 下载金手指：[gbatemp.net](https://gbatemp.net/download/cheat-codes-sxos-and-ams-main-cheat-file-updated.36311/)，解压到 ```atmosphere/contents/``` 目录
-- 下载游戏：[nxbrew.com](https://nxbrew.com/)
+- 金手指下载：
+  1. 进入[gbatemp.net](https://gbatemp.net/download/cheat-codes-sxos-and-ams-main-cheat-file-updated.36311/)，下载金手指内容。
+  2. 将下载的金手指内容解压到 ```atmosphere/contents/``` 目录
 
+- 游戏下载：
+  1. [nxbrew.com](https://nxbrew.com/)
+  2. [switch520](https://switch520.com/)
+  3. [rpgonly.com](https://rpgonly.com/)
+  4. [switchvip](https://switchvip.com/)
+  
 开机，Enjoy～
 
 ### 使用原则
-
 - 只在虚拟系统下安装破解游戏及 NSP 格式的插件
 - 真实系统只插卡带玩或下载正版数字版游戏
 - 真实系统可联机的游戏联机时不要开金手指，除非你有把握
