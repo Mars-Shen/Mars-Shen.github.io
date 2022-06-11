@@ -675,7 +675,7 @@
 <p>本文将介绍如何使用RabbitMQ整合Scrapy来控制Scrapy爬虫进行目标网页内容爬取。我们假设你已经使用过Scrapy和RabbitMQ或者对其有一定了解。</p>
 </blockquote>
 <h3 id="为什么要使用RabbitMQ来控制爬虫？"><a href="#为什么要使用RabbitMQ来控制爬虫？" class="headerlink" title="为什么要使用RabbitMQ来控制爬虫？"></a>为什么要使用RabbitMQ来控制爬虫？</h3><p>Scrapy爬虫其实有自己的一套生产环境部署控制系统<a target="_blank" rel="noopener" href="https://github.com/scrapy/scrapyd">Scrapyd</a>，这是一个开源的项目，他给Scrapy提供了服务器端的HTTP API，使其拥有运行与监控Scrapy爬虫的能力，使用Scrapyd需要将我们的爬虫部署至Scrapyd服务器。</p>
-<p>相比Scrapyd，RabbitMQ则多了一个队列的特性，同时也能监控与控制爬虫的，并且不需要将爬虫部署到特定的服务器，随时运行，同时与队列与我们整个项目的整合也更加平滑自如。目前<a href="https://www.marsshen.com/2018/05/23/Taoshow-website-Architecture-and-tech-overview/">淘秀网</a>爬虫端就是使用整合RabbitMQ这种解决方案来自动化控制与监控Scrapy爬虫。</p>
+<p>相比Scrapyd，RabbitMQ则多了一个队列的特性，同时也能监控与控制爬虫的，并且不需要将爬虫部署到特定的服务器，随时运行，同时与队列与我们整个项目的整合也更加平滑自如。目前<a href="https://www.marsshen.com/posts/26b6aa29/">淘秀网</a>爬虫端就是使用整合RabbitMQ这种解决方案来自动化控制与监控Scrapy爬虫。</p>
 <h3 id="如何整合RabbitMQ与Scrapy爬虫？"><a href="#如何整合RabbitMQ与Scrapy爬虫？" class="headerlink" title="如何整合RabbitMQ与Scrapy爬虫？"></a>如何整合RabbitMQ与Scrapy爬虫？</h3><p>RabbitMQ在Python端的客户端实现是叫做<a target="_blank" rel="noopener" href="https://pika.readthedocs.io/en/latest/intro.html">Pika</a>，这个RabbitMQ客户端提供了与别的RabbitMQ客户端大致相同的功能，如连接服务端，服务端连接管理，交换器管理，队列管理等等。我们将在我们的Scrapy中使用Pika来对RabbitMQ进行整合。</p>
 <p>首先我们在<code>scrapy.cfg</code>同级目录下创建python运行文件<code>begin.py</code>，这个文件用于写我们的运行爬虫已经连接RabbitMQ相应的代码。</p>
           <!--noindex-->
@@ -771,7 +771,7 @@
           <h1 id="淘秀网架构与使用技术总览"><a href="#淘秀网架构与使用技术总览" class="headerlink" title="淘秀网架构与使用技术总览"></a>淘秀网架构与使用技术总览</h1><blockquote>
 <p>基于Elasticsearch&#x2F;SpringBoot&#x2F;Redis&#x2F;RabbitMQ&#x2F;Mybatis&#x2F;Dubbo&#x2F;Vue&#x2F;MySql，结合Scrapy爬虫数据挖掘的网站建设。</p>
 </blockquote>
-<p>最近在工作之余的时间，学习了一些新的技术，于是想做一个项目，用来巩固这些新技术。<a target="_blank" rel="noopener" href="https://www.aitaoshow.com">淘秀网</a>就在这样的一个背景下诞生了，网站集成数据挖掘， 数据处理与展现于一身，其本身更像个搜索引擎。所有信息都是通过爬虫获取得到。<br>用户可以在网站上输入感兴趣的关键词，当用户输入一个关键词，网站展现出淘宝网中关键词相关产品的买家秀，用户可以通过查看买家秀的方式来决定是否购买当前产品，点击相应链接，前往淘宝网相关产品页面完成购买。</p>
+<p>最近在工作之余的时间，学习了一些新的技术，于是想做一个项目，用来巩固这些新技术。淘秀网就在这样的一个背景下诞生了，网站集成数据挖掘， 数据处理与展现于一身，其本身更像个搜索引擎。所有信息都是通过爬虫获取得到。<br>用户可以在网站上输入感兴趣的关键词，当用户输入一个关键词，网站展现出淘宝网中关键词相关产品的买家秀，用户可以通过查看买家秀的方式来决定是否购买当前产品，点击相应链接，前往淘宝网相关产品页面完成购买。</p>
 <h3 id="构架"><a href="#构架" class="headerlink" title="构架"></a>构架</h3><ul>
 <li><strong>数据端</strong><ul>
 <li>Scrapy爬虫框架(Python)</li>
@@ -782,14 +782,14 @@
 </ul>
 </li>
 <li><strong>搜索服务器</strong><ul>
-<li><a href="/2018/04/23/Elasticsearch-install-and-set-up/">Elasticsearch</a></li>
+<li><a href="/posts/2492827d/">Elasticsearch</a></li>
 </ul>
 </li>
 <li><strong>后端服务</strong><ul>
 <li>Spring Boot</li>
-<li><a href="/2018/03/10/Spring+Boot+Mybatis+Dubbo+Druid/">Dubbo</a> </li>
+<li><a href="/posts/34fb554c/">Dubbo</a></a> </li>
 <li>Redis</li>
-<li><a href="/2018/05/05/RabbitMQ-install-and-set-up/">RabbitMQ 消息队列</a> </li>
+<li><a href="/posts/4878be23/">RabbitMQ 消息队列</a></li>
 <li>Mybatis-Plus</li>
 <li>Druid</li>
 <li>ZooKeeper 注册中心</li>
