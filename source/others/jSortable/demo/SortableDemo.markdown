@@ -1,8 +1,7 @@
 ---
-layout:     plug_demo_page
-date:       2014-07-01 12:00:00
-author:     "Start Bootstrap"
-header-img: "img/plug_demo_bg.jpg"
+layout: plug_demo_page
+date: 2014-07-01 12:00:00
+author: "Start Bootstrap"
 ---
 <div id="sortable">
 </div>

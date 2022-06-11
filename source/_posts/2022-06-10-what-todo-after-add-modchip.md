@@ -181,5 +181,5 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
 > 引用
 
 1. [OLED Switch 硬破后的折腾攻略](https://blog.kuretru.com/posts/4d5dc8ff/)
-2. [Switch硬件破解经验分享 - 术语篇](https://www.marsshen.com/2022/05/29/switch-hack-terminology/)
+2. [Switch硬件破解经验分享 - 术语篇](/posts/f96d7ec4/)
 

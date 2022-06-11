@@ -22,7 +22,7 @@ updated: 2018-07-27 12:00:00
 
 Scrapy爬虫其实有自己的一套生产环境部署控制系统<a href="https://github.com/scrapy/scrapyd">Scrapyd</a>，这是一个开源的项目，他给Scrapy提供了服务器端的HTTP API，使其拥有运行与监控Scrapy爬虫的能力，使用Scrapyd需要将我们的爬虫部署至Scrapyd服务器。
 
-相比Scrapyd，RabbitMQ则多了一个队列的特性，同时也能监控与控制爬虫的，并且不需要将爬虫部署到特定的服务器，随时运行，同时与队列与我们整个项目的整合也更加平滑自如。目前<a href="https://www.marsshen.com/2018/05/23/Taoshow-website-Architecture-and-tech-overview/">淘秀网</a>爬虫端就是使用整合RabbitMQ这种解决方案来自动化控制与监控Scrapy爬虫。
+相比Scrapyd，RabbitMQ则多了一个队列的特性，同时也能监控与控制爬虫的，并且不需要将爬虫部署到特定的服务器，随时运行，同时与队列与我们整个项目的整合也更加平滑自如。目前<a href="https://www.marsshen.com/posts/26b6aa29/">淘秀网</a>爬虫端就是使用整合RabbitMQ这种解决方案来自动化控制与监控Scrapy爬虫。
 
 ### 如何整合RabbitMQ与Scrapy爬虫？
 

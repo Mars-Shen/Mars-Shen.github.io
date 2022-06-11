@@ -16,7 +16,7 @@ updated: 2018-05-23 12:00:00
 
 >基于Elasticsearch/SpringBoot/Redis/RabbitMQ/Mybatis/Dubbo/Vue/MySql，结合Scrapy爬虫数据挖掘的网站建设。
 
-最近在工作之余的时间，学习了一些新的技术，于是想做一个项目，用来巩固这些新技术。<a href="https://www.aitaoshow.com">淘秀网</a>就在这样的一个背景下诞生了，网站集成数据挖掘， 数据处理与展现于一身，其本身更像个搜索引擎。所有信息都是通过爬虫获取得到。
+最近在工作之余的时间，学习了一些新的技术，于是想做一个项目，用来巩固这些新技术。淘秀网就在这样的一个背景下诞生了，网站集成数据挖掘， 数据处理与展现于一身，其本身更像个搜索引擎。所有信息都是通过爬虫获取得到。
 用户可以在网站上输入感兴趣的关键词，当用户输入一个关键词，网站展现出淘宝网中关键词相关产品的买家秀，用户可以通过查看买家秀的方式来决定是否购买当前产品，点击相应链接，前往淘宝网相关产品页面完成购买。
 
 ### 构架
@@ -25,12 +25,12 @@ updated: 2018-05-23 12:00:00
 - **数据库**
     - Mysql
 - **搜索服务器**
-    - <a href="{{ site.baseurl }}/2018/04/23/Elasticsearch-install-and-set-up/">Elasticsearch</a> 
+    - [Elasticsearch](/posts/2492827d/) 
 - **后端服务**
     - Spring Boot
-    - <a href="{{ site.baseurl }}/2018/03/10/Spring+Boot+Mybatis+Dubbo+Druid/">Dubbo</a> 
+    - [Dubbo](/posts/34fb554c/)</a> 
     - Redis
-    - <a href="{{ site.baseurl }}/2018/05/05/RabbitMQ-install-and-set-up/">RabbitMQ 消息队列</a> 
+    - [RabbitMQ 消息队列](/posts/4878be23/)
     - Mybatis-Plus
     - Druid
     - ZooKeeper 注册中心
@@ -41,7 +41,7 @@ updated: 2018-05-23 12:00:00
     - element-ui
 <!-- more -->
 ### 架构图
-<img src="{{ site.baseurl }}/img/taoshow/taoshow_ architecture.JPG" width="100%" heigh="100%">
+![](/img/taoshow/taoshow_architecture.JPG)
 
 网站分为四个部分，三台服务器。其分别为后端数据获取部分，也就是上面的爬虫服务器 后端业务逻辑部分与前端展现部分, 也就是上面的业务服务器，搜索部分，也就是上面的搜索服务器。
 
@@ -64,8 +64,5 @@ updated: 2018-05-23 12:00:00
 #### 待解决问题
 - 查询时间过长(数据库优化与业务逻辑的优化)，随着数据的增长，这个为将越来越明显。
 - 样式的优化(手机端更好的适配)
-
-#### 相关网站
-- <a href="https://www.aitaoshow.com">淘秀网</a>
 
 

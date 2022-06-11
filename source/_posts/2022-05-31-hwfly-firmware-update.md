@@ -118,5 +118,5 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 
 1. [hwfly-nx固件Github地址](https://github.com/hwfly-nx/firmware)
-2. [Switch硬件破解经验分享 - 术语篇](https://www.marsshen.com/2022/05/29/switch-hack-terminology/)
+2. [Switch硬件破解经验分享 - 术语篇](/posts/f96d7ec4/)
 3. [简析国产三种NS芯片区别及Spacecraft固件Bug](http://www.265xh.com/nszhinan/4246.html)
