@@ -18,14 +18,14 @@ updated: 2018-04-23 12:00:00
 
 > Elasticsearch 是一个分布式、可扩展、实时的搜索与数据分析引擎。 它能从项目一开始就赋予你的数据以搜索、分析和探索的能力。 --<<Elasticsearch: 权威指南>>
 
-就像<code><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a></code>里说的，开源的 Elasticsearch是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。像维基百科、Stack Overflow、Github 等网站都采用它，足以见得他的能力。其实Elasticsearch最常见的组合是ELK(Elasticsearch + Logstash + kibana)，这里只介绍Elasticsearch的安装与使用。
+就像<a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a>里说的，开源的 Elasticsearch是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。像维基百科、Stack Overflow、Github 等网站都采用它，足以见得他的能力。其实Elasticsearch最常见的组合是ELK(Elasticsearch + Logstash + kibana)，这里只介绍Elasticsearch的安装与使用。
 本文的环境：Ubuntu。
 
 #### 安装Elasticsearch注意事项
-首先有一点要说明一下，ES对内存的要求很高，最好可以在内存2G以上的坏境运行Elasticsearch，否则可能会出现运行不稳定的问题。本人只有一台1核1G儿童云服务器，勉强使用中。另外ES运行需要Java8的运行环境，关于Java8的安装在这里不赘述，可以参考<code><a href="https://www.cnblogs.com/a2211009/p/4265225.html">这篇文章</a></code>。
+首先有一点要说明一下，ES对内存的要求很高，最好可以在内存2G以上的坏境运行Elasticsearch，否则可能会出现运行不稳定的问题。本人只有一台1核1G儿童云服务器，勉强使用中。另外ES运行需要Java8的运行环境，关于Java8的安装在这里不赘述，可以参考<a href="https://www.cnblogs.com/a2211009/p/4265225.html">这篇文章</a>。
 
 #### 通过tar包安装Elasticsearch
-这里用当前最新版6.2.4做例子，最新版可以从<code><a href="https://www.elastic.co/cn/products/elasticsearch">Elasticsearch官网</a></code>找到。
+这里用当前最新版6.2.4做例子，最新版可以从<a href="https://www.elastic.co/cn/products/elasticsearch">Elasticsearch官网</a>找到。
 <!-- more -->
 首先通过curl下载tar包：
 ```shell
@@ -111,7 +111,7 @@ docker run -p 9200:9200 -p 9300:9300 -d -e "discovery.type=single-node" --rm --n
 因为加了<code>-d</code>，所以当前运行模式是后台运行，不会有什么输出，若要停止这个镜像的运行，输入<code>docker ps</code>查看相应的信息，根据相关信息使用<code>docker stop</code>命令，停止Elasticsearch服务。在上面的例子中我们使用<code>docker stop es</code>来停止Elasticsearch服务。
 
 #### 安装Elasticsearch常见错误
-这一部分部分引用<code><a href="https://github.com/DimonHo/DH_Note/issues/3">这篇文章</a></code>，结合我遇到的实际问题做了些修改。
+这一部分部分引用<a href="https://github.com/DimonHo/DH_Note/issues/3">这篇文章</a>，结合我遇到的实际问题做了些修改。
 
 **问题1：**
 ```sehll
@@ -185,7 +185,7 @@ Java HotSpot(TM) Client VM warning: INFO: os::commit_memory(0x74800000, 20132659
 	2. 修改Elasticsearch中jvm的配置，即修改<code>elasticsearch-6.2.4/config/</code>中的jvm.options文件。修改其中的<code>-Xms2g -Xmx2g</code>为<code>-Xms512m -Xmx512m</code>即可。注意这个参数可能需要根据具体情况具体设置，但有个原则就是<code>-Xms</code>与<code>-Xmx</code>需要相等。
 
 #### 安装elasticsearch-head插件
-elasticsearch-head是个用来与Elasticsearch互动的图形化界面插件，有了他你可以很方便的管理你的Elasticsearch，查看你的Elasticsearch状态或者测试你的查询语句。这个是他官方的<code><a href="https://github.com/mobz/elasticsearch-head">GitHub页面</a></code>。
+elasticsearch-head是个用来与Elasticsearch互动的图形化界面插件，有了他你可以很方便的管理你的Elasticsearch，查看你的Elasticsearch状态或者测试你的查询语句。这个是他官方的<a href="https://github.com/mobz/elasticsearch-head">GitHub页面</a>。
 
 **安装步骤：**
 ```shell
@@ -199,13 +199,13 @@ npm run start
 >elasticsearch-head也推出了Chrome插件，**个人推荐直接安装Chrome的插件来使用elasticsearch-head**，非常非常方便。
 
 #### 安装elasticsearch-analysis-ik插件
-elasticsearch-analysis-ik是一个Elasticsearch的中文分词插件，支持自定义词库以及热更新，这个是他官方的<code><a href="https://github.com/medcl/elasticsearch-analysis-ik">GitHub页面</a></code>。
+elasticsearch-analysis-ik是一个Elasticsearch的中文分词插件，支持自定义词库以及热更新，这个是他官方的<a href="https://github.com/medcl/elasticsearch-analysis-ik">GitHub页面</a>。
 
 **安装步骤：**
 
 方式一：
 
-从<code><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases">这里</a></code>下载你Elasticsearch相应版本的安装包，解压缩后放在<code>your-es-root/plugins/</code>中。
+从<a href="https://github.com/medcl/elasticsearch-analysis-ik/releases">这里</a>下载你Elasticsearch相应版本的安装包，解压缩后放在<code>your-es-root/plugins/</code>中。
 
 方式二：
 
@@ -309,17 +309,17 @@ curl -XPOST http://localhost:9200/index/fulltext/_search  -H 'Content-Type:appli
 ```
 
 #### 安装x-pack插件
-x-pack是一个将各种插件集合起来的官方插件，这个插件集成了官方的Security（旧称 Shield），Alerting（通过 Watcher 实现），Monitoring（旧称 Marvel），Reporting，Graph，Machine Learning等。遗憾的是这个插件是付费的，如果只是自己学习用途，买个证书完全不合算。我们刚安装完Elasticsearch时，官方提供给我们一个试用licence，这是个全功能的证书，但是只能用30天。如果试用证书过期，官方另外提供了一种免费证书，类型为Basic，功能有限，具体可以看<code><a href="https://www.elastic.co/subscriptions/">这里</a></code>。x-pack我并不想详细讲，因为Basic证书连最基本的http认证都不提供，这表示如果将服务器暴露在外网环境任何人都可以随意操作我的Elasticsearch。最终我抛弃了x-pack并且通过Nginx的反向代理实现了最基本的http认证。
+x-pack是一个将各种插件集合起来的官方插件，这个插件集成了官方的Security（旧称 Shield），Alerting（通过 Watcher 实现），Monitoring（旧称 Marvel），Reporting，Graph，Machine Learning等。遗憾的是这个插件是付费的，如果只是自己学习用途，买个证书完全不合算。我们刚安装完Elasticsearch时，官方提供给我们一个试用licence，这是个全功能的证书，但是只能用30天。如果试用证书过期，官方另外提供了一种免费证书，类型为Basic，功能有限，具体可以看<a href="https://www.elastic.co/subscriptions/">这里</a>。x-pack我并不想详细讲，因为Basic证书连最基本的http认证都不提供，这表示如果将服务器暴露在外网环境任何人都可以随意操作我的Elasticsearch。最终我抛弃了x-pack并且通过Nginx的反向代理实现了最基本的http认证。
 
-x-pack的介绍与安装步骤详细的信息可以看<code><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/installing-xpack-es.html">这里</a></code>。
+x-pack的介绍与安装步骤详细的信息可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/installing-xpack-es.html">这里</a>。
 
-证书相关操作可以看<code><a href="https://www.elastic.co/guide/en/x-pack/6.2/license-management.html">这里</a></code>。
+证书相关操作可以看<a href="https://www.elastic.co/guide/en/x-pack/6.2/license-management.html">这里</a>。
 
-Nginx相关设置可以看<code><a href="https://www.jianshu.com/p/7ec26c13abbb">这里</a></code>
+Nginx相关设置可以看<a href="https://www.jianshu.com/p/7ec26c13abbb">这里</a>
 
 #### 资源列表
-* <code><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a></code>， 这个是中文版的，容易看懂，但是有个问题就是版本有点老，最新版中已经移除type概念，这个指南中还存在这个概念，可以一看但更推荐看英文最新文档。
-* <code><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">最新文档</a></code>，最新的英文文档，推荐阅读。
+* <a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a>， 这个是中文版的，容易看懂，但是有个问题就是版本有点老，最新版中已经移除type概念，这个指南中还存在这个概念，可以一看但更推荐看英文最新文档。
+* <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">最新文档</a>，最新的英文文档，推荐阅读。
 
 
 
