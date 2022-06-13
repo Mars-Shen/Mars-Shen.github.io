@@ -144,4 +144,4 @@ recommended_posts:
 #  fixedNumber: false
 #  autoDisplay: true #自动在文章底部显示推荐文章
 #  excludePattern: []
-  titleHtml: <h1>扩展阅读</h1> #自定义标题
+  titleHtml: <h3>扩展阅读</h3> #自定义标题
