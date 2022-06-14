@@ -1180,7 +1180,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1198,7 +1198,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="记一次Http劫持分析"><a href="#记一次Http劫持分析" class="headerlink" title="记一次Http劫持分析"></a>记一次Http劫持分析</h1><h4 id="2022-06-12更新"><a href="#2022-06-12更新" class="headerlink" title="2022-06-12更新"></a>2022-06-12更新</h4><p>经过一段时间的观察，发现并不是Http劫持，而是本站使用的来必力评论控件引入的广告。解决方法就是在来必力的控件代码DIV块中加上<code>&lt;style&gt;#taboola-livere &#123; display: none;&#125;&lt;/style&gt;</code>，通过这样的方式来隐藏来比力评论控件的广告。</p>
+          <h1 id="记一次Http劫持分析"><a href="#记一次Http劫持分析" class="headerlink" title="记一次Http劫持分析"></a>记一次Http劫持分析</h1><h4 id="2022-06-12更新"><a href="#2022-06-12更新" class="headerlink" title="2022-06-12更新"></a>2022-06-12更新</h4><p>经过一段时间的观察，发现这个广告是本站使用的来必力评论控件引入的。解决方法就是在来必力的控件代码DIV块中加上<code>&lt;style&gt;#taboola-livere &#123; display: none;&#125;&lt;/style&gt;</code>，通过这样的方式来隐藏来比力评论控件的广告。</p>
 <hr>
 <h4 id="原文"><a href="#原文" class="headerlink" title="原文"></a>原文</h4><p>最近在家用手机访问我自己的博客的时候，无论我用什么手机浏览器总是会在第一次加载页面的时候，在页面上加载了各种奇怪的广告，我顿时觉得很疑惑，我什么时候在网站上放广告了？我是失忆了，还是我喝醉了？<br><img src="/img/HttpJieChi/blog-1.jpeg" alt="劫持效果"></p>
           <!--noindex-->
