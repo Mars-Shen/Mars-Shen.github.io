@@ -2,6 +2,7 @@
 layout: plug_demo_page
 date: 2014-07-01 12:00:00
 author: "Start Bootstrap"
+alias: /others/jSortable/demo/SortableDemo/index.html
 ---
 <div id="sortable">
 </div>

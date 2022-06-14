@@ -13,6 +13,7 @@ tags:
 abbrlink: 95d092ba
 date: 2016-06-06 12:00:00
 updated: 2016-06-06 12:00:00
+alias: /2016/06/06/ios-swift-collapsible-table-section/index.html
 ---
 ![](https://img.shields.io/badge/Swift-2.2-orange.svg?style=flat)
 >原文链接以及源代码:<a href="https://github.com/jeantimex/ios-swift-collapsible-table-section">原文地址</a><br/>原文作者:Yong Su @ Box Inc.

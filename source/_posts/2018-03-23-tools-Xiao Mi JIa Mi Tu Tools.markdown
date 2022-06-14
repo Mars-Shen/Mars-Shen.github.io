@@ -10,6 +10,7 @@ tags:
 abbrlink: a9eae027
 date: 2018-03-23 12:00:00
 updated: 2018-03-23 12:00:00
+alias: /2018/03/23/tools-Xiao-Mi-JIa-Mi-Tu-Tools/index.html
 ---
 
 # 自动化抢小米加密兔辅助工具

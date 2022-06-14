@@ -11,6 +11,7 @@ published: true
 abbrlink: f96d7ec4
 date: 2022-05-29 12:00:00 
 updated: 2022-05-29 12:00:00
+alias: /2022/05/29/switch-hack-terminology/index.html
 ---
 ### **RCM**
 

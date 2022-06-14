@@ -12,6 +12,7 @@ tags:
 abbrlink: 4878be23
 date: 2018-05-05 12:00:00
 updated: 2018-05-05 12:00:00
+alias: /2018/05/05/RabbitMQ-install-and-set-up/index.html
 ---
 
 # Ubuntu下RabbitMQ的安装与配置

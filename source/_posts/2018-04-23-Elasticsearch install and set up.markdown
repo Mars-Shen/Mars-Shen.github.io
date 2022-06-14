@@ -12,6 +12,7 @@ tags:
 abbrlink: 2492827d
 date: 2018-04-23 12:00:00
 updated: 2018-04-23 12:00:00
+alias: /2018/04/23/Elasticsearch-install-and-set-up/index.html
 ---
 
 # Ubuntu下Elasticsearch安装与问题记录

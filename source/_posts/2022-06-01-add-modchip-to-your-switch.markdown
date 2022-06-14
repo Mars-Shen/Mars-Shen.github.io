@@ -12,6 +12,7 @@ subtitle: 国产破解芯片焊接教程
 abbrlink: 464772cb
 date: 2022-06-02 12:00:00
 updated: 2022-06-05 12:00:00
+alias: /2022/06/02/add-modchip-to-your-switch/index.html
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 

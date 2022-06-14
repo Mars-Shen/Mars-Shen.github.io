@@ -10,12 +10,13 @@ tags:
 abbrlink: 89408fe7
 date: 2018-03-29 12:00:00
 updated: 2022-06-12 12:00:00
+alias: /2018/03/29/Analysis-of-HTTP-hijacking/index.html
 ---
 
 # 记一次Http劫持分析
 
 #### 2022-06-12更新
-经过一段时间的观察，发现并不是Http劫持，而是本站使用的来必力评论控件引入的广告。解决方法就是在来必力的控件代码DIV块中加上```<style>#taboola-livere { display: none;}</style>```，通过这样的方式来隐藏来比力评论控件的广告。
+经过一段时间的观察，发现这个广告是本站使用的来必力评论控件引入的。解决方法就是在来必力的控件代码DIV块中加上```<style>#taboola-livere { display: none;}</style>```，通过这样的方式来隐藏来比力评论控件的广告。
 
 ---
 #### 原文

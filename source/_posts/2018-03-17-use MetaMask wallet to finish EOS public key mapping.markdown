@@ -10,6 +10,7 @@ tags:
 abbrlink: 8a7a7578
 date: 2018-03-16 12:00:00
 updated: 2018-03-16 12:00:00
+alias: /2018/03/16/use-MetaMask-wallet-to-finish-EOS-public-key-mapping/index.html
 ---
 
 <blockquote>前提条件:

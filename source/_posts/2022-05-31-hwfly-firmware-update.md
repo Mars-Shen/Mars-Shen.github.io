@@ -12,6 +12,7 @@ subtitle: 教你如何升级国产破解芯片固件
 abbrlink: 53cdbb65
 date: 2022-05-31 12:00:00 
 updated: 2022-05-31 12:00:00
+alias: /2022/05/31/hwfly-firmware-update/index.html
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 

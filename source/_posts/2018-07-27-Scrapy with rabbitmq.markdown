@@ -13,6 +13,7 @@ tags:
 abbrlink: 39fb172e
 date: 2018-07-27 12:00:00
 updated: 2018-07-27 12:00:00
+alias: /2018/07/27/Scrapy-with-rabbitmq/index.html
 ---
 # 如何使用RabbitMQ控制Scrapy爬虫
 

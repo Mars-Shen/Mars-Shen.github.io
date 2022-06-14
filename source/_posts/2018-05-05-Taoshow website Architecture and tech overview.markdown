@@ -11,6 +11,7 @@ tags:
 abbrlink: 26b6aa29
 date: 2018-05-23 12:00:00
 updated: 2018-05-23 12:00:00
+alias: /2018/05/23/Taoshow-website-Architecture-and-tech-overview/index.html
 ---
 # 淘秀网架构与使用技术总览
 
