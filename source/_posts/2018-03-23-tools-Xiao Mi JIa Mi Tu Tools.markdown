@@ -23,13 +23,13 @@ alias: /2018/03/23/tools-Xiao-Mi-JIa-Mi-Tu-Tools/index.html
 * 使用前请先在Chrome下载Tampermonkey插件.
 * 下载脚本文件XiaoMi-JiaMiTu-Tools.zip至本地.
 * 将文件XiaoMi-JiaMiTu-Tools.zip导入Tampermonkey.
-* 前往 <code><a href="https://jiamitu.mi.com/home">https://jiamitu.mi.com/home</a></code> 小米加密兔领养页面并登陆你自己的账号.
+* 前往 <a href="https://jiamitu.mi.com/home">https://jiamitu.mi.com/home</a> 小米加密兔领养页面并登陆你自己的账号.
 * 确保当前页面Tampermonkey中我们的脚本为开启状态. 
 * 当活动时间开始前1分钟点击**开始抢加密兔**,然后耐心等待脚本运行. 当页面提示你已抢到, 说明抢领成功, 如果长时间没领到加密兔, 可能加密兔已经被领完, 请第二天再尝试.
 * 如果需要更新, 请在Tampermonkey插件更新插件.
 
-下载链接: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools/raw/master/XiaoMi-JiaMiTu-Tools.zip">点我下载</a></code> 
-源码地址: <code><a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools">点我查看</a></code>
+下载链接: <a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools/raw/master/XiaoMi-JiaMiTu-Tools.zip">点我下载</a> 
+源码地址: <a href="https://github.com/Mars-Shen/XiaoMi-JiaMiTu-Tools">点我查看</a>
 <!-- more -->
 
 #### 脚本原理
