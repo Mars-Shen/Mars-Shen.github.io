@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/categories/index.html</loc>
+    <loc>https://www.marsshen.com/404.html</loc>
     
     <lastmod>2022-06-14</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/404.html</loc>
+    <loc>https://www.marsshen.com/categories/index.html</loc>
     
     <lastmod>2022-06-14</lastmod>
     
@@ -187,27 +187,6 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.marsshen.com/tags/RabbitMQ/</loc>
-    <lastmod>2022-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.marsshen.com/tags/python/</loc>
-    <lastmod>2022-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.marsshen.com/tags/switch%E7%A1%AC%E7%A0%B4%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -216,6 +195,13 @@
   
   <url>
     <loc>https://www.marsshen.com/tags/switch/</loc>
+    <lastmod>2022-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.marsshen.com/tags/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -299,6 +285,13 @@
   </url>
   
   <url>
+    <loc>https://www.marsshen.com/tags/RabbitMQ/</loc>
+    <lastmod>2022-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.marsshen.com/tags/%E6%B7%98%E7%A7%80%E7%BD%91/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,6 +300,13 @@
   
   <url>
     <loc>https://www.marsshen.com/tags/scrapy/</loc>
+    <lastmod>2022-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.marsshen.com/tags/python/</loc>
     <lastmod>2022-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
