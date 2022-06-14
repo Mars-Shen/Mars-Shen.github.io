@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Switch硬件破解经验分享 - 破解焊接篇
+title: Switch硬件破解经验分享 - 自己动手焊接switch破解芯片
 author: Mars Shen
 multilingual: false
 tags:
@@ -8,7 +8,7 @@ tags:
   - switch硬破教程
   - switch
 published: true
-subtitle: 国产破解芯片焊接教程
+subtitle: switch破解芯片焊接教程，详细教你怎么自己动手焊接破解芯片
 abbrlink: 464772cb
 date: 2022-06-02 12:00:00
 updated: 2022-06-05 12:00:00
