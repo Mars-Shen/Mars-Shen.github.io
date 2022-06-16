@@ -789,93 +789,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Switch硬件破解经验分享 - 破解问题FAQ</title>
-    <url>/posts/c7924c66/</url>
-    <content><![CDATA[<blockquote>
-<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
-</blockquote>
-<div class="admonition info"><p class="admonition-title">说明
-</p><p><strong>我会收集一些硬破后常见错误解决方式，还有一些技巧更新在这个页面。有什么问题也可以在这里留言。</strong></p>
-</div>
-
-<h3 id="如何进入homebrew-launcher-自制软件启动器，简称HBL"><a href="#如何进入homebrew-launcher-自制软件启动器，简称HBL" class="headerlink" title="如何进入homebrew launcher(自制软件启动器，简称HBL)"></a>如何进入homebrew launcher(自制软件启动器，简称HBL)</h3><p>有两种方法可以进入homebrew launcher：</p>
-<ul>
-<li>随便找个游戏，按住R并启动这个游戏。<br>或者</li>
-<li>通过单击相册图标<ul>
-<li>这将使你进入applet mode(小程序模式)，你会在右上角看到applet mode几个字。</li>
-</ul>
-</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">关于applet mode
-</p><p><strong>applet mode(小程序模式)并没有用最高权限执行自制软件，可能会使某些自制程序可能无法正常工作出错。</strong></p>
-</div>
-
-<span id="more"></span>
-<h3 id="如何进入维护模式"><a href="#如何进入维护模式" class="headerlink" title="如何进入维护模式"></a>如何进入维护模式</h3><p>如果你经常打开游戏报错，或者遇到莫名其妙的问题，那么可以尝试按如下步骤进入维护模式：</p>
-<ol>
-<li>打开switch。</li>
-<li>系统开机，进入Hekate后选择你要进的系统，进入大气时(黑屏时)按住按住(音量 +) 和 (音量 -) 直到出现画面。</li>
-<li>这时候你就进入了维护模式，一般来说什么都不要动，直接长按电源键关机，重新打开switch即可。</li>
-</ol>
-<h3 id="如何在进入游戏时禁止Mods和金手指"><a href="#如何在进入游戏时禁止Mods和金手指" class="headerlink" title="如何在进入游戏时禁止Mods和金手指"></a>如何在进入游戏时禁止Mods和金手指</h3><p>如果想在启动游戏时禁用Mods或金手指，请按住L并启动你想要启动的游戏。</p>
-<h3 id="启动菜单中虚拟系统消失"><a href="#启动菜单中虚拟系统消失" class="headerlink" title="启动菜单中虚拟系统消失"></a>启动菜单中虚拟系统消失</h3><p>如果启动菜单中虚拟系统消失，请检查<code>sd -&gt; bootloader -&gt; hekate_ipl.ini</code>配置文件，查看是否缺少虚拟系统配置。可以参考如下配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...省略之前配置</span><br><span class="line">&#123;&#125;</span><br><span class="line">[Fusee]</span><br><span class="line">emummcforce=1</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br><span class="line">payload=bootloader/payloads/fusee.bin</span><br><span class="line"></span><br><span class="line">&#123;&#125;</span><br><span class="line">[Atmosphere (emuMMC)]</span><br><span class="line">emummcforce=1</span><br><span class="line">fss0=atmosphere/package3</span><br><span class="line">kip1patch=nosigchk</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br></pre></td></tr></table></figure>
-<p>其中<code>&#123;&#125;</code>为分隔符，<code>[Fusee]</code>为fusee.bin方式引导的大气层虚拟系统，<code>[Atmosphere (emuMMC)]</code>为普通方式引导的大气层虚拟系统。</p>
-<h3 id="哪些行为可以让我被ban？"><a href="#哪些行为可以让我被ban？" class="headerlink" title="哪些行为可以让我被ban？"></a>哪些行为可以让我被ban？</h3><div class="admonition error"><p class="admonition-title">注意
-</p><p><strong>任天堂的政策一直在动态变化，我不保证下面说的一定对。如被 ban 号或 ban 机，本人概不负责。</strong></p>
-</div>
-
-<p>立刻ban：</p>
-<ul>
-<li>盗版行为：只要使用盗版软件并且联网，必ban，包括但不限于安装盗版游戏、安装自制 NSP 文件等。</li>
-<li>使用自制软件更改用户图标。</li>
-<li>不合规的 eShop 行为，包括退款，黑卡等，前段时间闹的沸沸扬扬的港服Ban号就是由于黑点卡引起的。</li>
-<li>使用带有你switch唯一证书的自制软件或 PC 工具连接到任何任天堂网络或者CDN。</li>
-</ul>
-<p>很有可能被ban，但一般不会马上被ban：</p>
-<ul>
-<li>修改网络游戏</li>
-<li>在网络游戏中作弊</li>
-<li>使用自制软件清除系统日志</li>
-<li>在线使用多个 NAND（sysMMC 和 emuMMC），而并且连接了任天堂的网络。</li>
-</ul>
-<p>到目前为止，不会被Ban：</p>
-<ul>
-<li>单纯使用大气层自制固件(这里指的是单纯的使用大气层固件，没有任何上述的盗版行为)。</li>
-<li>单纯使用Homebrew。</li>
-<li>使用自定义主题或者自定义系统模块。</li>
-<li>单纯单机离线游戏中使用Mods或者使用金手指。</li>
-<li>超频</li>
-<li>运行其他操作系统，例如 Android 或 Linux</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">综上所述，按如下原则使用破解switch
-</p><ul>
-<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
-<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
-<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
-<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
-<li><strong>目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
-</ul>
-</div>
-
-<h3 id="破解芯片一直亮黄灯？"><a href="#破解芯片一直亮黄灯？" class="headerlink" title="破解芯片一直亮黄灯？"></a>破解芯片一直亮黄灯？</h3><p>大概率是焊接问题，请检查焊接焊点。</p>
-<hr>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<ol>
-<li><a href="https://switch.homebrew.guide/faq.html">switch.homebrew.guide</a></li>
-<li><a href="https://rentry.org/SwitchFAQ">rentry.org</a></li>
-<li><a href="https://nh-server.github.io/switch-guide/faq/">nh-server.github.io</a></li>
-</ol>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li></ul></div>]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>switch硬破教程</tag>
-        <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Switch硬件破解经验分享 - 破解后折腾篇</title>
     <url>/posts/20e16ead/</url>
     <content><![CDATA[<blockquote>
@@ -1027,6 +940,93 @@
 <li><a href="/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li>
 </ol>
 <div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li></ul></div>]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>switch硬破教程</tag>
+        <tag>switch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Switch硬件破解经验分享 - 破解问题FAQ</title>
+    <url>/posts/c7924c66/</url>
+    <content><![CDATA[<blockquote>
+<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
+</blockquote>
+<div class="admonition info"><p class="admonition-title">说明
+</p><p><strong>我会收集一些硬破后常见错误解决方式，还有一些技巧更新在这个页面。有什么问题也可以在这里留言。</strong></p>
+</div>
+
+<h3 id="如何进入homebrew-launcher-自制软件启动器，简称HBL"><a href="#如何进入homebrew-launcher-自制软件启动器，简称HBL" class="headerlink" title="如何进入homebrew launcher(自制软件启动器，简称HBL)"></a>如何进入homebrew launcher(自制软件启动器，简称HBL)</h3><p>有两种方法可以进入homebrew launcher：</p>
+<ul>
+<li>随便找个游戏，按住R并启动这个游戏。<br>或者</li>
+<li>通过单击相册图标<ul>
+<li>这将使你进入applet mode(小程序模式)，你会在右上角看到applet mode几个字。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">关于applet mode
+</p><p><strong>applet mode(小程序模式)并没有用最高权限执行自制软件，可能会使某些自制程序可能无法正常工作出错。</strong></p>
+</div>
+
+<span id="more"></span>
+<h3 id="如何进入维护模式"><a href="#如何进入维护模式" class="headerlink" title="如何进入维护模式"></a>如何进入维护模式</h3><p>如果你经常打开游戏报错，或者遇到莫名其妙的问题，那么可以尝试按如下步骤进入维护模式：</p>
+<ol>
+<li>打开switch。</li>
+<li>系统开机，进入Hekate后选择你要进的系统，进入大气时(黑屏时)按住按住(音量 +) 和 (音量 -) 直到出现画面。</li>
+<li>这时候你就进入了维护模式，一般来说什么都不要动，直接长按电源键关机，重新打开switch即可。</li>
+</ol>
+<h3 id="如何在进入游戏时禁止Mods和金手指"><a href="#如何在进入游戏时禁止Mods和金手指" class="headerlink" title="如何在进入游戏时禁止Mods和金手指"></a>如何在进入游戏时禁止Mods和金手指</h3><p>如果想在启动游戏时禁用Mods或金手指，请按住L并启动你想要启动的游戏。</p>
+<h3 id="启动菜单中虚拟系统消失"><a href="#启动菜单中虚拟系统消失" class="headerlink" title="启动菜单中虚拟系统消失"></a>启动菜单中虚拟系统消失</h3><p>如果启动菜单中虚拟系统消失，请检查<code>sd -&gt; bootloader -&gt; hekate_ipl.ini</code>配置文件，查看是否缺少虚拟系统配置。可以参考如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...省略之前配置</span><br><span class="line">&#123;&#125;</span><br><span class="line">[Fusee]</span><br><span class="line">emummcforce=1</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br><span class="line">payload=bootloader/payloads/fusee.bin</span><br><span class="line"></span><br><span class="line">&#123;&#125;</span><br><span class="line">[Atmosphere (emuMMC)]</span><br><span class="line">emummcforce=1</span><br><span class="line">fss0=atmosphere/package3</span><br><span class="line">kip1patch=nosigchk</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br></pre></td></tr></table></figure>
+<p>其中<code>&#123;&#125;</code>为分隔符，<code>[Fusee]</code>为fusee.bin方式引导的大气层虚拟系统，<code>[Atmosphere (emuMMC)]</code>为普通方式引导的大气层虚拟系统。</p>
+<h3 id="哪些行为可以让我被ban？"><a href="#哪些行为可以让我被ban？" class="headerlink" title="哪些行为可以让我被ban？"></a>哪些行为可以让我被ban？</h3><div class="admonition error"><p class="admonition-title">注意
+</p><p><strong>任天堂的政策一直在动态变化，我不保证下面说的一定对。如被 ban 号或 ban 机，本人概不负责。</strong></p>
+</div>
+
+<p>立刻ban：</p>
+<ul>
+<li>盗版行为：只要使用盗版软件并且联网，必ban，包括但不限于安装盗版游戏、安装自制 NSP 文件等。</li>
+<li>使用自制软件更改用户图标。</li>
+<li>不合规的 eShop 行为，包括退款，黑卡等，前段时间闹的沸沸扬扬的港服Ban号就是由于黑点卡引起的。</li>
+<li>使用带有你switch唯一证书的自制软件或 PC 工具连接到任何任天堂网络或者CDN。</li>
+</ul>
+<p>很有可能被ban，但一般不会马上被ban：</p>
+<ul>
+<li>修改网络游戏</li>
+<li>在网络游戏中作弊</li>
+<li>使用自制软件清除系统日志</li>
+<li>在线使用多个 NAND（sysMMC 和 emuMMC），而并且连接了任天堂的网络。</li>
+</ul>
+<p>到目前为止，不会被Ban：</p>
+<ul>
+<li>单纯使用大气层自制固件(这里指的是单纯的使用大气层固件，没有任何上述的盗版行为)。</li>
+<li>单纯使用Homebrew。</li>
+<li>使用自定义主题或者自定义系统模块。</li>
+<li>单纯单机离线游戏中使用Mods或者使用金手指。</li>
+<li>超频</li>
+<li>运行其他操作系统，例如 Android 或 Linux</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">综上所述，按如下原则使用破解switch
+</p><ul>
+<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
+<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
+<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
+<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
+<li><strong>目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
+</ul>
+</div>
+
+<h3 id="破解芯片一直亮黄灯？"><a href="#破解芯片一直亮黄灯？" class="headerlink" title="破解芯片一直亮黄灯？"></a>破解芯片一直亮黄灯？</h3><p>大概率是焊接问题，请检查焊接焊点。</p>
+<hr>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<ol>
+<li><a href="https://switch.homebrew.guide/faq.html">switch.homebrew.guide</a></li>
+<li><a href="https://rentry.org/SwitchFAQ">rentry.org</a></li>
+<li><a href="https://nh-server.github.io/switch-guide/faq/">nh-server.github.io</a></li>
+</ol>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>switch硬破教程</tag>
