@@ -147,7 +147,7 @@ recommended_posts:
   titleHtml: <strong>扩展阅读</strong> #自定义标题
 
 nofollow:
-  enable: true
+  enable: false
   field: site
   exclude:
     - 'marsshen.com'
