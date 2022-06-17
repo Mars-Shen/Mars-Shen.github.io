@@ -16,6 +16,7 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-admonition": "^1.1.2",
     "hexo-deployer-git": "^3.0.0",
+    "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-alias": "^1.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.9",

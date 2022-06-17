@@ -145,3 +145,11 @@ recommended_posts:
 #  autoDisplay: true #自动在文章底部显示推荐文章
 #  excludePattern: []
   titleHtml: <strong>扩展阅读</strong> #自定义标题
+
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'marsshen.com'
+    - 'www.marsshen.com'
+    - 'game.marsshen.com'
