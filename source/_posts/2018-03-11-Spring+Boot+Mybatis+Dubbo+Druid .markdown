@@ -23,7 +23,7 @@ alias: /2018/03/10/Spring+Boot+Mybatis+Dubbo+Druid/index.html
 # Spring Boot部分
 #### 生成一个简单的Spring Boot项目
 
-首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a href="https://start.spring.io/">start.spring.io</a></code>
+首先去Spring Boot的官网项目生成器生成一个简单项目:```[start.spring.io](https://start.spring.io/)```
 ![](/img/SpringBoot/SpringBoot-1.png)
 点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.
 
