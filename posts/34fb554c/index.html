@@ -24,12 +24,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.marsshen.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="记录自己项目中使用Spring Boot与Mybatis&#x2F;Dubbo&#x2F;Druid整合过程中出现的问题,以及相应的解决方法.  Spring Boot部分生成一个简单的Spring Boot项目首先去Spring Boot的官网项目生成器生成一个简单项目:start.spring.io点Generate Project下载并且导入到本地IDE, 这里用的是Intellij. Spring Boot">
+    <meta name="description" content="记录自己项目中使用Spring Boot与Mybatis&#x2F;Dubbo&#x2F;Druid整合过程中出现的问题,以及相应的解决方法.  Spring Boot部分生成一个简单的Spring Boot项目首先去Spring Boot的官网项目生成器生成一个简单项目:[start.spring.io](https:&#x2F;&#x2F;start.spring.io&#x2F;)点Generate Project下载并且导入到本地IDE,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot&#x2F;Mybatis&#x2F;Dubbo&#x2F;Druid整合">
 <meta property="og:url" content="https://www.marsshen.com/posts/34fb554c/index.html">
 <meta property="og:site_name" content="Mars&#39;s Blog">
-<meta property="og:description" content="记录自己项目中使用Spring Boot与Mybatis&#x2F;Dubbo&#x2F;Druid整合过程中出现的问题,以及相应的解决方法.  Spring Boot部分生成一个简单的Spring Boot项目首先去Spring Boot的官网项目生成器生成一个简单项目:start.spring.io点Generate Project下载并且导入到本地IDE, 这里用的是Intellij. Spring Boot">
+<meta property="og:description" content="记录自己项目中使用Spring Boot与Mybatis&#x2F;Dubbo&#x2F;Druid整合过程中出现的问题,以及相应的解决方法.  Spring Boot部分生成一个简单的Spring Boot项目首先去Spring Boot的官网项目生成器生成一个简单项目:[start.spring.io](https:&#x2F;&#x2F;start.spring.io&#x2F;)点Generate Project下载并且导入到本地IDE,">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.marsshen.com/img/SpringBoot/SpringBoot-1.png">
 <meta property="og:image" content="https://www.marsshen.com/img/SpringBoot/SpringBoot-2.png">
@@ -295,7 +295,7 @@
     <div class="post-body" itemprop="articleBody">
         <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
-<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a target="_blank" rel="noopener external nofollow noreferrer" href="https://start.spring.io/">start.spring.io</a></code><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
+<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<code>[start.spring.io](https://start.spring.io/)</code><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
 <h4 id="Spring-Boot-Pom文件修改默认继承关系及引用"><a href="#Spring-Boot-Pom文件修改默认继承关系及引用" class="headerlink" title="Spring Boot Pom文件修改默认继承关系及引用"></a>Spring Boot Pom文件修改默认继承关系及引用</h4><p>
     默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
 </p>
