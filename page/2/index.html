@@ -487,7 +487,7 @@
     <div class="post-body" itemprop="articleBody">
           <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
-<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<code>[start.spring.io](https://start.spring.io/)</code><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
+<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<a target="_blank" rel="noopener external nofollow noreferrer" href="https://start.spring.io/">start.spring.io</a><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
 <h4 id="Spring-Boot-Pom文件修改默认继承关系及引用"><a href="#Spring-Boot-Pom文件修改默认继承关系及引用" class="headerlink" title="Spring Boot Pom文件修改默认继承关系及引用"></a>Spring Boot Pom文件修改默认继承关系及引用</h4><p>
     默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
 </p>
