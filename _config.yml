@@ -153,3 +153,11 @@ nofollow:
     - 'marsshen.com'
     - 'www.marsshen.com'
     - 'game.marsshen.com'
+
+#archive分页每页显示文章数
+archive_generator:
+    per_page: 0
+
+#tag分页每页显示文章数
+tag_generator:
+    per_page: 0
