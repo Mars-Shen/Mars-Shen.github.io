@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.marsshen.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.marsshen.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="记录自己项目中使用Spring Boot与Mybatis&#x2F;Dubbo&#x2F;Druid整合过程中出现的问题,以及相应的解决方法.  Spring Boot部分生成一个简单的Spring Boot项目首先去Spring Boot的官网项目生成器生成一个简单项目:start.spring.io点Generate Project下载并且导入到本地IDE, 这里用的是Intellij. Spring Boot">
 <meta property="og:type" content="article">
@@ -105,7 +105,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -169,21 +169,21 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mars Shen"
-      src="/img/avatar.jpg">
+      src="/img/avatar.webp">
   <p class="site-author-name" itemprop="name">Mars Shen</p>
-  <div class="site-description" itemprop="description">Mars的个人博客，记录自己的生活，分享技术，积累人生。</div>
+  <div class="site-description" itemprop="description">记录点滴，分享技术，积累知识。</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -232,13 +232,13 @@
     <link itemprop="mainEntityOfPage" href="https://www.marsshen.com/posts/34fb554c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/img/avatar.jpg">
+      <meta itemprop="image" content="/img/avatar.webp">
       <meta itemprop="name" content="Mars Shen">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Mars's Blog">
-      <meta itemprop="description" content="Mars的个人博客，记录自己的生活，分享技术，积累人生。">
+      <meta itemprop="description" content="记录点滴，分享技术，积累知识。">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -295,7 +295,7 @@
     <div class="post-body" itemprop="articleBody">
         <blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
 
-<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a target="_blank" rel="noopener external nofollow noreferrer" href="https://start.spring.io/">start.spring.io</a></code><br><img src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
+<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<code><a target="_blank" rel="noopener external nofollow noreferrer" href="https://start.spring.io/">start.spring.io</a></code><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
 <h4 id="Spring-Boot-Pom文件修改默认继承关系及引用"><a href="#Spring-Boot-Pom文件修改默认继承关系及引用" class="headerlink" title="Spring Boot Pom文件修改默认继承关系及引用"></a>Spring Boot Pom文件修改默认继承关系及引用</h4><p>
     默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
 </p>
@@ -310,7 +310,7 @@
 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.log4j12.Log4jLoggerFactory loaded from file:/Users/MarsShen/Project/SSM/xmall/xmall-manager/xmall-manager-service-springboot/target/xmall-manager-service-springboot-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.8.0-alpha2.jar). If you are using WebLogic you will need to add &#x27;org.slf4j&#x27; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.log4j12.Log4jLoggerFactory</span><br><span class="line">	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:637)</span><br><span class="line">	at org.springframework.util.Assert.isInstanceOf(Assert.java:537)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:274)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:99)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:191)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:170)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)</span><br><span class="line">	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:68)</span><br><span class="line">	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:155)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:135)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:87)</span><br><span class="line">	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:172)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)</span><br><span class="line">	... 43 more</span><br></pre></td></tr></table></figure>
 
-<p>这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件<br><img src="/img/SpringBoot/SpringBoot-2.png"><br>解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.</p>
+<p>这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件<br><img data-src="/img/SpringBoot/SpringBoot-2.png"><br>解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="Spring-Boot与Dubbo整合"><a href="#Spring-Boot与Dubbo整合" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h1><h4 id="Spring-Boot与Dubbo整合-1"><a href="#Spring-Boot与Dubbo整合-1" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h4><p>
     Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
@@ -432,7 +432,7 @@
 
 
 <div class="copyright">
-  &copy; 2016 – 
+  &copy; 2015 – 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -444,13 +444,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">50k</span>
+    <span title="站点总字数">54k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">45 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -482,6 +482,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
