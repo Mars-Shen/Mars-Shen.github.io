@@ -161,3 +161,20 @@ archive_generator:
 #tag分页每页显示文章数
 tag_generator:
     per_page: 0
+
+#压缩插件
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
