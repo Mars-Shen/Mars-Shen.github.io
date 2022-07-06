@@ -105,7 +105,7 @@
 </p><p><strong>以上图片来自网络。</strong></p>
 </div>
 
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破��问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>翻译</tag>
@@ -530,7 +530,7 @@
 <li><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/cn/preface.html">Elasticsearch: 权威指南</a>， 这个是中文版的，容易看懂，但是有个问题就是版本有点老，最新版中已经移除type概念，这个指南中还存在这个概念，可以一看但更推荐看英文最新文档。</li>
 <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">最新文档</a>，最新的英文文档，推荐阅读。</li>
 </ul>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://dedicationyu.cn/article/3c321097.html">ubuntu18.04 修改 IP 为静态 IP 并能够上网</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>互联网技术</tag>
@@ -577,7 +577,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
 <p>然后访问<code><a href="http://server-name:15672/">http://server-name:15672/</a></code>可以进入管理页面，默认账号密码都为<code>guest</code>，里面可以管理像创建用户，维护队列之类的功能，非常好用。<br>详细信息可以看<code><a href="https://www.rabbitmq.com/management.html">这里</a></code></p>
 <p>完</p>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://dedicationyu.cn/article/3c321097.html">ubuntu18.04 修改 IP 为静态 IP 并能够上网</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>互联网技术</tag>
