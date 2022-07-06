@@ -105,7 +105,7 @@
 </p><p><strong>以上图片来自网络。</strong></p>
 </div>
 
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破��问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>翻译</tag>
@@ -165,76 +165,6 @@
         <tag>互联网技术</tag>
         <tag>IOS开发</tag>
         <tag>swift</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring Boot/Mybatis/Dubbo/Druid整合</title>
-    <url>/posts/34fb554c/</url>
-    <content><![CDATA[<blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
-
-<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<a href="https://start.spring.io/">start.spring.io</a><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
-<h4 id="Spring-Boot-Pom文件修改默认继承关系及引用"><a href="#Spring-Boot-Pom文件修改默认继承关系及引用" class="headerlink" title="Spring Boot Pom文件修改默认继承关系及引用"></a>Spring Boot Pom文件修改默认继承关系及引用</h4><p>
-    默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
-</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- Import dependency management from Spring Boot --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>
-    使用<code>dependencyManagement</code>代替<code>parent</code>完成Spring Boot必须组件的导入.
-</p>
-
-<h4 id="出现错误"><a href="#出现错误" class="headerlink" title="出现错误"></a>出现错误</h4><p>
-    项目中出现:
-</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.log4j12.Log4jLoggerFactory loaded from file:/Users/MarsShen/Project/SSM/xmall/xmall-manager/xmall-manager-service-springboot/target/xmall-manager-service-springboot-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.8.0-alpha2.jar). If you are using WebLogic you will need to add &#x27;org.slf4j&#x27; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.log4j12.Log4jLoggerFactory</span><br><span class="line">	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:637)</span><br><span class="line">	at org.springframework.util.Assert.isInstanceOf(Assert.java:537)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:274)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:99)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:191)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:170)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)</span><br><span class="line">	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:68)</span><br><span class="line">	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:155)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:135)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:87)</span><br><span class="line">	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:172)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)</span><br><span class="line">	... 43 more</span><br></pre></td></tr></table></figure>
-
-<p>这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件<br><img data-src="/img/SpringBoot/SpringBoot-2.png"><br>解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="Spring-Boot与Dubbo整合"><a href="#Spring-Boot与Dubbo整合" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h1><h4 id="Spring-Boot与Dubbo整合-1"><a href="#Spring-Boot与Dubbo整合-1" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h4><p>
-    Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
-</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.dubbo.springboot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.sgroschupf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zkclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>
-    修改application.properties中的配置, 添加dubbo相关属性:
-</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#Dubbo 服务提供者配置</span><br><span class="line">#注册中心选择了zookeeper</span><br><span class="line">spring.dubbo.registry.address=zookeeper://127.0.0.1:2181 </span><br><span class="line">spring.dubbo.protocol.name=dubbo </span><br><span class="line">spring.dubbo.protocol.port=20880</span><br><span class="line">spring.dubbo.application.name=provider</span><br><span class="line">#需要暴露接口的包</span><br><span class="line">spring.dubbo.scan=cn.example.servicespringboot.service.imp</span><br></pre></td></tr></table></figure>
-<p>
-    最后在服务生产者类中使用<code>com.alibaba.dubbo.config.annotation.Service</code>中的<code>@service</code>即可暴露service
-</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="keyword">import</span> com.alibaba.dubbo.config.annotation.Service;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MemberServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">MemberService</span> &#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Dubbo-Admin的使用"><a href="#Dubbo-Admin的使用" class="headerlink" title="Dubbo Admin的使用"></a>Dubbo Admin的使用</h4><p>
-    Dubbo控制台可以很好的监控当前服务发布者与消费者的状态, 建议调试的时候安装使用.<code><a href="http://dubbo.io/books/dubbo-admin-book/">安装教程</a></code>
-</p>
-
-<h1 id="Spring-Boot与Mybatis-x2F-Druid整合"><a href="#Spring-Boot与Mybatis-x2F-Druid整合" class="headerlink" title="Spring Boot与Mybatis&#x2F;Druid整合"></a>Spring Boot与Mybatis&#x2F;Druid整合</h1><h4 id="Spring-Boot与Mybatis-x2F-Druid整合-1"><a href="#Spring-Boot与Mybatis-x2F-Druid整合-1" class="headerlink" title="Spring Boot与Mybatis&#x2F;Druid整合"></a>Spring Boot与Mybatis&#x2F;Druid整合</h4><p>
-    首先在Pom文件中导入相应的jar包:
-</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>            </span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.44<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>
-    修改application.properties中的配置, 使用Druid链接数据库:
-</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#数据库设置</span><br><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource  </span><br><span class="line">spring.datasource.driverClassName=com.mysql.jdbc.Driver  </span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/test?characterEncoding=utf-8</span><br><span class="line">spring.datasource.username=root  </span><br><span class="line">spring.datasource.password=root  </span><br><span class="line">#--------------------------</span><br><span class="line"># 下面为连接池的补充设置，应用到上面所有数据源中</span><br><span class="line"># 初始化大小，最小，最大</span><br><span class="line">spring.datasource.initialSize=5  </span><br><span class="line">spring.datasource.minIdle=5  </span><br><span class="line">spring.datasource.maxActive=20  </span><br><span class="line"># 配置获取连接等待超时的时间</span><br><span class="line">spring.datasource.maxWait=60000  </span><br><span class="line"># 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒</span><br><span class="line">spring.datasource.timeBetweenEvictionRunsMillis=60000  </span><br><span class="line"># 配置一个连接在池中最小生存的时间，单位是毫秒</span><br><span class="line">spring.datasource.minEvictableIdleTimeMillis=300000  </span><br><span class="line">spring.datasource.validationQuery=SELECT 1 FROM DUAL  </span><br><span class="line">spring.datasource.testWhileIdle=true  </span><br><span class="line">spring.datasource.testOnBorrow=false  </span><br><span class="line">spring.datasource.testOnReturn=false  </span><br><span class="line"># 打开PSCache，并且指定每个连接上PSCache的大小</span><br><span class="line">spring.datasource.poolPreparedStatements=true  </span><br><span class="line">spring.datasource.maxPoolPreparedStatementPerConnectionSize=20  </span><br><span class="line"># 配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#x27;wall&#x27;用于防火墙</span><br><span class="line">spring.datasource.filters=stat,wall,log4j  </span><br><span class="line"># 通过connectProperties属性来打开mergeSql功能；慢SQL记录</span><br><span class="line">spring.datasource.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000  </span><br><span class="line"># 合并多个DruidDataSource的监控数据</span><br><span class="line">#spring.datasource.useGlobalDataSourceStat=true</span><br></pre></td></tr></table></figure>
-<p>
-    创建一个用DatasourceConfig类来配置Data source:
-</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.example.servicespringboot.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DatasourceConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConfigurationProperties(prefix = &quot;spring.datasource&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> DataSource <span class="title function_">druidDataSource</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">DruidDataSource</span> <span class="variable">druidDataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DruidDataSource</span>();</span><br><span class="line">        <span class="keyword">return</span> druidDataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>
-    在启动类中加入<code>@ServletComponentScan</code>和<code>@MapperScan("cn.example.manager.mapper")</code>:定义mapper所在的包
-</p>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ServletComponentScan</span></span><br><span class="line"><span class="meta">@MapperScan(&quot;cn.example.manager.mapper&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServiceSpringbootApplication</span> &#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>
-    至此, 整个整合基本就配置完成.
-</p>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>互联网技术</tag>
-        <tag>Spring Boot</tag>
-        <tag>Mybatis</tag>
-        <tag>Dubbo</tag>
-        <tag>Druid</tag>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -342,6 +272,76 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring Boot/Mybatis/Dubbo/Druid整合</title>
+    <url>/posts/34fb554c/</url>
+    <content><![CDATA[<blockquote>记录自己项目中使用Spring Boot与Mybatis/Dubbo/Druid整合过程中出现的问题,以及相应的解决方法.</blockquote>
+
+<h1 id="Spring-Boot部分"><a href="#Spring-Boot部分" class="headerlink" title="Spring Boot部分"></a>Spring Boot部分</h1><h4 id="生成一个简单的Spring-Boot项目"><a href="#生成一个简单的Spring-Boot项目" class="headerlink" title="生成一个简单的Spring Boot项目"></a>生成一个简单的Spring Boot项目</h4><p>首先去Spring Boot的官网项目生成器生成一个简单项目:<a href="https://start.spring.io/">start.spring.io</a><br><img data-src="/img/SpringBoot/SpringBoot-1.png"><br>点Generate Project下载并且导入到本地IDE, 这里用的是Intellij.</p>
+<h4 id="Spring-Boot-Pom文件修改默认继承关系及引用"><a href="#Spring-Boot-Pom文件修改默认继承关系及引用" class="headerlink" title="Spring Boot Pom文件修改默认继承关系及引用"></a>Spring Boot Pom文件修改默认继承关系及引用</h4><p>
+    默认Pom文件Spring Boot是用继承Pom的方式导入Spring Boot的必须组件的,那如果项目Pom中本来就已经有一个<code>parent</code>存在了,那应该怎么办呢? Spring Boot给出了自己的解决办法
+</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- Import dependency management from Spring Boot --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>
+    使用<code>dependencyManagement</code>代替<code>parent</code>完成Spring Boot必须组件的导入.
+</p>
+
+<h4 id="出现错误"><a href="#出现错误" class="headerlink" title="出现错误"></a>出现错误</h4><p>
+    项目中出现:
+</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.log4j12.Log4jLoggerFactory loaded from file:/Users/MarsShen/Project/SSM/xmall/xmall-manager/xmall-manager-service-springboot/target/xmall-manager-service-springboot-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.8.0-alpha2.jar). If you are using WebLogic you will need to add &#x27;org.slf4j&#x27; to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.log4j12.Log4jLoggerFactory</span><br><span class="line">	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:637)</span><br><span class="line">	at org.springframework.util.Assert.isInstanceOf(Assert.java:537)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:274)</span><br><span class="line">	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:99)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:191)</span><br><span class="line">	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:170)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)</span><br><span class="line">	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)</span><br><span class="line">	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:68)</span><br><span class="line">	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)</span><br><span class="line">	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.run(SpringBootServletInitializer.java:155)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.createRootApplicationContext(SpringBootServletInitializer.java:135)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.SpringBootServletInitializer.onStartup(SpringBootServletInitializer.java:87)</span><br><span class="line">	at org.springframework.web.SpringServletContainerInitializer.onStartup(SpringServletContainerInitializer.java:172)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5196)</span><br><span class="line">	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)</span><br><span class="line">	... 43 more</span><br></pre></td></tr></table></figure>
+
+<p>这是由于项目中已经存在log4j的jar包,与Logback产生冲突导致运行时出现这个<code>java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath.</code>错误. 通过<code>mvn dependency:tree</code>命令可以看到具体冲突的文件<br><img data-src="/img/SpringBoot/SpringBoot-2.png"><br>解决这个问题很简单, 只需要在Spring Boot组件导入的时候, 将有冲突的组件排除<code>spring-boot-starter-logging</code>再导入即可.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Spring-Boot与Dubbo整合"><a href="#Spring-Boot与Dubbo整合" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h1><h4 id="Spring-Boot与Dubbo整合-1"><a href="#Spring-Boot与Dubbo整合-1" class="headerlink" title="Spring Boot与Dubbo整合"></a>Spring Boot与Dubbo整合</h4><p>
+    Spring Boot与Dubbo整合相对比较简单, 首先在Pom文件中导入相应的jar包:
+</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.dubbo.springboot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.sgroschupf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zkclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>
+    修改application.properties中的配置, 添加dubbo相关属性:
+</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#Dubbo 服务提供者配置</span><br><span class="line">#注册中心选择了zookeeper</span><br><span class="line">spring.dubbo.registry.address=zookeeper://127.0.0.1:2181 </span><br><span class="line">spring.dubbo.protocol.name=dubbo </span><br><span class="line">spring.dubbo.protocol.port=20880</span><br><span class="line">spring.dubbo.application.name=provider</span><br><span class="line">#需要暴露接口的包</span><br><span class="line">spring.dubbo.scan=cn.example.servicespringboot.service.imp</span><br></pre></td></tr></table></figure>
+<p>
+    最后在服务生产者类中使用<code>com.alibaba.dubbo.config.annotation.Service</code>中的<code>@service</code>即可暴露service
+</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="keyword">import</span> com.alibaba.dubbo.config.annotation.Service;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MemberServiceImpl</span> <span class="keyword">implements</span> <span class="title class_">MemberService</span> &#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Dubbo-Admin的使用"><a href="#Dubbo-Admin的使用" class="headerlink" title="Dubbo Admin的使用"></a>Dubbo Admin的使用</h4><p>
+    Dubbo控制台可以很好的监控当前服务发布者与消费者的状态, 建议调试的时候安装使用.<code><a href="http://dubbo.io/books/dubbo-admin-book/">安装教程</a></code>
+</p>
+
+<h1 id="Spring-Boot与Mybatis-x2F-Druid整合"><a href="#Spring-Boot与Mybatis-x2F-Druid整合" class="headerlink" title="Spring Boot与Mybatis&#x2F;Druid整合"></a>Spring Boot与Mybatis&#x2F;Druid整合</h1><h4 id="Spring-Boot与Mybatis-x2F-Druid整合-1"><a href="#Spring-Boot与Mybatis-x2F-Druid整合-1" class="headerlink" title="Spring Boot与Mybatis&#x2F;Druid整合"></a>Spring Boot与Mybatis&#x2F;Druid整合</h4><p>
+    首先在Pom文件中导入相应的jar包:
+</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>            </span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.44<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>
+    修改application.properties中的配置, 使用Druid链接数据库:
+</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">#数据库设置</span><br><span class="line">spring.datasource.type=com.alibaba.druid.pool.DruidDataSource  </span><br><span class="line">spring.datasource.driverClassName=com.mysql.jdbc.Driver  </span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/test?characterEncoding=utf-8</span><br><span class="line">spring.datasource.username=root  </span><br><span class="line">spring.datasource.password=root  </span><br><span class="line">#--------------------------</span><br><span class="line"># 下面为连接池的补充设置，应用到上面所有数据源中</span><br><span class="line"># 初始化大小，最小，最大</span><br><span class="line">spring.datasource.initialSize=5  </span><br><span class="line">spring.datasource.minIdle=5  </span><br><span class="line">spring.datasource.maxActive=20  </span><br><span class="line"># 配置获取连接等待超时的时间</span><br><span class="line">spring.datasource.maxWait=60000  </span><br><span class="line"># 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒</span><br><span class="line">spring.datasource.timeBetweenEvictionRunsMillis=60000  </span><br><span class="line"># 配置一个连接在池中最小生存的时间，单位是毫秒</span><br><span class="line">spring.datasource.minEvictableIdleTimeMillis=300000  </span><br><span class="line">spring.datasource.validationQuery=SELECT 1 FROM DUAL  </span><br><span class="line">spring.datasource.testWhileIdle=true  </span><br><span class="line">spring.datasource.testOnBorrow=false  </span><br><span class="line">spring.datasource.testOnReturn=false  </span><br><span class="line"># 打开PSCache，并且指定每个连接上PSCache的大小</span><br><span class="line">spring.datasource.poolPreparedStatements=true  </span><br><span class="line">spring.datasource.maxPoolPreparedStatementPerConnectionSize=20  </span><br><span class="line"># 配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#x27;wall&#x27;用于防火墙</span><br><span class="line">spring.datasource.filters=stat,wall,log4j  </span><br><span class="line"># 通过connectProperties属性来打开mergeSql功能；慢SQL记录</span><br><span class="line">spring.datasource.connectionProperties=druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000  </span><br><span class="line"># 合并多个DruidDataSource的监控数据</span><br><span class="line">#spring.datasource.useGlobalDataSourceStat=true</span><br></pre></td></tr></table></figure>
+<p>
+    创建一个用DatasourceConfig类来配置Data source:
+</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.example.servicespringboot.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DatasourceConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConfigurationProperties(prefix = &quot;spring.datasource&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> DataSource <span class="title function_">druidDataSource</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">DruidDataSource</span> <span class="variable">druidDataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DruidDataSource</span>();</span><br><span class="line">        <span class="keyword">return</span> druidDataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>
+    在启动类中加入<code>@ServletComponentScan</code>和<code>@MapperScan("cn.example.manager.mapper")</code>:定义mapper所在的包
+</p>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ServletComponentScan</span></span><br><span class="line"><span class="meta">@MapperScan(&quot;cn.example.manager.mapper&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServiceSpringbootApplication</span> &#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>
+    至此, 整个整合基本就配置完成.
+</p>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>互联网技术</tag>
+        <tag>Spring Boot</tag>
+        <tag>Mybatis</tag>
+        <tag>Dubbo</tag>
+        <tag>Druid</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自动化抢小米加密兔辅助工具</title>
     <url>/posts/a9eae027/</url>
     <content><![CDATA[<h1 id="自动化抢小米加密兔辅助工具"><a href="#自动化抢小米加密兔辅助工具" class="headerlink" title="自动化抢小米加密兔辅助工具"></a>自动化抢小米加密兔辅助工具</h1><p>
@@ -399,6 +399,53 @@
       <tags>
         <tag>原创</tag>
         <tag>互联网技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu下RabbitMQ的安装与配置</title>
+    <url>/posts/4878be23/</url>
+    <content><![CDATA[<h1 id="Ubuntu下RabbitMQ的安装与配置"><a href="#Ubuntu下RabbitMQ的安装与配置" class="headerlink" title="Ubuntu下RabbitMQ的安装与配置"></a>Ubuntu下RabbitMQ的安装与配置</h1><p>最近在研究RabbitMQ，本文简单记录了如何搭建与配置一个RabbitMQ服务器。</p>
+<h2 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h2><p><code>rabbitmq-server</code>是可以在Ubuntu系统与Debian系统中使用的RabbitMQ服务器。在Ubuntu标准的repositories中，其实包含了<code>rabbitmq-server</code>，但是标准仓库中的版本往往非常的老旧，直接安装的话会得到的可能不是你想要的版本，所以想安装新版本，我们需要一些额外的工作。这里主要介绍了Ubuntu下通过<code>apt-get</code>的方法安装最新版本，如果想了解更多的安装方法，可以看<code><a href="https://www.rabbitmq.com/download.html">这里</a></code></p>
+<p><strong>安装前提</strong></p>
+<p>由于RabbitMQ需要基于Erlang&#x2F;OTP，所以在安装RabbitMQ之前需要先安装Erlang&#x2F;OTP。同样的，在Ubuntu标准的repositories中，Erlang&#x2F;OTP的版本很老，推荐不要直接安装在Ubuntu标准的repositories中Erlang&#x2F;OTP，而是安装新版本。</p>
+<h4 id="安装Erlang"><a href="#安装Erlang" class="headerlink" title="安装Erlang"></a>安装Erlang</h4><p><strong>添加地址</strong></p>
+<p>首先执行下面两个命令，添加Erlang自己的仓库地址到你本地。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb</span><br><span class="line">sudo dpkg -i erlang-solutions_1.0_all.deb</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>或者你可以手动添加仓库地址至本地。<br>添加下面代码至你本地<code>/etc/apt/sources.list</code>中，注意把下面的<code>&#123;distribution&#125;</code>(包括大括号)替换成你自己系统的distribution。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deb https://packages.erlang-solutions.com/ubuntu &#123;distribution&#125; contrib</span><br></pre></td></tr></table></figure>
+<p>如果不知道自己系统的distribution是什么，可以输入<code>lsb_release -c</code>查看，我自己的系统是Ubuntu16.04，对应的distribution是xenial，所以我添加进<code>/etc/apt/sources.list</code>的命令是</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deb https://packages.erlang-solutions.com/ubuntu xenial contrib</span><br></pre></td></tr></table></figure>
+<p>下一步用下面的命令来添加Erlang公钥</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc</span><br><span class="line">sudo apt-key add erlang_solutions.asc</span><br></pre></td></tr></table></figure>
+<p><strong>开始安装Erlang</strong></p>
+<p>用下面的命令刷新本地apt-get仓库的缓存，然后安装Erlang。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install erlang</span><br></pre></td></tr></table></figure>
+<p>至此，Erlang安装完毕，如果想了解更多Erlang&#x2F;OTP的安装方法，可以看<code><a href="https://packages.erlang-solutions.com/erlang/#tabs-debian">这里</a></code></p>
+<h4 id="安装rabbitmq-server"><a href="#安装rabbitmq-server" class="headerlink" title="安装rabbitmq-server"></a>安装rabbitmq-server</h4><p><strong>添加rabbitmq仓库地址</strong></p>
+<p>同样的下面的像上文所说的一样将下面的<code>&#123;distribution&#125;</code>(包括大括号)替换成你自己系统的distribution。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;deb https://dl.bintray.com/rabbitmq/debian &#123;distribution&#125; main&quot; | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list</span><br></pre></td></tr></table></figure>
+<p>添加rabbitmq仓库公钥</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -O- https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+<p>用下面的命令刷新本地apt-get仓库的缓存，然后安装rabbitmq-server。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install rabbitmq-server</span><br></pre></td></tr></table></figure>
+<p>至此rabbitmq-server安装完毕。</p>
+<h2 id="运行与配置RabbitMQ"><a href="#运行与配置RabbitMQ" class="headerlink" title="运行与配置RabbitMQ"></a>运行与配置RabbitMQ</h2><h4 id="运行RabbitMQ"><a href="#运行RabbitMQ" class="headerlink" title="运行RabbitMQ"></a>运行RabbitMQ</h4><p>在RabbitMQ安装包安装完后，服务器默认是会在后台通过一个没有特权的用户rabbitmq来运行的，想要手动启动或者停止重启服务器，只需要像系统中别的启动命令一样就可以了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service rabbitmq-server start</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用端口"><a href="#常用端口" class="headerlink" title="常用端口"></a>常用端口</h4><p>以下是官网上常用端口的介绍:</p>
+<p><strong>4369</strong>: epmd, a peer discovery service used by RabbitMQ nodes and CLI tools <br><br><strong><code>5672, 5671</code></strong>: used by AMQP 0-9-1 and 1.0 clients without and with TLS <br><br><strong>25672</strong>: used for inter-node and CLI tools communication (Erlang distribution server port) and is allocated from a dynamic range (limited to a single port by default, computed as AMQP port + 20000). See networking guide for details. <br><br><strong>35672-35682</strong>: used by CLI tools (Erlang distribution client ports) for communication with nodes and is allocated from a dynamic range (computed as Erlang dist port + 10000 through dist port + 10010). See networking guide for details. <br><br><strong><code>15672</code></strong>: HTTP API clients and rabbitmqadmin (only if the management plugin is enabled) <br><br><strong>61613, 61614</strong>: STOMP clients without and with TLS (only if the STOMP plugin is enabled) <br><br><strong>1883, 8883</strong>: (MQTT clients without and with TLS, if the MQTT plugin is enabled <br><br><strong>15674</strong>: STOMP-over-WebSockets clients (only if the Web STOMP plugin is enabled) <br><br><strong>15675</strong>: MQTT-over-WebSockets clients (only if the Web MQTT plugin is enabled) <br></p>
+<p>其中<code>5672, 5671</code>为消息队列常用的端口，<code>15672</code>为网页可视化管理所用的端口。</p>
+<h4 id="开启网页可视化管理"><a href="#开启网页可视化管理" class="headerlink" title="开启网页可视化管理"></a>开启网页可视化管理</h4><p>开启网页可视化管理很简单，首先需要开启RabbitMQ可视化管理插件，通过如下命令开启</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
+<p>然后访问<code><a href="http://server-name:15672/">http://server-name:15672/</a></code>可以进入管理页面，默认账号密码都为<code>guest</code>，里面可以管理像创建用户，维护队列之类的功能，非常好用。<br>详细信息可以看<code><a href="https://www.rabbitmq.com/management.html">这里</a></code></p>
+<p>完</p>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://dedicationyu.cn/article/3c321097.html">ubuntu18.04 修改 IP 为静态 IP 并能够上网</a></li></ul></div>]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>互联网技术</tag>
+        <tag>RabbitMQ</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -534,55 +581,8 @@
       <tags>
         <tag>原创</tag>
         <tag>互联网技术</tag>
+        <tag>Ubuntu</tag>
         <tag>ELK</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu下RabbitMQ的安装与配置</title>
-    <url>/posts/4878be23/</url>
-    <content><![CDATA[<h1 id="Ubuntu下RabbitMQ的安装与配置"><a href="#Ubuntu下RabbitMQ的安装与配置" class="headerlink" title="Ubuntu下RabbitMQ的安装与配置"></a>Ubuntu下RabbitMQ的安装与配置</h1><p>最近在研究RabbitMQ，本文简单记录了如何搭建与配置一个RabbitMQ服务器。</p>
-<h2 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h2><p><code>rabbitmq-server</code>是可以在Ubuntu系统与Debian系统中使用的RabbitMQ服务器。在Ubuntu标准的repositories中，其实包含了<code>rabbitmq-server</code>，但是标准仓库中的版本往往非常的老旧，直接安装的话会得到的可能不是你想要的版本，所以想安装新版本，我们需要一些额外的工作。这里主要介绍了Ubuntu下通过<code>apt-get</code>的方法安装最新版本，如果想了解更多的安装方法，可以看<code><a href="https://www.rabbitmq.com/download.html">这里</a></code></p>
-<p><strong>安装前提</strong></p>
-<p>由于RabbitMQ需要基于Erlang&#x2F;OTP，所以在安装RabbitMQ之前需要先安装Erlang&#x2F;OTP。同样的，在Ubuntu标准的repositories中，Erlang&#x2F;OTP的版本很老，推荐不要直接安装在Ubuntu标准的repositories中Erlang&#x2F;OTP，而是安装新版本。</p>
-<h4 id="安装Erlang"><a href="#安装Erlang" class="headerlink" title="安装Erlang"></a>安装Erlang</h4><p><strong>添加地址</strong></p>
-<p>首先执行下面两个命令，添加Erlang自己的仓库地址到你本地。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb</span><br><span class="line">sudo dpkg -i erlang-solutions_1.0_all.deb</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>或者你可以手动添加仓库地址至本地。<br>添加下面代码至你本地<code>/etc/apt/sources.list</code>中，注意把下面的<code>&#123;distribution&#125;</code>(包括大括号)替换成你自己系统的distribution。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deb https://packages.erlang-solutions.com/ubuntu &#123;distribution&#125; contrib</span><br></pre></td></tr></table></figure>
-<p>如果不知道自己系统的distribution是什么，可以输入<code>lsb_release -c</code>查看，我自己的系统是Ubuntu16.04，对应的distribution是xenial，所以我添加进<code>/etc/apt/sources.list</code>的命令是</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deb https://packages.erlang-solutions.com/ubuntu xenial contrib</span><br></pre></td></tr></table></figure>
-<p>下一步用下面的命令来添加Erlang公钥</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc</span><br><span class="line">sudo apt-key add erlang_solutions.asc</span><br></pre></td></tr></table></figure>
-<p><strong>开始安装Erlang</strong></p>
-<p>用下面的命令刷新本地apt-get仓库的缓存，然后安装Erlang。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install erlang</span><br></pre></td></tr></table></figure>
-<p>至此，Erlang安装完毕，如果想了解更多Erlang&#x2F;OTP的安装方法，可以看<code><a href="https://packages.erlang-solutions.com/erlang/#tabs-debian">这里</a></code></p>
-<h4 id="安装rabbitmq-server"><a href="#安装rabbitmq-server" class="headerlink" title="安装rabbitmq-server"></a>安装rabbitmq-server</h4><p><strong>添加rabbitmq仓库地址</strong></p>
-<p>同样的下面的像上文所说的一样将下面的<code>&#123;distribution&#125;</code>(包括大括号)替换成你自己系统的distribution。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;deb https://dl.bintray.com/rabbitmq/debian &#123;distribution&#125; main&quot; | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list</span><br></pre></td></tr></table></figure>
-<p>添加rabbitmq仓库公钥</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -O- https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-<p>用下面的命令刷新本地apt-get仓库的缓存，然后安装rabbitmq-server。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install rabbitmq-server</span><br></pre></td></tr></table></figure>
-<p>至此rabbitmq-server安装完毕。</p>
-<h2 id="运行与配置RabbitMQ"><a href="#运行与配置RabbitMQ" class="headerlink" title="运行与配置RabbitMQ"></a>运行与配置RabbitMQ</h2><h4 id="运行RabbitMQ"><a href="#运行RabbitMQ" class="headerlink" title="运行RabbitMQ"></a>运行RabbitMQ</h4><p>在RabbitMQ安装包安装完后，服务器默认是会在后台通过一个没有特权的用户rabbitmq来运行的，想要手动启动或者停止重启服务器，只需要像系统中别的启动命令一样就可以了</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service rabbitmq-server start</span><br></pre></td></tr></table></figure>
-
-<h4 id="常用端口"><a href="#常用端口" class="headerlink" title="常用端口"></a>常用端口</h4><p>以下是官网上常用端口的介绍:</p>
-<p><strong>4369</strong>: epmd, a peer discovery service used by RabbitMQ nodes and CLI tools <br><br><strong><code>5672, 5671</code></strong>: used by AMQP 0-9-1 and 1.0 clients without and with TLS <br><br><strong>25672</strong>: used for inter-node and CLI tools communication (Erlang distribution server port) and is allocated from a dynamic range (limited to a single port by default, computed as AMQP port + 20000). See networking guide for details. <br><br><strong>35672-35682</strong>: used by CLI tools (Erlang distribution client ports) for communication with nodes and is allocated from a dynamic range (computed as Erlang dist port + 10000 through dist port + 10010). See networking guide for details. <br><br><strong><code>15672</code></strong>: HTTP API clients and rabbitmqadmin (only if the management plugin is enabled) <br><br><strong>61613, 61614</strong>: STOMP clients without and with TLS (only if the STOMP plugin is enabled) <br><br><strong>1883, 8883</strong>: (MQTT clients without and with TLS, if the MQTT plugin is enabled <br><br><strong>15674</strong>: STOMP-over-WebSockets clients (only if the Web STOMP plugin is enabled) <br><br><strong>15675</strong>: MQTT-over-WebSockets clients (only if the Web MQTT plugin is enabled) <br></p>
-<p>其中<code>5672, 5671</code>为消息队列常用的端口，<code>15672</code>为网页可视化管理所用的端口。</p>
-<h4 id="开启网页可视化管理"><a href="#开启网页可视化管理" class="headerlink" title="开启网页可视化管理"></a>开启网页可视化管理</h4><p>开启网页可视化管理很简单，首先需要开启RabbitMQ可视化管理插件，通过如下命令开启</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
-<p>然后访问<code><a href="http://server-name:15672/">http://server-name:15672/</a></code>可以进入管理页面，默认账号密码都为<code>guest</code>，里面可以管理像创建用户，维护队列之类的功能，非常好用。<br>详细信息可以看<code><a href="https://www.rabbitmq.com/management.html">这里</a></code></p>
-<p>完</p>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://dedicationyu.cn/article/3c321097.html">ubuntu18.04 修改 IP 为静态 IP 并能够上网</a></li></ul></div>]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>互联网技术</tag>
-        <tag>RabbitMQ</tag>
-        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -901,6 +901,93 @@
       </tags>
   </entry>
   <entry>
+    <title>Switch硬件破解经验分享 - 破解问题FAQ</title>
+    <url>/posts/c7924c66/</url>
+    <content><![CDATA[<blockquote>
+<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
+</blockquote>
+<div class="admonition info"><p class="admonition-title">说明
+</p><p><strong>我会收集一些硬破后常见错误解决方式，还有一些技巧更新在这个页面。有什么问题也可以在这里留言。</strong></p>
+</div>
+
+<h3 id="如何进入homebrew-launcher-自制软件启动器，简称HBL"><a href="#如何进入homebrew-launcher-自制软件启动器，简称HBL" class="headerlink" title="如何进入homebrew launcher(自制软件启动器，简称HBL)"></a>如何进入homebrew launcher(自制软件启动器，简称HBL)</h3><p>有两种方法可以进入homebrew launcher：</p>
+<ul>
+<li>随便找个游戏，按住R并启动这个游戏。<br>或者</li>
+<li>通过单击相册图标<ul>
+<li>这将使你进入applet mode(小程序模式)，你会在右上角看到applet mode几个字。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">关于applet mode
+</p><p><strong>applet mode(小程序模式)并没有用最高权限执行自制软件，可能会使某些自制程序可能无法正常工作出错。</strong></p>
+</div>
+
+<span id="more"></span>
+<h3 id="如何进入维护模式"><a href="#如何进入维护模式" class="headerlink" title="如何进入维护模式"></a>如何进入维护模式</h3><p>如果你经常打开游戏报错，或者遇到莫名其妙的问题，那么可以尝试按如下步骤进入维护模式：</p>
+<ol>
+<li>打开switch。</li>
+<li>系统开机，进入Hekate后选择你要进的系统，进入大气时(黑屏时)按住按住(音量 +) 和 (音量 -) 直到出现画面。</li>
+<li>这时候你就进入了维护模式，一般来说什么都不要动，直接长按电源键关机，重新打开switch即可。</li>
+</ol>
+<h3 id="如何在进入游戏时禁止Mods和金手指"><a href="#如何在进入游戏时禁止Mods和金手指" class="headerlink" title="如何在进入游戏时禁止Mods和金手指"></a>如何在进入游戏时禁止Mods和金手指</h3><p>如果想在启动游戏时禁用Mods或金手指，请按住L并启动你想要启动的游戏。</p>
+<h3 id="启动菜单中虚拟系统消失"><a href="#启动菜单中虚拟系统消失" class="headerlink" title="启动菜单中虚拟系统消失"></a>启动菜单中虚拟系统消失</h3><p>如果启动菜单中虚拟系统消失，请检查<code>sd -&gt; bootloader -&gt; hekate_ipl.ini</code>配置文件，查看是否缺少虚拟系统配置。可以参考如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...省略之前配置</span><br><span class="line">&#123;&#125;</span><br><span class="line">[Fusee]</span><br><span class="line">emummcforce=1</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br><span class="line">payload=bootloader/payloads/fusee.bin</span><br><span class="line"></span><br><span class="line">&#123;&#125;</span><br><span class="line">[Atmosphere (emuMMC)]</span><br><span class="line">emummcforce=1</span><br><span class="line">fss0=atmosphere/package3</span><br><span class="line">kip1patch=nosigchk</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br></pre></td></tr></table></figure>
+<p>其中<code>&#123;&#125;</code>为分隔符，<code>[Fusee]</code>为fusee.bin方式引导的大气层虚拟系统，<code>[Atmosphere (emuMMC)]</code>为普通方式引导的大气层虚拟系统。</p>
+<h3 id="哪些行为可以让我被ban？"><a href="#哪些行为可以让我被ban？" class="headerlink" title="哪些行为可以让我被ban？"></a>哪些行为可以让我被ban？</h3><div class="admonition error"><p class="admonition-title">注意
+</p><p><strong>任天堂的政策一直在动态变化，我不保证下面说的一定对。如被 ban 号或 ban 机，本人概不负责。</strong></p>
+</div>
+
+<p>立刻ban：</p>
+<ul>
+<li>盗版行为：只要使用盗版软件并且联网，必ban，包括但不限于安装盗版游戏、安装自制 NSP 文件等。</li>
+<li>使用自制软件更改用户图标。</li>
+<li>不合规的 eShop 行为，包括退款，黑卡等，前段时间闹的沸沸扬扬的港服Ban号就是由于黑点卡引起的。</li>
+<li>使用带有你switch唯一证书的自制软件或 PC 工具连接到任何任天堂网络或者CDN。</li>
+</ul>
+<p>很有可能被ban，但一般不会马上被ban：</p>
+<ul>
+<li>修改网络游戏</li>
+<li>在网络游戏中作弊</li>
+<li>使用自制软件清除系统日志</li>
+<li>在线使用多个 NAND（sysMMC 和 emuMMC），而并且连接了任天堂的网络。</li>
+</ul>
+<p>到目前为止，不会被Ban：</p>
+<ul>
+<li>单纯使用大气层自制固件(这里指的是单纯的使用大气层固件，没有任何上述的盗版行为)。</li>
+<li>单纯使用Homebrew。</li>
+<li>使用自定义主题或者自定义系统模块。</li>
+<li>单纯单机离线游戏中使用Mods或者使用金手指。</li>
+<li>超频</li>
+<li>运行其他操作系统，例如 Android 或 Linux</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">综上所述，按如下原则使用破解switch
+</p><ul>
+<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
+<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
+<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
+<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
+<li><strong>目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
+</ul>
+</div>
+
+<h3 id="破解芯片一直亮黄灯？"><a href="#破解芯片一直亮黄灯？" class="headerlink" title="破解芯片一直亮黄灯？"></a>破解芯片一直亮黄灯？</h3><p>大概率是焊接问题，请检查焊接焊点。</p>
+<hr>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<ol>
+<li><a href="https://switch.homebrew.guide/faq.html">switch.homebrew.guide</a></li>
+<li><a href="https://rentry.org/SwitchFAQ">rentry.org</a></li>
+<li><a href="https://nh-server.github.io/switch-guide/faq/">nh-server.github.io</a></li>
+</ol>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li></ul></div>]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>switch硬破教程</tag>
+        <tag>switch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Switch硬件破解经验分享 - 破解后折腾篇</title>
     <url>/posts/20e16ead/</url>
     <content><![CDATA[<blockquote>
@@ -1052,93 +1139,6 @@
 <li><a href="/posts/f96d7ec4/">Switch硬件破解经验分享 - 术语篇</a></li>
 </ol>
 <div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li></ul></div>]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>switch硬破教程</tag>
-        <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Switch硬件破解经验分享 - 破解问题FAQ</title>
-    <url>/posts/c7924c66/</url>
-    <content><![CDATA[<blockquote>
-<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
-</blockquote>
-<div class="admonition info"><p class="admonition-title">说明
-</p><p><strong>我会收集一些硬破后常见错误解决方式，还有一些技巧更新在这个页面。有什么问题也可以在这里留言。</strong></p>
-</div>
-
-<h3 id="如何进入homebrew-launcher-自制软件启动器，简称HBL"><a href="#如何进入homebrew-launcher-自制软件启动器，简称HBL" class="headerlink" title="如何进入homebrew launcher(自制软件启动器，简称HBL)"></a>如何进入homebrew launcher(自制软件启动器，简称HBL)</h3><p>有两种方法可以进入homebrew launcher：</p>
-<ul>
-<li>随便找个游戏，按住R并启动这个游戏。<br>或者</li>
-<li>通过单击相册图标<ul>
-<li>这将使你进入applet mode(小程序模式)，你会在右上角看到applet mode几个字。</li>
-</ul>
-</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">关于applet mode
-</p><p><strong>applet mode(小程序模式)并没有用最高权限执行自制软件，可能会使某些自制程序可能无法正常工作出错。</strong></p>
-</div>
-
-<span id="more"></span>
-<h3 id="如何进入维护模式"><a href="#如何进入维护模式" class="headerlink" title="如何进入维护模式"></a>如何进入维护模式</h3><p>如果你经常打开游戏报错，或者遇到莫名其妙的问题，那么可以尝试按如下步骤进入维护模式：</p>
-<ol>
-<li>打开switch。</li>
-<li>系统开机，进入Hekate后选择你要进的系统，进入大气时(黑屏时)按住按住(音量 +) 和 (音量 -) 直到出现画面。</li>
-<li>这时候你就进入了维护模式，一般来说什么都不要动，直接长按电源键关机，重新打开switch即可。</li>
-</ol>
-<h3 id="如何在进入游戏时禁止Mods和金手指"><a href="#如何在进入游戏时禁止Mods和金手指" class="headerlink" title="如何在进入游戏时禁止Mods和金手指"></a>如何在进入游戏时禁止Mods和金手指</h3><p>如果想在启动游戏时禁用Mods或金手指，请按住L并启动你想要启动的游戏。</p>
-<h3 id="启动菜单中虚拟系统消失"><a href="#启动菜单中虚拟系统消失" class="headerlink" title="启动菜单中虚拟系统消失"></a>启动菜单中虚拟系统消失</h3><p>如果启动菜单中虚拟系统消失，请检查<code>sd -&gt; bootloader -&gt; hekate_ipl.ini</code>配置文件，查看是否缺少虚拟系统配置。可以参考如下配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...省略之前配置</span><br><span class="line">&#123;&#125;</span><br><span class="line">[Fusee]</span><br><span class="line">emummcforce=1</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br><span class="line">payload=bootloader/payloads/fusee.bin</span><br><span class="line"></span><br><span class="line">&#123;&#125;</span><br><span class="line">[Atmosphere (emuMMC)]</span><br><span class="line">emummcforce=1</span><br><span class="line">fss0=atmosphere/package3</span><br><span class="line">kip1patch=nosigchk</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br></pre></td></tr></table></figure>
-<p>其中<code>&#123;&#125;</code>为分隔符，<code>[Fusee]</code>为fusee.bin方式引导的大气层虚拟系统，<code>[Atmosphere (emuMMC)]</code>为普通方式引导的大气层虚拟系统。</p>
-<h3 id="哪些行为可以让我被ban？"><a href="#哪些行为可以让我被ban？" class="headerlink" title="哪些行为可以让我被ban？"></a>哪些行为可以让我被ban？</h3><div class="admonition error"><p class="admonition-title">注意
-</p><p><strong>任天堂的政策一直在动态变化，我不保证下面说的一定对。如被 ban 号或 ban 机，本人概不负责。</strong></p>
-</div>
-
-<p>立刻ban：</p>
-<ul>
-<li>盗版行为：只要使用盗版软件并且联网，必ban，包括但不限于安装盗版游戏、安装自制 NSP 文件等。</li>
-<li>使用自制软件更改用户图标。</li>
-<li>不合规的 eShop 行为，包括退款，黑卡等，前段时间闹的沸沸扬扬的港服Ban号就是由于黑点卡引起的。</li>
-<li>使用带有你switch唯一证书的自制软件或 PC 工具连接到任何任天堂网络或者CDN。</li>
-</ul>
-<p>很有可能被ban，但一般不会马上被ban：</p>
-<ul>
-<li>修改网络游戏</li>
-<li>在网络游戏中作弊</li>
-<li>使用自制软件清除系统日志</li>
-<li>在线使用多个 NAND（sysMMC 和 emuMMC），而并且连接了任天堂的网络。</li>
-</ul>
-<p>到目前为止，不会被Ban：</p>
-<ul>
-<li>单纯使用大气层自制固件(这里指的是单纯的使用大气层固件，没有任何上述的盗版行为)。</li>
-<li>单纯使用Homebrew。</li>
-<li>使用自定义主题或者自定义系统模块。</li>
-<li>单纯单机离线游戏中使用Mods或者使用金手指。</li>
-<li>超频</li>
-<li>运行其他操作系统，例如 Android 或 Linux</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">综上所述，按如下原则使用破解switch
-</p><ul>
-<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
-<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
-<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
-<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
-<li><strong>目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
-</ul>
-</div>
-
-<h3 id="破解芯片一直亮黄灯？"><a href="#破解芯片一直亮黄灯？" class="headerlink" title="破解芯片一直亮黄灯？"></a>破解芯片一直亮黄灯？</h3><p>大概率是焊接问题，请检查焊接焊点。</p>
-<hr>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<ol>
-<li><a href="https://switch.homebrew.guide/faq.html">switch.homebrew.guide</a></li>
-<li><a href="https://rentry.org/SwitchFAQ">rentry.org</a></li>
-<li><a href="https://nh-server.github.io/switch-guide/faq/">nh-server.github.io</a></li>
-</ol>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li><li><a href="https://www.marsshen.com/posts/53cdbb65/">Switch硬件破解经验分享 - 破解芯片固件升级篇</a></li></ul></div>]]></content>
       <tags>
         <tag>原创</tag>
         <tag>switch硬破教程</tag>
