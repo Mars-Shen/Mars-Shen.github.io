@@ -11,7 +11,7 @@ published: true
 subtitle: 教你如何升级国产破解芯片固件
 abbrlink: 53cdbb65
 date: 2022-05-31 12:00:00 
-updated: 2022-05-31 12:00:00
+updated: 2022-07-09 12:00:00
 alias: /2022/05/31/hwfly-firmware-update/index.html
 ---
 >本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
@@ -38,10 +38,10 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 ### 使用
 
-- 将兼容的有效playload（如 [hekate](https://github.com/CTCaer/hekate/releases) ），重命名payload.bin，并放在你的 sd 卡根目录中。
+- 将兼容的有效playload（如 [hekate](https://github.com/CTCaer/hekate/releases) ），重命名 **payload.bin**，并放在你的 sd 卡根目录中。
 - 第一次开启时，芯片将进行初始脉冲训练（最多 5 分钟），这时候芯片黄灯闪烁；完成后破解芯片将准备就绪，后续启动时会更快速。
 - 在启动期间按住 VOL+ 可防止破解芯片进入睡眠状态（一般破解完成后，破解芯片就会关闭，LED灯会熄灭）。这操作完成后可以允许破解芯片与[hwfly-toolbox](https://github.com/hwfly-nx/hwfly-toolbox)交互以进行额外的对破解芯片的 操作和诊断。
-- 启动switch后，当芯片脉冲破解成功但由于 sd 卡问题阻止加载 payload.bin 时，屏幕上会提供诊断。在这时， 可以通过同时按下 VOL+ 和 VOL- 来启动OFW。
+- 启动switch后，当芯片脉冲破解成功但由于 sd 卡问题阻止加载 **payload.bin** 时，屏幕上会提供诊断。在这时， 可以通过同时按下 VOL+ 和 VOL- 来启动OFW。
 - 在开机期间按住 VOL+ 和 VOL- 直到脉冲完成（绿灯亮起），会绕过任何有效的playload 并启动到 OFW。
 
 ### LED诊断
@@ -66,20 +66,21 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 **方法 b) - 使用 hwfly-toolbox 进行更新操作，该方法不需要打开设备后盖，但不能刷入引导程序（bootloader）。此时引导加载程序（bootloader）中的 LED 状态可能与上面LED状态图不一致。**
 
 1. 从此获取[hwfly-toolbox](https://github.com/hwfly-nx/hwfly-toolbox/releases)刷固件工具
-2. 将 hwfly_toolbox.bin 放到 sd卡的/bootloader/payloads/ 中。
-3. 开机进入 hekate，选择```playload```然后选择运行 hwfly_toolbox.bin。
-4. 从hwfly_toolbox的菜单中更新SD loader。
-5. 从菜单关闭switch主机。
-6. 取出sd卡，将 firmware.bin和sdloader.enc 放到你的sd卡根目录。**不要提早放**。如果之前刷过测试版本的固件，需要创建一个名为.force_update的空文件到sd卡根目录。
-7. 将sd卡放回switch主机，按住VOL+按钮开机（如果进入hekate后绿灯一直亮，说明操作成功）。
-8. 再次从 hekate 运行 hwfly_toolbox.bin。
-9. 从菜单更新固件（firmware）。
-10. 重新启动switch并完成更新。
+2. 将 **hwfly_toolbox.bin** 放到 sd卡的 **/bootloader/payloads/** 中。
+3. 将 hwfly 刷固件工具中的 **sdloader.enc** 放进 sd 卡的根目录。
+4. 开机进入 hekate，选择 playload 然后选择运行 **hwfly_toolbox.bin**。
+5. 从hwfly_toolbox的菜单中更新SD loader。
+6. 从菜单关闭switch主机。
+7. 取出sd卡，将 **firmware.bin** 放到你的sd卡根目录。**不要提早放**。如果之前刷过测试版本的固件，需要创建一个名为 **.force_update** 的空文件到sd卡根目录。
+8. 将sd卡放回switch主机，按住VOL+按钮开机（如果进入hekate后绿灯一直亮，说明操作成功）。
+9. 再次从 hekate 运行 **hwfly_toolbox.bin**。
+10. 从菜单更新固件（firmware）。
+11. 重新启动switch并完成更新。
 
 **方法c) - 使用外部编程器应用（j-link、st-link、gd-link）** 
 
 1. 参见[刷固件方法地址](https://www.sthetix.info/flashing-updating-unbricking-the-chip/)。
-2. 提供的bootloader.bin应该在0x080000000处被刷入。提供的payload.bin应在0x08003000处被刷入。
+2. 提供的 **bootloader.bin** 应该在0x080000000处被刷入。提供的 **payload.bin** 应在0x08003000处被刷入。
 
 
 **注意**：上面的三个方法没有一个可将无法更新固件的4代以前的芯片变成可更新固件的芯片。（不可更新固件的芯片在主板上使用一个 BGA FPGA类型控制芯片，而可更新固件的芯片主板上使用的是QFN FPGA类型控制芯片，硬件上是不同的）。
@@ -97,7 +98,7 @@ hwfly-nx（[最新固件下载地址](https://github.com/hwfly-nx/firmware/relea
 
 这个不管真实（正版）系统、真实（破解）系统，还是虚拟系统下，都一 样。而且不管你是通过按住电源键选择“关闭电源”关机，还是 goldleaf 里面 按 ZL/ZR 后点击 shutdown 关机，也都一样。
 
-假如在 bootloader/hekate_ipl.ini 中配置 autoboot=0，则自动开机会停 留在 hekate 的 RCM 菜单里，这就带来一个严重问题，首先机器会非常耗电且 机器热量也会立刻增加，假如长时间放在包里，其实不利于机器散热，容易造成硬件隐患。
+假如在 **bootloader/hekate_ipl.ini** 中配置 autoboot=0，则自动开机会停 留在 hekate 的 RCM 菜单里，这就带来一个严重问题，首先机器会非常耗电且 机器热量也会立刻增加，假如长时间放在包里，其实不利于机器散热，容易造成硬件隐患。
 
 **解决正常关机的办法如下：**
 
