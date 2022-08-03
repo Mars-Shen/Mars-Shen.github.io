@@ -11,7 +11,7 @@ published: true
 subtitle: 破解后折腾教程
 abbrlink: 20e16ead
 date: 2022-06-10 12:00:00
-updated: 2022-06-10 12:00:00
+updated: 2022-08-03 12:00:00
 ---
 > 本文仅为本人对破解的理解以及相关实践的总结，仅供参考。
 
@@ -19,7 +19,7 @@ updated: 2022-06-10 12:00:00
 
 ## 基础知识
 
-安装完破解芯片后，每次重新开启switch主机，破解芯片将进行工作，将诱导主机载入我们自己的playload，通过这个自制playload，可以进一步引到主机运行自制固件。通常来说，目前主流的自制playload为Hekate，主流的自制固件为Atmosphere（也就是大气层固件）。所以我们现在要做的就是将整合了playload和大气层的文件整合包，塞到TF卡根目录。这个整合包可以自己做，也可以找网上别人做好的现成的整合包，下面简单介绍下如何制作整合包。
+安装完破解芯片后，每次重新开启switch主机，破解芯片将进行工作，将诱导主机载入我们自己的payload，通过这个自制payload，可以进一步引到主机运行自制固件。通常来说，目前主流的自制payload为Hekate，主流的自制固件为Atmosphere（也就是大气层固件）。所以我们现在要做的就是将整合了payload和大气层的文件整合包，塞到TF卡根目录。这个整合包可以自己做，也可以找网上别人做好的现成的整合包，下面简单介绍下如何制作整合包。
 
 <!--more-->
 
@@ -43,7 +43,7 @@ updated: 2022-06-10 12:00:00
   这个网站专门用来定制自己的整合包，这里面的固件、组件等都是最新版本的更新非常快。
   1. 进入([sdsetup官网下载页](https://www.sdsetup.com/console?switch))。
   2. 选择Recommended Defaults或自己选择自己需要的组件后拉到最下面点击Download your ZIP下载。
-  3. 解压下载下来的zip包，你会看到2个文件夹，sd和payloads，将sd卡里面的内容全部复制到TF卡根目录，然后将payloads中```hekate_ctcaer_x.x.x.bin```更名成```playload.bin```放入TF卡根目录。
+  3. 解压下载下来的zip包，你会看到2个文件夹，sd和payloads，将sd卡里面的内容全部复制到TF卡根目录，然后将payloads中```hekate_ctcaer_x.x.x.bin```更名成```payload.bin```放入TF卡根目录。
 
 !!! info "关于Lockpick_RCM.bin"
     **payloads文件夹中```Lockpick_RCM.bin```可以用来备份主机key，有需要的同学可以自行搜索用法，这里就不赘述。**
@@ -51,7 +51,7 @@ updated: 2022-06-10 12:00:00
 **获取Neptune 团队的 DeepSea 基础整合包：**
   这是国外Neptune 团队的 DeepSea 整合包，维护很专业，通常更新也比较迅速。
   1. 进入（[DeepSea整合包下载页面](https://github.com/Team-Neptune/DeepSea/releases))下载最新的发布版本，三个版本随意 (我用的全功能版)。
-  2. 解压放入TF卡根目录，并将```hekate_ctcaer_x.x.x.bin```更名成```playload.bin```。
+  2. 解压放入TF卡根目录，并将```hekate_ctcaer_x.x.x.bin```更名成```payload.bin```。
 
 完成上述两种方式任意一种后，将TF卡塞进switch主机，此刻正常情况下，开机后会进入 hekate 引导程序，如果没进入，请考虑是否整合包有问题。
 如果你是国产芯片，关机后会变成重启，进入hekate后设置```options->Auto HOS Power Off```即可。
@@ -90,7 +90,7 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
    - **Stock (SYSNAND)：** 从机身内部的 eMMC 启动系统，不加载破解，也就是真实系统。
    - **CFW (SYSNAND)：** 从机身内部的 eMMC 启动系统，加载破解，不建议选择这一项，非常容易被ban。
    - **CFW (EMUMMC)：** 从 SD 卡的虚拟系统启动，加载破解，也就是虚拟系统，建议用此进入虚拟系统。
-   - **Fusee：** 使用大气层playload引导，从 SD 卡的虚拟系统启动，加载破解，也就是大气层引导的虚拟系统。
+   - **Fusee：** 使用大气层payload引导，从 SD 卡的虚拟系统启动，加载破解，也就是大气层引导的虚拟系统。
 
 ### 处理虚拟系统
 
