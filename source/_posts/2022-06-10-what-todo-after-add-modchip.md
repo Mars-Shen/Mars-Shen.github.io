@@ -117,7 +117,7 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
     ```
 
 **打签名破解补丁：**
-  1. 下载[ITotalJustice/patches](https://github.com/ITotalJustice/patches)，直接解压到根目录，这样才能运行破解游戏。
+  1. 下载[ITotalJustice/patches](https://github.com/ITotalJustice/patches)（已被封，请看我另一篇帖子[Atmosphere大气层签名补丁](/posts/418ba16d/)），直接解压到根目录，这样才能运行破解游戏。
   2. 编辑 ```bootloader/hekate_ipl.ini``` 文件，在[CFW (EMUMMC)] 下新增一行 ```kip1patch=nosigchk```，我只在虚拟系统下开启破解补丁。
 
 !!! warning "注意"
@@ -166,7 +166,7 @@ Switch 内置的 eMMC 存储芯片有以下几个重要分区：BOOT0、BOOT1、
 
 ### 更新系统
 
-等待 [Hekate](https://github.com/CTCaer/hekate) 这个 BootLoader，[大气层系统](https://github.com/Atmosphere-NX/Atmosphere/releases)，[破解补丁](https://github.com/ITotalJustice/patches)更新，确保三者已支持最新系统，或直接等整合包 DeapSea 更新
+等待 [Hekate](https://github.com/CTCaer/hekate) 这个 BootLoader，[大气层系统](https://github.com/Atmosphere-NX/Atmosphere/releases)，[破解补丁](/posts/418ba16d/)更新，确保三者已支持最新系统，或直接等整合包 DeapSea 更新
 
 1. 正确安装上述三者
 2. 真实系统：开机进入```Stock (SYSNAND)```，直接联网并更新，等待自动重启
