@@ -20,6 +20,15 @@
   </url>
   
   <url>
+    <loc>https://www.marsshen.com/categories/index.html</loc>
+    
+    <lastmod>2023-02-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.marsshen.com/404.html</loc>
     
     <lastmod>2023-02-27</lastmod>
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/categories/index.html</loc>
+    <loc>https://www.marsshen.com/posts/418ba16d/</loc>
     
     <lastmod>2023-02-27</lastmod>
     
