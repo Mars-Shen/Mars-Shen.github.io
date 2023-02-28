@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Atmosphere大气层破解签名补丁
+title: Switch硬件破解经验分享 - Atmosphere大气层破解签名补丁
 author: Mars Shen
 multilingual: false
 tags:
@@ -8,12 +8,12 @@ tags:
   - switch硬破教程
   - switch
 published: true
-subtitle: '大气层破解签名补丁, 定期更新'
+subtitle: '大气层破解签名补丁, 不定期更新'
 abbrlink: 418ba16d
 date: 2023-02-27 12:00:00
 updated: 2023-02-27 12:00:00
 ---
-> 大气层签名补丁, 定期更新。
+> 大气层签名补丁, 不定期更新。
 
 ### 大气层破解签名补丁
 
