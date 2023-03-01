@@ -27,6 +27,7 @@ updated: 2023-02-27 12:00:00
 
 ###  下载地址:
 下载：[Hekate+AMS-package3-sigpatches-1.5.0-cfw-16.0.0.zip](/file/Hekate+AMS-package3-sigpatches-1.5.0-cfw-16.0.0.zip)
+<!--more -->
 
 	
 ---
