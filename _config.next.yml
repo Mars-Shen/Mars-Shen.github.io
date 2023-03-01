@@ -273,10 +273,10 @@ reward_settings:
 
 reward:
   #wechatpay: /images/wechatpay.png
-  #alipay: /images/alipay.png
+  alipay: /img/alipay_account.jpg
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
-  Ethereum: /img/eth_account.jpg
+  #Ethereum: /img/eth_account.jpg
 
 # Subscribe through Telegram Channel, Twitter, etc.
 # Usage: `Key: permalink || icon` (Font Awesome)
