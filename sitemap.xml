@@ -223,20 +223,6 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/switch%E7%A1%AC%E7%A0%B4%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2023-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.marsshen.com/tags/switch/</loc>
-    <lastmod>2023-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.marsshen.com/tags/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2023-03-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -252,6 +238,20 @@
   
   <url>
     <loc>https://www.marsshen.com/tags/python/</loc>
+    <lastmod>2023-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.marsshen.com/tags/switch%E7%A1%AC%E7%A0%B4%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2023-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.marsshen.com/tags/switch/</loc>
     <lastmod>2023-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -328,14 +328,14 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/Ubuntu/</loc>
+    <loc>https://www.marsshen.com/tags/ELK/</loc>
     <lastmod>2023-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/tags/ELK/</loc>
+    <loc>https://www.marsshen.com/tags/Ubuntu/</loc>
     <lastmod>2023-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
