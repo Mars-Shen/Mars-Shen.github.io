@@ -902,6 +902,161 @@
       </tags>
   </entry>
   <entry>
+    <title>Switch硬件破解经验分享 - 破解问题FAQ</title>
+    <url>/posts/c7924c66/</url>
+    <content><![CDATA[<blockquote>
+<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
+</blockquote>
+<div class="admonition info"><p class="admonition-title">说明
+</p><p><strong>我会收集一些硬破后常见错误解决方式，还有一些技巧更新在这个页面。有什么问题也可以在这里留言。</strong></p>
+</div>
+
+<h3 id="如何进入homebrew-launcher-自制软件启动器，简称HBL"><a href="#如何进入homebrew-launcher-自制软件启动器，简称HBL" class="headerlink" title="如何进入homebrew launcher(自制软件启动器，简称HBL)"></a>如何进入homebrew launcher(自制软件启动器，简称HBL)</h3><p>有两种方法可以进入homebrew launcher：</p>
+<ul>
+<li>随便找个游戏，按住R并启动这个游戏。<br>或者</li>
+<li>通过单击相册图标<ul>
+<li>这将使你进入applet mode(小程序模式)，你会在右上角看到applet mode几个字。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">关于applet mode
+</p><p><strong>applet mode(小程序模式)并没有用最高权限执行自制软件，可能会使某些自制程序可能无法正常工作出错。</strong></p>
+</div>
+
+<span id="more"></span>
+<h3 id="如何进入维护模式"><a href="#如何进入维护模式" class="headerlink" title="如何进入维护模式"></a>如何进入维护模式</h3><p>如果你经常打开游戏报错，或者遇到莫名其妙的问题，那么可以尝试按如下步骤进入维护模式：</p>
+<ol>
+<li>打开switch。</li>
+<li>系统开机，进入Hekate后选择你要进的系统，进入大气时(黑屏时)按住按住(音量 +) 和 (音量 -) 直到出现画面。</li>
+<li>这时候你就进入了维护模式，一般来说什么都不要动，直接长按电源键关机，重新打开switch即可。</li>
+</ol>
+<h3 id="如何在进入游戏时禁止Mods和金手指"><a href="#如何在进入游戏时禁止Mods和金手指" class="headerlink" title="如何在进入游戏时禁止Mods和金手指"></a>如何在进入游戏时禁止Mods和金手指</h3><p>如果想在启动游戏时禁用Mods或金手指，请按住L并启动你想要启动的游戏。</p>
+<h3 id="启动菜单中虚拟系统消失"><a href="#启动菜单中虚拟系统消失" class="headerlink" title="启动菜单中虚拟系统消失"></a>启动菜单中虚拟系统消失</h3><p>如果启动菜单中虚拟系统消失，请检查<code>sd -&gt; bootloader -&gt; hekate_ipl.ini</code>配置文件，查看是否缺少虚拟系统配置。可以参考如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...省略之前配置</span><br><span class="line">&#123;&#125;</span><br><span class="line">[Fusee]</span><br><span class="line">emummcforce=1</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br><span class="line">payload=bootloader/payloads/fusee.bin</span><br><span class="line"></span><br><span class="line">&#123;&#125;</span><br><span class="line">[Atmosphere (emuMMC)]</span><br><span class="line">emummcforce=1</span><br><span class="line">fss0=atmosphere/package3</span><br><span class="line">kip1patch=nosigchk</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br></pre></td></tr></table></figure>
+<p>其中<code>&#123;&#125;</code>为分隔符，<code>[Fusee]</code>为fusee.bin方式引导的大气层虚拟系统，<code>[Atmosphere (emuMMC)]</code>为普通方式引导的大气层虚拟系统。</p>
+<h3 id="哪些行为可以让我被ban？"><a href="#哪些行为可以让我被ban？" class="headerlink" title="哪些行为可以让我被ban？"></a>哪些行为可以让我被ban？</h3><div class="admonition error"><p class="admonition-title">注意
+</p><p><strong>任天堂的政策一直在动态变化，我不保证下面说的一定对。如被 ban 号或 ban 机，本人概不负责。</strong></p>
+</div>
+
+<p>立刻ban：</p>
+<ul>
+<li>盗版行为：只要使用盗版软件并且联网，必ban，包括但不限于安装盗版游戏、安装自制 NSP 文件等。</li>
+<li>使用自制软件更改用户图标。</li>
+<li>不合规的 eShop 行为，包括退款，黑卡等，前段时间闹的沸沸扬扬的港服Ban号就是由于黑点卡引起的。</li>
+<li>使用带有你switch唯一证书的自制软件或 PC 工具连接到任何任天堂网络或者CDN。</li>
+</ul>
+<p>很有可能被ban，但一般不会马上被ban：</p>
+<ul>
+<li>修改网络游戏</li>
+<li>在网络游戏中作弊</li>
+<li>使用自制软件清除系统日志</li>
+<li>在线使用多个 NAND（sysMMC 和 emuMMC），而并且连接了任天堂的网络。</li>
+</ul>
+<p>到目前为止，不会被Ban：</p>
+<ul>
+<li>单纯使用大气层自制固件(这里指的是单纯的使用大气层固件，没有任何上述的盗版行为)。</li>
+<li>单纯使用Homebrew。</li>
+<li>使用自定义主题或者自定义系统模块。</li>
+<li>单纯单机离线游戏中使用Mods或者使用金手指。</li>
+<li>超频</li>
+<li>运行其他操作系统，例如 Android 或 Linux</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">综上所述，按如下原则使用破解switch
+</p><ul>
+<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
+<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
+<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
+<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
+<li><strong>目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
+</ul>
+</div>
+
+<h3 id="破解芯片一直亮黄灯？"><a href="#破解芯片一直亮黄灯？" class="headerlink" title="破解芯片一直亮黄灯？"></a>破解芯片一直亮黄灯？</h3><h2 id="大概率是焊接问题，请检查焊接焊点。"><a href="#大概率是焊接问题，请检查焊接焊点。" class="headerlink" title="大概率是焊接问题，请检查焊接焊点。
+    "></a>大概率是焊接问题，请检查焊接焊点。
+    </h2><blockquote>
+<p>引用</p>
+</blockquote>
+<ol>
+<li><a href="https://switch.homebrew.guide/faq.html">switch.homebrew.guide</a></li>
+<li><a href="https://rentry.org/SwitchFAQ">rentry.org</a></li>
+<li><a href="https://nh-server.github.io/switch-guide/faq/">nh-server.github.io</a></li>
+</ol>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/418ba16d/">Switch硬件破解经验分享 - Atmosphere大气层破解签名补丁</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>switch硬破教程</tag>
+        <tag>switch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Switch硬件破解经验分享 - Atmosphere大气层破解签名补丁</title>
+    <url>/posts/418ba16d/</url>
+    <content><![CDATA[<blockquote>
+<p>大气层签名补丁, 不定期更新。</p>
+</blockquote>
+<h3 id="大气层破解签名补丁"><a href="#大气层破解签名补丁" class="headerlink" title="大气层破解签名补丁"></a>大气层破解签名补丁</h3><div class="admonition info"><p class="admonition-title">说明
+</p><p><strong>当前测试版签名补丁更新为 FW 16.0.0 和 ATMOSPHERE v1.5.0（预发布版本）。</strong></p>
+</div>
+
+<p>鉴于目前 HarukoNX 和 iTotalJustice 的存储库都被地球最强法务部封了，我收集了网上最新的大气层补丁。如果你使用 Hekate 进行引导，这个签名补丁适合你， 如果你使用的是 fusee，那么该包中也已经包含该方法的补丁。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法:"></a>使用方法:</h3><p>下载zip包，解压后覆盖到SD卡根目录下，重启Switch即可。</p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址:"></a>下载地址:</h3><p>下载：<a href="/file/Hekate+AMS-package3-sigpatches-1.5.0-cfw-16.0.0.zip">Hekate+AMS-package3-sigpatches-1.5.0-cfw-16.0.0.zip</a></p>
+<span id="more"></span>
+
+<hr>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<ol>
+<li><a href="https://gbatemp.net/threads/sigpatches-for-atmosphere-hekate-fss0-fusee-package3.571543/">gbatemp.net</a></li>
+</ol>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
+      <tags>
+        <tag>原创</tag>
+        <tag>switch硬破教程</tag>
+        <tag>switch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>区块链系列 - 以太坊简介</title>
+    <url>/posts/df475880/</url>
+    <content><![CDATA[<blockquote>
+<p>本文为转载，原文地址为<a href="https://waksana.github.io/blog/2023/02/28/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%AE%80%E4%BB%8B.html">waksana</a>。</p>
+</blockquote>
+<h4 id="以太坊简介"><a href="#以太坊简介" class="headerlink" title="以太坊简介"></a>以太坊简介</h4><p>简单来说，以太坊就是一个图灵机。它包含一个状态(state)，其中包括所有钱包状态、智能合约及其状态。状态类似于图灵机的无限纸带，无限纸带上同时存储着数据和程序。用户通过交易(transaction)向以太坊发送指令，它会根据指令进行操作或运行智能合约，得到一个新的状态(state’)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">State&#x27; = Process State Transactions</span><br></pre></td></tr></table></figure>
+
+<p>这个图灵机与众不同之处在于，任何人都无法篡改它的状态，也无法阻止它的运行。这些优势源自于它的底层数据结构：区块链。</p>
+<span id="more"></span>
+
+<h4 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h4><p>区块链是一种类似于链表的数据结构，链表是一个经典数据结构，每一个项都有一个指向前继(或者后继)的指针。区块链在链表的基础上做了一个改动，把链表指向前继指针换为前一个区块的哈希。每一个新的区块都包含前面区块的哈希值，一直传递到第一个区块。中间任何区块的数据修改都会让该区块后的所有区块哈希产生变化。这就让区块链具备了感知篡改的能力。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FirstBlock = &#123;...&#125;</span><br><span class="line">Block2 = &#123;... previousBlock: hash(FirstBlock) &#125;</span><br><span class="line">Block3 = &#123;... previousBlock: hash(Block2) &#125;</span><br></pre></td></tr></table></figure>
+
+<p>到这里，区块链是一个能够感知篡改的，只能追加数据的存储结构，还无法胜任以太坊的需求。需要注入一些灵魂让区块链活起来。</p>
+<h4 id="加密货币"><a href="#加密货币" class="headerlink" title="加密货币"></a>加密货币</h4><p>区块链是一个静态的数据结构，只有活着的区块链才有防篡改，去中心化等等特性。其中的关键因素就是加密货币。</p>
+<p>首先，每一个新的区块都会产生一些加密货币。按规则创建区块的人有权力添加一条交易把这些加密货币添加到自己的钱包状态中去。这导致人们热衷于创建新的区块。为了避免无成本的随意创建区块，记账人需要证明自己投入了相当多的资源来获得创建区块的权力。这个资源就是算力和电费。这些花费唯一的意义就是证明自己投入了这些资源。偶尔多个竞争者会同时获得记账权，这时解决争端的方式是以最长的链为正确的链。</p>
+<p>在大家争相创建区块的时候，去中心化就产生了。创建区块的权力根据算力的大小随机的分发给竞争者。大家踊跃验证别人创建区块的正确性。然后马上投入下一个区块的算力竞争。任何篡改之后的区块链都无法被其他人认可，并且由于算力的累积也无法追赶上最长链。</p>
+<p>记账人不仅仅需要承担工作量证明的算力，还需要把用户的交易(trancation)收集起来，并且从上一个区块的状态(State)通过执行这些交易(transaction)获得新的状态(State’)。这时，另一个问题出现了，就是如何鼓励记账人把用户发送的交易加入区块中。这里加密货币也起到了关键作用：记账人除了能获得区块新增的加密货币外，还能从每个用户交易当中获取小费，这样记账的人就倾向于把小费更多的交易纳入区块中。</p>
+<p>小费还解决了图灵机的停机问题，在普通的图灵机中，我们没办法判定一个程序是否会停机，在以太坊中，任何一个操作都需要一定量的小费，当智能合约长时间运行的时候小费会被耗尽，这就是停机的时候。</p>
+<p>区块链和加密货币提供了一个竞争的记账人构成的去中心化的状态转移机器（类似图灵机中的读写头）但是区块链提供的存储系统却是不可篡改只能追加的。和以太坊所需要的状态模型不太匹配。状态的模型需要能够修改以前的数据，比如一个智能合约中参数的值，或者一个钱包中的余额。</p>
+<h4 id="状态树"><a href="#状态树" class="headerlink" title="状态树"></a>状态树</h4><p>在以太坊中，用户钱包和智能合约，都有一个40个16进制数长度的地址。用户的地址里存着他的余额和用户状态；智能合约的地址里存着代码和智能合约的参数值。</p>
+<p>为了实现地址到状态的存储和更改，以太坊采用了一种称为默克尔路径压缩字典树（MPT）的数据结构。这种存储结构类似于一棵字典树，其中地址被用作键，叶节点中存储的内容是对应地址的状态。由于MPT的结构，状态的更改可以方便地进行。通过将树的指针替换为哈希指针，可以计算出整个状态的哈希值，从而将所有状态的哈希存储在区块链中。这种存储方式可以验证巨大的状态内容，同时状态可以使用其他存储和同步方式。矿工的记账过程可以看作是从旧状态计算出新状态，并将新状态的哈希记录在新区块中。</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>以太坊在区块链上实现了一个去中心化的不可篡改的图灵机。他把记账人当作图灵机的读写头，把状态树当作图灵机中无穷长的纸带，通过MPT把状态压缩成一个hash值，有种一叶一世界的感觉，应该是一区块一世界。</p>
+<hr>
+<blockquote>
+<p>原文转载地址</p>
+</blockquote>
+<ol>
+<li><a href="https://waksana.github.io/blog/2023/02/28/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%AE%80%E4%BB%8B.html">waksana</a></li>
+</ol>
+<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/a9eae027/">自动化抢小米加密兔辅助工具</a></li><li><a href="https://www.marsshen.com/posts/8a7a7578/">使用MetaMask钱包完成EOS钱包映射</a></li></ul></div>]]></content>
+      <tags>
+        <tag>区块链</tag>
+        <tag>转载</tag>
+        <tag>以太坊</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Switch硬件破解经验分享 - 破解后折腾篇</title>
     <url>/posts/20e16ead/</url>
     <content><![CDATA[<blockquote>
@@ -1057,161 +1212,6 @@
         <tag>原创</tag>
         <tag>switch硬破教程</tag>
         <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Switch硬件破解经验分享 - 破解问题FAQ</title>
-    <url>/posts/c7924c66/</url>
-    <content><![CDATA[<blockquote>
-<p>本文仅为本人对破解的理解以及相关实践的总结，仅供参考。</p>
-</blockquote>
-<div class="admonition info"><p class="admonition-title">说明
-</p><p><strong>我会收集一些硬破后常见错误解决方式，还有一些技巧更新在这个页面。有什么问题也可以在这里留言。</strong></p>
-</div>
-
-<h3 id="如何进入homebrew-launcher-自制软件启动器，简称HBL"><a href="#如何进入homebrew-launcher-自制软件启动器，简称HBL" class="headerlink" title="如何进入homebrew launcher(自制软件启动器，简称HBL)"></a>如何进入homebrew launcher(自制软件启动器，简称HBL)</h3><p>有两种方法可以进入homebrew launcher：</p>
-<ul>
-<li>随便找个游戏，按住R并启动这个游戏。<br>或者</li>
-<li>通过单击相册图标<ul>
-<li>这将使你进入applet mode(小程序模式)，你会在右上角看到applet mode几个字。</li>
-</ul>
-</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">关于applet mode
-</p><p><strong>applet mode(小程序模式)并没有用最高权限执行自制软件，可能会使某些自制程序可能无法正常工作出错。</strong></p>
-</div>
-
-<span id="more"></span>
-<h3 id="如何进入维护模式"><a href="#如何进入维护模式" class="headerlink" title="如何进入维护模式"></a>如何进入维护模式</h3><p>如果你经常打开游戏报错，或者遇到莫名其妙的问题，那么可以尝试按如下步骤进入维护模式：</p>
-<ol>
-<li>打开switch。</li>
-<li>系统开机，进入Hekate后选择你要进的系统，进入大气时(黑屏时)按住按住(音量 +) 和 (音量 -) 直到出现画面。</li>
-<li>这时候你就进入了维护模式，一般来说什么都不要动，直接长按电源键关机，重新打开switch即可。</li>
-</ol>
-<h3 id="如何在进入游戏时禁止Mods和金手指"><a href="#如何在进入游戏时禁止Mods和金手指" class="headerlink" title="如何在进入游戏时禁止Mods和金手指"></a>如何在进入游戏时禁止Mods和金手指</h3><p>如果想在启动游戏时禁用Mods或金手指，请按住L并启动你想要启动的游戏。</p>
-<h3 id="启动菜单中虚拟系统消失"><a href="#启动菜单中虚拟系统消失" class="headerlink" title="启动菜单中虚拟系统消失"></a>启动菜单中虚拟系统消失</h3><p>如果启动菜单中虚拟系统消失，请检查<code>sd -&gt; bootloader -&gt; hekate_ipl.ini</code>配置文件，查看是否缺少虚拟系统配置。可以参考如下配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...省略之前配置</span><br><span class="line">&#123;&#125;</span><br><span class="line">[Fusee]</span><br><span class="line">emummcforce=1</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br><span class="line">payload=bootloader/payloads/fusee.bin</span><br><span class="line"></span><br><span class="line">&#123;&#125;</span><br><span class="line">[Atmosphere (emuMMC)]</span><br><span class="line">emummcforce=1</span><br><span class="line">fss0=atmosphere/package3</span><br><span class="line">kip1patch=nosigchk</span><br><span class="line">icon=bootloader/res/atmosphere-emu.bmp</span><br></pre></td></tr></table></figure>
-<p>其中<code>&#123;&#125;</code>为分隔符，<code>[Fusee]</code>为fusee.bin方式引导的大气层虚拟系统，<code>[Atmosphere (emuMMC)]</code>为普通方式引导的大气层虚拟系统。</p>
-<h3 id="哪些行为可以让我被ban？"><a href="#哪些行为可以让我被ban？" class="headerlink" title="哪些行为可以让我被ban？"></a>哪些行为可以让我被ban？</h3><div class="admonition error"><p class="admonition-title">注意
-</p><p><strong>任天堂的政策一直在动态变化，我不保证下面说的一定对。如被 ban 号或 ban 机，本人概不负责。</strong></p>
-</div>
-
-<p>立刻ban：</p>
-<ul>
-<li>盗版行为：只要使用盗版软件并且联网，必ban，包括但不限于安装盗版游戏、安装自制 NSP 文件等。</li>
-<li>使用自制软件更改用户图标。</li>
-<li>不合规的 eShop 行为，包括退款，黑卡等，前段时间闹的沸沸扬扬的港服Ban号就是由于黑点卡引起的。</li>
-<li>使用带有你switch唯一证书的自制软件或 PC 工具连接到任何任天堂网络或者CDN。</li>
-</ul>
-<p>很有可能被ban，但一般不会马上被ban：</p>
-<ul>
-<li>修改网络游戏</li>
-<li>在网络游戏中作弊</li>
-<li>使用自制软件清除系统日志</li>
-<li>在线使用多个 NAND（sysMMC 和 emuMMC），而并且连接了任天堂的网络。</li>
-</ul>
-<p>到目前为止，不会被Ban：</p>
-<ul>
-<li>单纯使用大气层自制固件(这里指的是单纯的使用大气层固件，没有任何上述的盗版行为)。</li>
-<li>单纯使用Homebrew。</li>
-<li>使用自定义主题或者自定义系统模块。</li>
-<li>单纯单机离线游戏中使用Mods或者使用金手指。</li>
-<li>超频</li>
-<li>运行其他操作系统，例如 Android 或 Linux</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">综上所述，按如下原则使用破解switch
-</p><ul>
-<li><strong>只在虚拟系统下安装破解游戏及 NSP 格式的插件</strong></li>
-<li><strong>真实系统只插卡带玩或下载正版数字版游戏</strong></li>
-<li><strong>真实系统可联机的游戏联机时不要开金手指，除非你有把握</strong></li>
-<li><strong>真实系统可联机的游戏存档不要改的太过分，除非你有把握</strong></li>
-<li><strong>目前我还没被 ban，被 ban 了会在此更新，如被 ban 号或 ban 机，本人概不负责</strong></li>
-</ul>
-</div>
-
-<h3 id="破解芯片一直亮黄灯？"><a href="#破解芯片一直亮黄灯？" class="headerlink" title="破解芯片一直亮黄灯？"></a>破解芯片一直亮黄灯？</h3><h2 id="大概率是焊接问题，请检查焊接焊点。"><a href="#大概率是焊接问题，请检查焊接焊点。" class="headerlink" title="大概率是焊接问题，请检查焊接焊点。
-    "></a>大概率是焊接问题，请检查焊接焊点。
-    </h2><blockquote>
-<p>引用</p>
-</blockquote>
-<ol>
-<li><a href="https://switch.homebrew.guide/faq.html">switch.homebrew.guide</a></li>
-<li><a href="https://rentry.org/SwitchFAQ">rentry.org</a></li>
-<li><a href="https://nh-server.github.io/switch-guide/faq/">nh-server.github.io</a></li>
-</ol>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/418ba16d/">Switch硬件破解经验分享 - Atmosphere大气层破解签名补丁</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>switch硬破教程</tag>
-        <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Switch硬件破解经验分享 - Atmosphere大气层破解签名补丁</title>
-    <url>/posts/418ba16d/</url>
-    <content><![CDATA[<blockquote>
-<p>大气层签名补丁, 不定期更新。</p>
-</blockquote>
-<h3 id="大气层破解签名补丁"><a href="#大气层破解签名补丁" class="headerlink" title="大气层破解签名补丁"></a>大气层破解签名补丁</h3><div class="admonition info"><p class="admonition-title">说明
-</p><p><strong>当前测试版签名补丁更新为 FW 16.0.0 和 ATMOSPHERE v1.5.0（预发布版本）。</strong></p>
-</div>
-
-<p>鉴于目前 HarukoNX 和 iTotalJustice 的存储库都被地球最强法务部封了，我收集了网上最新的大气层补丁。如果你使用 Hekate 进行引导，这个签名补丁适合你， 如果你使用的是 fusee，那么该包中也已经包含该方法的补丁。</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法:"></a>使用方法:</h3><p>下载zip包，解压后覆盖到SD卡根目录下，重启Switch即可。</p>
-<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址:"></a>下载地址:</h3><p>下载：<a href="/file/Hekate+AMS-package3-sigpatches-1.5.0-cfw-16.0.0.zip">Hekate+AMS-package3-sigpatches-1.5.0-cfw-16.0.0.zip</a></p>
-<span id="more"></span>
-
-<hr>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<ol>
-<li><a href="https://gbatemp.net/threads/sigpatches-for-atmosphere-hekate-fss0-fusee-package3.571543/">gbatemp.net</a></li>
-</ol>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/c7924c66/">Switch硬件破解经验分享 - 破解问题FAQ</a></li><li><a href="https://www.marsshen.com/posts/20e16ead/">Switch硬件破解经验分享 - 破解后折腾篇</a></li><li><a href="https://www.marsshen.com/posts/464772cb/">Switch硬件破解经验分享 - 自己动手焊接switch破解芯片</a></li></ul></div>]]></content>
-      <tags>
-        <tag>原创</tag>
-        <tag>switch硬破教程</tag>
-        <tag>switch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>区块链系列 - 以太坊简介</title>
-    <url>/posts/df475880/</url>
-    <content><![CDATA[<blockquote>
-<p>本文为转载，原文地址为<a href="https://waksana.github.io/blog/2023/02/28/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%AE%80%E4%BB%8B.html">waksana</a>。</p>
-</blockquote>
-<h4 id="以太坊简介"><a href="#以太坊简介" class="headerlink" title="以太坊简介"></a>以太坊简介</h4><p>简单来说，以太坊就是一个图灵机。它包含一个状态(state)，其中包括所有钱包状态、智能合约及其状态。状态类似于图灵机的无限纸带，无限纸带上同时存储着数据和程序。用户通过交易(transaction)向以太坊发送指令，它会根据指令进行操作或运行智能合约，得到一个新的状态(state’)。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">State&#x27; = Process State Transactions</span><br></pre></td></tr></table></figure>
-
-<p>这个图灵机与众不同之处在于，任何人都无法篡改它的状态，也无法阻止它的运行。这些优势源自于它的底层数据结构：区块链。</p>
-<span id="more"></span>
-
-<h4 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h4><p>区块链是一种类似于链表的数据结构，链表是一个经典数据结构，每一个项都有一个指向前继(或者后继)的指针。区块链在链表的基础上做了一个改动，把链表指向前继指针换为前一个区块的哈希。每一个新的区块都包含前面区块的哈希值，一直传递到第一个区块。中间任何区块的数据修改都会让该区块后的所有区块哈希产生变化。这就让区块链具备了感知篡改的能力。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FirstBlock = &#123;...&#125;</span><br><span class="line">Block2 = &#123;... previousBlock: hash(FirstBlock) &#125;</span><br><span class="line">Block3 = &#123;... previousBlock: hash(Block2) &#125;</span><br></pre></td></tr></table></figure>
-
-<p>到这里，区块链是一个能够感知篡改的，只能追加数据的存储结构，还无法胜任以太坊的需求。需要注入一些灵魂让区块链活起来。</p>
-<h4 id="加密货币"><a href="#加密货币" class="headerlink" title="加密货币"></a>加密货币</h4><p>区块链是一个静态的数据结构，只有活着的区块链才有防篡改，去中心化等等特性。其中的关键因素就是加密货币。</p>
-<p>首先，每一个新的区块都会产生一些加密货币。按规则创建区块的人有权力添加一条交易把这些加密货币添加到自己的钱包状态中去。这导致人们热衷于创建新的区块。为了避免无成本的随意创建区块，记账人需要证明自己投入了相当多的资源来获得创建区块的权力。这个资源就是算力和电费。这些花费唯一的意义就是证明自己投入了这些资源。偶尔多个竞争者会同时获得记账权，这时解决争端的方式是以最长的链为正确的链。</p>
-<p>在大家争相创建区块的时候，去中心化就产生了。创建区块的权力根据算力的大小随机的分发给竞争者。大家踊跃验证别人创建区块的正确性。然后马上投入下一个区块的算力竞争。任何篡改之后的区块链都无法被其他人认可，并且由于算力的累积也无法追赶上最长链。</p>
-<p>记账人不仅仅需要承担工作量证明的算力，还需要把用户的交易(trancation)收集起来，并且从上一个区块的状态(State)通过执行这些交易(transaction)获得新的状态(State’)。这时，另一个问题出现了，就是如何鼓励记账人把用户发送的交易加入区块中。这里加密货币也起到了关键作用：记账人除了能获得区块新增的加密货币外，还能从每个用户交易当中获取小费，这样记账的人就倾向于把小费更多的交易纳入区块中。</p>
-<p>小费还解决了图灵机的停机问题，在普通的图灵机中，我们没办法判定一个程序是否会停机，在以太坊中，任何一个操作都需要一定量的小费，当智能合约长时间运行的时候小费会被耗尽，这就是停机的时候。</p>
-<p>区块链和加密货币提供了一个竞争的记账人构成的去中心化的状态转移机器（类似图灵机中的读写头）但是区块链提供的存储系统却是不可篡改只能追加的。和以太坊所需要的状态模型不太匹配。状态的模型需要能够修改以前的数据，比如一个智能合约中参数的值，或者一个钱包中的余额。</p>
-<h4 id="状态树"><a href="#状态树" class="headerlink" title="状态树"></a>状态树</h4><p>在以太坊中，用户钱包和智能合约，都有一个40个16进制数长度的地址。用户的地址里存着他的余额和用户状态；智能合约的地址里存着代码和智能合约的参数值。</p>
-<p>为了实现地址到状态的存储和更改，以太坊采用了一种称为默克尔路径压缩字典树（MPT）的数据结构。这种存储结构类似于一棵字典树，其中地址被用作键，叶节点中存储的内容是对应地址的状态。由于MPT的结构，状态的更改可以方便地进行。通过将树的指针替换为哈希指针，可以计算出整个状态的哈希值，从而将所有状态的哈希存储在区块链中。这种存储方式可以验证巨大的状态内容，同时状态可以使用其他存储和同步方式。矿工的记账过程可以看作是从旧状态计算出新状态，并将新状态的哈希记录在新区块中。</p>
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>以太坊在区块链上实现了一个去中心化的不可篡改的图灵机。他把记账人当作图灵机的读写头，把状态树当作图灵机中无穷长的纸带，通过MPT把状态压缩成一个hash值，有种一叶一世界的感觉，应该是一区块一世界。</p>
-<hr>
-<blockquote>
-<p>原文转载地址</p>
-</blockquote>
-<ol>
-<li><a href="https://waksana.github.io/blog/2023/02/28/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%AE%80%E4%BB%8B.html">waksana</a></li>
-</ol>
-<div><strong>扩展阅读</strong><ul><li><a href="https://www.marsshen.com/posts/a9eae027/">自动化抢小米加密兔辅助工具</a></li><li><a href="https://www.marsshen.com/posts/8a7a7578/">使用MetaMask钱包完成EOS钱包映射</a></li></ul></div>]]></content>
-      <tags>
-        <tag>区块链</tag>
-        <tag>转载</tag>
-        <tag>以太坊</tag>
       </tags>
   </entry>
 </search>
