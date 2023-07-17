@@ -18,7 +18,7 @@ updated: 2023-07-17 12:00:00
 
 ### sys-patch 签名模块介绍
 
-sys-patch是一个类似脚本的系统模块，可在启动时修补fs、es、ldr和nifm。它可以自动在系统更新后更新ldr补丁，因此即使没有更新sigpatches签名补丁，也可以保持最新的ldr补丁。
+ITotalJustice的最新作品，sys-patch是一个类似脚本的系统模块，可在启动时修补fs、es、ldr和nifm。它可以自动在系统更新后更新ldr补丁，因此即使没有更新sigpatches签名补丁，也可以保持最新的ldr补丁。
 
 !!! info
     如果你正确安装了签名补丁，但你每次离线打开游戏时都提醒你“请关闭飞行模式”，因此导致很多游戏没法正确运行。那推荐你安装这个模块，可以解决这个问题，并保障大多数游戏正常运行。
@@ -36,5 +36,6 @@ zip包地址为：[V1.4.2](https://github.com/ITotalJustice/sys-patch/releases/d
 > 引用
 
 1. [https://github.com/ITotalJustice/sys-patch](https://github.com/ITotalJustice/sys-patch)
+2. [gbatemp]https://gbatemp.net/threads/sys-patch-sysmod-that-patches-on-boot.633517/
 
 
