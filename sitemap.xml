@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/categories/index.html</loc>
+    <loc>https://www.marsshen.com/404.html</loc>
     
     <lastmod>2023-07-17</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.marsshen.com/404.html</loc>
+    <loc>https://www.marsshen.com/categories/index.html</loc>
     
     <lastmod>2023-07-17</lastmod>
     
@@ -358,6 +358,13 @@
   </url>
   
   <url>
+    <loc>https://www.marsshen.com/tags/scrapy/</loc>
+    <lastmod>2023-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.marsshen.com/tags/%E8%BD%AC%E8%BD%BD/</loc>
     <lastmod>2023-07-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,13 +373,6 @@
   
   <url>
     <loc>https://www.marsshen.com/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/</loc>
-    <lastmod>2023-07-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.marsshen.com/tags/scrapy/</loc>
     <lastmod>2023-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
